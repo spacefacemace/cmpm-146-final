@@ -181,4 +181,3 @@ label scene7:
 
     li "Well, I’ll let you two go, too! Thanks for your hard work."
 
-
