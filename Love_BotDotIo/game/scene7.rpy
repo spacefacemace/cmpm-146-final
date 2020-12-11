@@ -2,6 +2,11 @@
 # stuff for ai
 # points for li->pg, li->rv, rv->pg
 
+# rn the answers to the player's options is
+# set to the ideal answer (mostly for rv ai) + its weight
+# probably take them out and put them in a set
+# and make ai choose the best from there
+
 label scene7:
 
     scene second_stage
