@@ -40,21 +40,19 @@ label scene4:
                 "We’ll see about that.":
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
-                "(silence)":
-                # best option for rv, points for li->rv
-                rv "Don’t you think you should clean your place up a little?"
+        "(silence)":
+            # best option for rv, points for li->rv
+            rv "Don’t you think you should clean your place up a little?"
 
-                # trying to make it so that after rv asks question there's another menu player
-                # has to choose from, i think it should be indented correctly?
-                menu:
+            menu:
                 
-                    # 1-2 points for li->pg
-                    "Yeah, we'll clean it.":
-                        cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
+                # 1-2 points for li->pg
+                "Yeah, we'll clean it.":
+                    cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
-                    # lower points for li->pg
-                    "We’ll see about that.":
-                        cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
+                # lower points for li->pg
+                "We’ll see about that.":
+                    cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
     cf "While we’re at it, let’s get [rm] in it, too."
 
