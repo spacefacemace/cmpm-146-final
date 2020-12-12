@@ -13,9 +13,6 @@
 
 label scene8:
 
-    # first elem: li->pg, second elem: li->rv, third elem: rv->pg
-    $ arr = [0, 0, 0]
-
     scene second_stage
 
     show rv
@@ -32,17 +29,17 @@ label scene8:
 
         "Are you ready?":
             #points for li->rv
-            $ arr[1] += 3
+            $ state[1] += 3
             rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
         "You think you’ll be okay?":
             #points for li->rv
-            $ arr[1] += 3
+            $ state[1] += 3
             rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
         # best option, points for li->pg
         "You’re going to do great. You’ve worked really hard on this.":
-            $ arr[0] += 5
+            $ state[0] += 5
             rv "Yeah, from all the sports I’ve played, I know that type of thing won’t go to waste."
 
     show li at right
@@ -53,17 +50,17 @@ label scene8:
 
         "I don’t see why not.":
             #points for li->rv
-            $ arr[1] += 3
+            $ state[1] += 3
             rv "Oh for sure, we’ll make sure of it."
 
         "I think so.":
             #points for li->rv
-            $ arr[1] += 3
+            $ state[1] += 3
             rv "Oh for sure, we’ll make sure of it."
 
         # best option, points for li->pg
         "Of course it will, we’ll make sure of it.":
-            $ arr[0] += 5
+            $ state[0] += 5
             rv "[pg]’s right. It’s why we’re helping out."
 
 
@@ -98,7 +95,7 @@ label scene8:
 
         "Yeah, I don’t want to.":
             # points for rv->pg
-            $ arr[2] += 3
+            $ state[2] += 3
             rv "...Wow. You’re pretty sure of yourself, [pg]."
 
         "I’m trying not to.":
@@ -127,7 +124,7 @@ label scene8:
     menu:
 
         "Same with you.": # this one gives points for rv->pg
-            $ arr[2] += 2
+            $ state[2] += 2
             rv "When this all comes to an end...no hard feelings?"
 
         "I guess it could be.":
@@ -136,7 +133,7 @@ label scene8:
     menu:
 
         "Yeah, no hard feelings.": # some points for rv->pg
-            $ arr[2] += 3
+            $ state[2] += 3
             rv "Sweet. Don’t worry, that feeling’s mutual."
 
         "I’ll have to think about it.":
@@ -153,16 +150,16 @@ label scene8:
     menu:
 
         "Congratulate [li].": # points for li->pg
-            $ arr[0] += 4
+            $ state[0] += 4
             "Congratulations, [li], the show was a success!"
             rv "Yep, and from me and [pg] -- here you go."
-            $ arr[1] += 1
+            $ state[1] += 1
 
         "Greet [li].":
-            $ arr[1] += 4
+            $ state[1] += 4
             rv "Congrats on the show, [li]. I’d say it went pretty well?" # points for li->rv
             "Oh, here’s something for you."
-            $ arr[0] += 1
+            $ state[0] += 1
 
     li "Flowers? You shouldn’t have."
 
@@ -176,11 +173,11 @@ label scene8:
 
         "If it meant the show was more enjoyable for you, then it was worth it.": # 1-2 points for li->rv
             rv "Yeah, what [pg] said. It’s nice that the last show went well."
-            $ arr[1] += 2
+            $ state[1] += 2
 
         "It’s no big deal.":
             rv "Yeah, no worries. You should enjoy your final show, after all." # a lot of points for li->rv
-            $ arr[1] += 4
+            $ state[1] += 4
 
     show cf
     hide rv at easeoutright
@@ -225,16 +222,16 @@ label scene8:
     menu:
 
         "I wouldn’t miss it for the world.": # points for li->pg
-            $ arr[0] += 4
+            $ state[0] += 4
             rv "Same here." # give li->rv like one pity point he's trying
-            $ arr[1] += 1
+            $ state[1] += 1
 
         "Right, the after-party...":
             cf "Did you forget? Good thing we’re going together, then."
 
         "That completely slipped my mind.":
             rv "You forgot? Don’t say you have something else planned. It’d suck if you weren’t there." # points for li->rv
-            $ arr[1] += 4
+            $ state[1] += 4
             "No, I don’t."
             cf "We literally made plans yesterday about going together! But with all the mayhem that was going on, I could see how it’d be easy to forget."
             "Of course, I wouldn’t miss it."
