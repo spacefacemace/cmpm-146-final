@@ -23,6 +23,7 @@ label scene6:
         rv "Since the max for the gondola is two people, how about I ride with [li], and [pg] could ride with [cf]?"
 
         li "That sounds like a good idea!"
+        $ state[1] += 4
 
         pg "{i}Wow, he’s really trying to get her. It’s not his first time doing this, huh? Or maybe I’m just a really bad rival.{/i}"
 
@@ -40,7 +41,7 @@ label scene6:
         menu:
             "I'm not giving up yet.":
 
-                $ state[2] = state[2]
+                $ state[0] += 2
 
             "It's definitely going to be difficult.":
 
@@ -71,6 +72,7 @@ label scene6:
         menu:
             "How do I do that?":
                 label cf_advice:
+                    $ state[0] += 1
                     cf "Take charge, think of what [li] would like to hear. Don’t let him take up all of [li]’s time! You have to get her to see you in a good way, too. Then I think you have more of a chance."
                     pg "Since when did you get so good at giving advice?"
                     cf "Haha... I'm not too sure."
@@ -94,6 +96,7 @@ label scene6:
         menu:
             "You could go with me.":
                 li "Oh... that sounds good!"
+                $ state += 4
                 jump li_pg_gondola
 
             "...":
@@ -110,13 +113,14 @@ label scene6:
         label li_pg_gondola:
             pg "{i}Is it just me or is someone glaring at me? Someone behind me?{/i}"
 
-            # fade in
+            # dissolve in
+            show sc_boardwalk
+            with fade
 
             # Change characters on scene to rival and cf, rival is looking daggers at pg
-            hide li
-            show rv annoyed
+            show rv annoyed at left
+            show cf at right
 
-            # fade out
 
             pg "{i}Well that makes sense. Can’t waste this opportunity, though!{/i}"
 
@@ -131,6 +135,7 @@ label scene6:
 
             menu:
                 "Is it because I’m here, too?":
+                    $ state[0] += 5
                     li "Um, maybe? Hahaha..."
                     li "It does help that I’m with someone I trust."
                     jump smalltalk
@@ -190,6 +195,7 @@ label scene6:
                     li "What about you, [pg]?"
                     menu:
                         "I’m thinking about...you?":
+                            $ state[0] += 2
                             li "Me? Hahaha...what about me?"
                             menu:
                                 "Just about how lucky I was to ride this with you.":
@@ -219,10 +225,12 @@ label scene6:
             pg "{i}Be more forward. Alright, let’s do this.{/i}"
         menu:
             "What about those funnel cakes?":
+                $ state[0] += 2
                 li "Funnel cakes sound good right now! I haven’t had those in forever."
 
             "Same here.":
                 rv "What about that funnel cake place?"
+                $ state[1] += 2
                 li "I haven’t had those in forever -- let’s get those."
 
         # Switch background to funnel cake shop
@@ -234,15 +242,18 @@ label scene6:
 
         menu:
             "I can pay for you, [li].":
+                $ state[0] += 2
                 li "Are you sure about that, [pg]?"
                 pg "Yeah, I don’t mind."
                 rv "Then count me in, too."
+                $ state[2] += 3
                 cf "[pg] is paying? Nice."
                 pg "...Alright, alright."
                 pg "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
 
             "Wonder what I should get…":
                 rv "I can pay for you, [li]."
+                $ state[1] += 4
                 li "Woah, really? ...Thanks!"
                 pg "{i}...Missed opportunity there.{/i}"
 
