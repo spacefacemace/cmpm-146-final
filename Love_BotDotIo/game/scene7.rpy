@@ -15,7 +15,7 @@ label scene7:
     scene second_stage
 
     show rv
-    
+
     "{i}Tomorrow is the show.{/i}"
 
     "{i}Everyone’s worked hard up until now, making sure that everything goes above and beyond, spendings hours upon hours perfecting their performances...you know how it goes.{/i}"
@@ -28,7 +28,7 @@ label scene7:
 
 
     menu:
-        
+
         "You’re an athlete, though?":
             # points for rv->pg
             $ arr[2] += 3
@@ -59,7 +59,7 @@ label scene7:
     rv "Seriously...should I just go find them myself?"
 
     menu:
-        
+
         # 1-2 points for rv->pg, some points for li->pg
         "I don’t think that’s a good idea...":
             $ arr[0] += 3
@@ -80,7 +80,7 @@ label scene7:
     rv "Or do you just not want me to leave?"
 
     menu:
-        
+
         "That’s kind of...":
             rv "I'm kidding."
 
@@ -102,7 +102,7 @@ label scene7:
     rv "If this was the real thing, there could be some serious delay."
 
     menu:
-        
+
         "I think they get it, [rv].":
             rv "I guess I was a little harsh. Sorry about that."
 
@@ -133,7 +133,7 @@ label scene7:
     rv "You know about the after-party, right?"
 
     menu:
-        
+
         # 1-2 points for li->rv
         "After-party?":
             $ arr[1] += 2
@@ -154,7 +154,7 @@ label scene7:
     rv "This dance group is one of his...interests? He’s an unofficial advisor?"
 
     menu:
-        
+
         # 1-2 points for li->pg
         "Right, I think [li] told me about that.":
             $ arr[0] += 2
@@ -184,7 +184,7 @@ label scene7:
     li "Doing what you did just now, we’ll definitely have a successful show tomorrow!"
 
     menu:
-        
+
         # best option, points for li->pg
         "Then we’ll make sure to do our best.":
             $ arr[0] += 5
@@ -211,5 +211,4 @@ label scene7:
 
     li "Well, I’ll let you two go, too! Thanks for your hard work."
 
-    return arr
-
+    jump after7

@@ -8,7 +8,7 @@ label scene10:
     show cf at right
     show li at left
     show rv
-    
+
     cf "We did it, [pg] -- we’ve finally graduated!"
 
     li "About time, too! We’ve all made it through college!"
@@ -160,7 +160,7 @@ label rv_pg_route:
 
     rv "Don’t think I’m letting you go easily."
 
-    return
+    jump after10
 
 # branch if player won
 label li_pg_route:
@@ -220,7 +220,7 @@ label li_pg_route:
 
     li "Ah, they’re coming back right now -- let’s tell them the good news!"
 
-    return
+    jump after10
 
 # branch if rival won
 label li_rv_route:
@@ -233,7 +233,7 @@ label li_rv_route:
 
     li "Should I just say it straight up? Maybe it’ll be easier than trying to figure out what I had planned before."
 
-li "I wanted to tell you that...later on, I’m going to tell [rv] that I like him."
+    li "I wanted to tell you that...later on, I’m going to tell [rv] that I like him."
 
     menu:
 
@@ -268,8 +268,4 @@ li "I wanted to tell you that...later on, I’m going to tell [rv] that I like h
 
     li "Ah, they’re coming back now. I can’t wait for later!"
 
-    return
-
-
-
-
+    jump after10

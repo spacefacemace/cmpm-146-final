@@ -40,18 +40,30 @@ label scene6:
         menu:
             "I'm not giving up yet.":
 
+                $ state[2] = state[2]
+
             "It's definitely going to be difficult.":
 
+                $ state[2] = state[2]
+
             "I'm not sure what's going to happen...":
+
+                $ state[2] = state[2]
 
         cf "What are you planning to do?"
 
         menu:
             "Just try to get on [li]'s good side even more?":
 
+                $ state[2] = state[2]
+
             "I'm still not sure.":
 
+                $ state[2] = state[2]
+
             "Do you have any advice?":
+
+                $ state[2] = state[2]
 
 
         cf "Hmm, well, I'd try to be as forward -- no, try to be {i}more{/i} forward than [rv]. Play his game, but do it better."
@@ -237,3 +249,4 @@ label scene6:
 
         pg "{i}And after all of that...this could be some sort of reward.{/i}"
         pg "{i}Alright, can I get...{/i}"
+        jump after6

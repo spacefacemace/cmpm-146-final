@@ -31,7 +31,7 @@ label scene5:
     li "I remember that, too...well, [rv], [pg], what do you think? You’ll be okay?"
 
     menu:
-        
+
         # best option, points for li->pg
         "Of course.":
             $ arr[0] += 5
@@ -57,7 +57,7 @@ label scene5:
     rv "Don’t worry, [li] -- with me around, this show will be like a well-oiled machine!"
 
     menu:
-        
+
         # best option, points for li->pg
         "Don’t count me out, [rv]. I’ll do my best to help, too.":
             $ arr[0] += 5
@@ -98,27 +98,27 @@ label scene5:
     li "Not too bad, right?"
 
     menu:
-        
+
         # best option, points for li->pg
         "Not at all.":
             $ arr[0] += 5
             # some points for li->rv
             $ arr[1] += 2
-            rv "We’d help if it were 100, right, [pg]?
+            rv "We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "20 is...":
             # best option for rv, points for li->rv
             $ arr[1] += 5
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?
+            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "It’s a lot.":
             # best option for rv, points for li->rv
             $ arr[1] += 5
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?
+            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
     cf "We’ll make sure the group listens to you guys, too. They can get...rowdy, but I’m sure you two can handle it."
@@ -135,6 +135,4 @@ label scene5:
 
     "{i}We’ll change it somehow.{/i}"
 
-    return arr
-
-
+    jump after5

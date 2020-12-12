@@ -23,11 +23,11 @@ label scene4:
     show cf at right
     show li at left
     show rv
-    
+
     cf "Don’t mind all the mess."
 
     menu:
-        
+
         # best option, points for li->pg
         "Yeah, we’re gonna clean all this stuff tomorrow.":
             $ arr[0] += 5
@@ -40,7 +40,7 @@ label scene4:
             rv "Don’t you think you should clean your place up a little?"
 
             menu:
-                
+
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
                         $ arr[0] += 2
@@ -57,7 +57,7 @@ label scene4:
             $ arr[1] += 5
 
             menu:
-                
+
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
                     $ arr[0] += 1
@@ -73,7 +73,7 @@ label scene4:
     li "Yeah, where is he?"
 
     menu:
-        
+
         # best option, points for li->pg
         "He’s playing Minecraft. I can go get him.":
             $ arr[0] += 5
@@ -105,7 +105,7 @@ label scene4:
     "{i}I should probably...{/i}"
 
     menu:
-        
+
         # best option, points for li->pg
         "Clear the table.":
             $ arr[1] += 5
@@ -157,7 +157,7 @@ label scene4:
     cf "We had a chess set?"
 
     menu:
-        
+
         # best option, points for li->pg
         "[rm] mentioned it when we first moved in.":
             $ arr[0] += 3
@@ -178,7 +178,7 @@ label scene4:
 
     rm "...True."
 
-    menu: 
+    menu:
 
         "Do you know how to play, [rv]?":
             # 1-2 points for li->rv
@@ -204,7 +204,7 @@ label scene4:
 
     "{i}Do I...?{/i}"
 
-    menu: 
+    menu:
 
         "Of course, I’m not very good though.":
             # 1-2 points for li->rv
@@ -227,7 +227,7 @@ label scene4:
             $ arr[1] += 3
             rv "If that’s the case, then you wouldn’t mind playing a game against me, would you?"
 
-    menu: 
+    menu:
 
         # 2-3 points for li->pg and rv->pg
         "Bring it on.":
@@ -249,7 +249,7 @@ label scene4:
 
     rv "Alright. White or black?"
 
-    menu: 
+    menu:
 
         "White.":
             rv "Go ahead, make your move."
@@ -288,7 +288,7 @@ label scene4:
 
     "{i}What should I do?{/i}"
 
-    menu: 
+    menu:
 
         "Attack.":
             rv "...Interesting."
@@ -308,7 +308,7 @@ label scene4:
 
     "{i}My turn again. This time...{/i}"
 
-    menu: 
+    menu:
 
         # best_move +1
         "Attack.":
@@ -334,7 +334,7 @@ label scene4:
 
     "{i}If that’s the case, then...I should know what moves he’ll do next, right? Looking at the board...{/i}"
 
-    menu: 
+    menu:
 
         # best_move +1
         "Move queen.":
@@ -345,8 +345,8 @@ label scene4:
             rv "oh wow."
 
     # not sure if we have to put dollar sign or not for this one?
-    $ if best_move >= 2:
-        $ chess_win = True
+    if best_move >= 2:
+        $chess_win = True
 
     if chess_win:
 
@@ -377,7 +377,7 @@ label scene4:
 
     li "If I learned how to play, maybe I could play next time..."
 
-    menu: 
+    menu:
 
         # best option, points for li->pg
         "I would love to teach you how to play.":
@@ -408,5 +408,4 @@ label scene4:
 
     "{i}...but I’m just as determined.{/i}"
 
-    return arr
-
+    jump after4

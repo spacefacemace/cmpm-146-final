@@ -37,7 +37,7 @@ label scene9:
     rv "On one hand, thank god. On the other hand..."
 
     menu:
-        
+
         # best option, points for li->pg
         "It’s a bit bittersweet.":
             $ arr[0] += 5
@@ -63,7 +63,7 @@ label scene9:
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"
 
     menu:
-        
+
         "Is it a lot?":
             rv "Well, no matter how much, I’ll listen to it. You can count on that." # a lot of points for li->rv
             $ arr[1] += 4
@@ -95,13 +95,13 @@ label scene9:
     hide rv easeoutright
 
     li "...And then there were two."
- 
+
     li "At least right here where we are. I think [cf] and [rm] went to go check out the vinyls again."
 
     li "I know I talk about just how eventful this year was...so I want to ask you this, [pg] -- what’d you think of this year?"
 
     menu:
-        
+
         "It was a lot.":
             li "There’s a thought I always have, though...the thought of time moving forward."
 
@@ -126,7 +126,7 @@ label scene9:
     li "Though I’m sure [rv] has something figured out. He always does. He mentioned working at his dad’s business? That must be fun."
 
     menu:
-        
+
         # subtract points for li->pg(?)
         "It’s only because his dad is the CEO.":
             $ arr[0] -= 2
@@ -146,7 +146,7 @@ label scene9:
     li "I’m sure we’ll be fine."
 
     menu:
-        
+
         # best options, pts for li->pg
         "Yep, we will be.":
             $ arr[0] += 5
@@ -189,4 +189,4 @@ label scene9:
 
     "{i}I just hope I don’t end up regretting it.{/i}"
 
-    return arr
+    jump after9

@@ -19,7 +19,7 @@ label scene8:
     scene second_stage
 
     show rv
-    
+
     pg "{i}No matter how many times we’ve rehearsed all this backstage stuff, being back here with [rv] is...interesting.{/i}"
 
     pg "{i}Especially when...{/i}"
@@ -88,7 +88,7 @@ label scene8:
         "What?":
             rv "You’re thinking the same thing, aren’t you?"
 
-        "Huh?": 
+        "Huh?":
             rv "You’re thinking the same thing, aren’t you?"
 
         "(silence)":
@@ -117,7 +117,7 @@ label scene8:
         "I'm sorry?":
             rv "Yeah, because normally people just quit by now...but not you."
 
-        "Is that so?": 
+        "Is that so?":
             rv "Yeah, because normally people just quit by now...but not you."
 
     rv "I mean, look at where we are."
@@ -130,7 +130,7 @@ label scene8:
             $ arr[2] += 2
             rv "When this all comes to an end...no hard feelings?"
 
-        "I guess it could be.": 
+        "I guess it could be.":
             rv "When this all comes to an end...no hard feelings?"
 
     menu:
@@ -164,13 +164,13 @@ label scene8:
             "Oh, here’s something for you."
             $ arr[0] += 1
 
-   li "Flowers? You shouldn’t have."
+    li "Flowers? You shouldn’t have."
 
-   li "No, really, I love flowers, but keeping them alive..."
+    li "No, really, I love flowers, but keeping them alive..."
 
-   li "I’ll try my best, haha."
+    li "I’ll try my best, haha."
 
-   li "I know I keep saying it, but thank you for your help! It’s thanks to you that the show was enjoyable. Everyone was less worried, me included. I think that ease of mind made our performances all the more better!"
+    li "I know I keep saying it, but thank you for your help! It’s thanks to you that the show was enjoyable. Everyone was less worried, me included. I think that ease of mind made our performances all the more better!"
 
     menu:
 
@@ -235,9 +235,9 @@ label scene8:
         "That completely slipped my mind.":
             rv "You forgot? Don’t say you have something else planned. It’d suck if you weren’t there." # points for li->rv
             $ arr[1] += 4
-            "No, I don’t." 
-            cf "We literally made plans yesterday about going together! But with all the mayhem that was going on, I could see how it’d be easy to forget." 
-            "Of course, I wouldn’t miss it." 
+            "No, I don’t."
+            cf "We literally made plans yesterday about going together! But with all the mayhem that was going on, I could see how it’d be easy to forget."
+            "Of course, I wouldn’t miss it."
 
     li "Awesome! See you guys later, then!"
 
@@ -259,5 +259,4 @@ label scene8:
 
     cf "Won’t matter if we’re late, but...you know how it is."
 
-    return arr
-
+    jump after8
