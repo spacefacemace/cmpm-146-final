@@ -11,9 +11,9 @@ label scene10:
     
     cf "We did it, [pg] -- we’ve finally graduated!"
 
-    li: "About time, too! We’ve all made it through college!"
+    li "About time, too! We’ve all made it through college!"
 
-    rv: "Yeah, about that -- why are you guys last to graduate? Making us wait like this..."
+    rv "Yeah, about that -- why are you guys last to graduate? Making us wait like this..."
 
     menu:
 
