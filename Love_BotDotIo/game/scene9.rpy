@@ -188,3 +188,5 @@ label scene9:
     "{i}As scary as it is, the only way to find out is to let time move forward.{/i}"
 
     "{i}I just hope I don’t end up regretting it.{/i}"
+
+    return arr
