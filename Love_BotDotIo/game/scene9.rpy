@@ -108,9 +108,9 @@ label scene9:
         # best option, points for li->pg
         "You made it bearable.":
             $ arr[0] += 1
-            li: “Me...?”
-            li: “That’s the first time someone’s said that to me.”
-            li: “Well then...I’m honored!”
+            li "Me...?"
+            li "That’s the first time someone’s said that to me."
+            li "Well then...I’m honored!"
             li "There’s a thought I always have, though...the thought of time moving forward."
 
         # 1-2 points for li->pg
