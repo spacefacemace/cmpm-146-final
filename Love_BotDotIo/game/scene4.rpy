@@ -11,6 +11,13 @@
 
 label scene4:
 
+    # first elem: li->pg, second elem: li->rv, third elem: rv->pg
+    $ arr = [0, 0, 0]
+
+    # the stuff for the chess stuff in this scene.
+    $ chess_win = False
+    $ best_move = 0
+
     scene pg_cf_rm_apartment
 
     show cf at right
@@ -23,35 +30,42 @@ label scene4:
         
         # best option, points for li->pg
         "Yeah, we’re gonna clean all this stuff tomorrow.":
+            $ arr[0] += 5
             rv "I sure hope so."
             cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
         "Watch out for that pizza box.":
             # best option for rv, points for li->rv
+            $ arr[1] += 5
             rv "Don’t you think you should clean your place up a little?"
 
             menu:
                 
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
+                        $ arr[0] += 2
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
                 # lower points for li->pg
                 "We’ll see about that.":
+                        $ arr[0] -= 4
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
         "(silence)":
             # best option for rv, points for li->rv
             rv "Don’t you think you should clean your place up a little?"
+            $ arr[1] += 5
 
             menu:
                 
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
+                    $ arr[0] += 1
                     cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
                 # lower points for li->pg
                 "We’ll see about that.":
+                    $ arr[0] -= 4
                     cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
     cf "While we’re at it, let’s get [rm] in it, too."
@@ -62,16 +76,19 @@ label scene4:
         
         # best option, points for li->pg
         "He’s playing Minecraft. I can go get him.":
+            $ arr[0] += 5
             li "Can’t have him missing out!"
 
 
         "He’s probably playing Minecraft.":
             # best option for rv, points for li->rv
+            $ arr[1] += 5
             rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
 
         "I dunno, his room?":
             # best option for rv, points for li->rv
+            $ arr[1] += 5
             rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
     hide cf
@@ -91,21 +108,25 @@ label scene4:
         
         # best option, points for li->pg
         "Clear the table.":
+            $ arr[1] += 5
             "Should I clear the table?"
             li "That'd be great!"
 
 
         "Set up the food.":
             # 1-2 points for li->pg
+            $ arr[0] += 2
             "Should I set up the food?"
             # 1-2 points for li->rv
             rv "Shouldn’t we clear the table first?"
+            $ arr[1] += 2
             li "Yeah, that first, then the food!"
 
 
         "Wait.":
             # best option for rv, points for li->rv
             rv "Shouldn’t we clear the table first?"
+            $ arr[0] += 5
             li "That’s a good idea!"
 
     li "All set. Alright, let’s dig in!"
@@ -139,6 +160,7 @@ label scene4:
         
         # best option, points for li->pg
         "[rm] mentioned it when we first moved in.":
+            $ arr[0] += 3
             rm "Yes, we had a chess set. Though I don’t know how to play it {i}well{/i}."
 
 
@@ -160,17 +182,22 @@ label scene4:
 
         "Do you know how to play, [rv]?":
             # 1-2 points for li->rv
+            $ arr[1] += 2
             rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
 
 
         "Are you good at it, [rv]?":
             # 1-2 points for li->rv
-            rm "Of course. I had to get good if I wanted to beat my dad, and he had a really high score."
+            $ arr[1] += 2
+            rv "Of course. I had to get good if I wanted to beat my dad, and he had a really high score."
 
         # some points for rv->pg, 1-2 points for li->pg
         "What are you to say that, [rv]?":
+            $ arr[0] += 2
+            $ arr[2] += 3
             # 2-3 points for li->rv
-            rm "Because I know how to play well? I had to get good if I wanted to beat my dad, and he had a really high score."
+            $ arr[2] += 3
+            rv "Because I know how to play well? I had to get good if I wanted to beat my dad, and he had a really high score."
 
 
     li "Do you know how to play, [pg]?"
@@ -181,31 +208,43 @@ label scene4:
 
         "Of course, I’m not very good though.":
             # 1-2 points for li->rv
+            $ arr[1] += 2
             rv "Aren’t you modest? Why don’t we figure out how good you really are?"
 
         # 2-3 points for li->pg
         "Of course, I’m decent at it.":
+            $ arr[0] += 3
             # 2-3 points for li->rv
-            rm "Then you wouldn’t mind playing a game against me, would you?"
+            $ arr[1] += 3
+            rv "Then you wouldn’t mind playing a game against me, would you?"
 
         # 2-3 points for li->pg and rv->pg
         "Of course, I might be even better than [rv].":
+            $ arr[0] += 3
+            $ arr[2] += 3
             # 2-3 points for li->rv
-            rm "Those are some big words..."
-            rm "If that’s the case, then you wouldn’t mind playing a game against me, would you?"
+            rv "Those are some big words..."
+            $ arr[1] += 3
+            rv "If that’s the case, then you wouldn’t mind playing a game against me, would you?"
 
     menu: 
 
         # 2-3 points for li->pg and rv->pg
         "Bring it on.":
+            $ arr[0] += 3
+            $ arr[2] += 3
             rv "Then let’s set up the board."
 
         # 2-3 points for li->pg, high points for rv->pg
         "Let’s see how good you really are.":
+            $ arr[0] += 3
+            $ arr[2] += 5
             rv "Then let’s set up the board."
 
         # 1-2 points for li->pg and rv->pg
         "I’ll try my best.":
+            $ arr[0] += 2
+            $ arr[2] += 2
             rv "Then let’s set up the board."
 
     rv "Alright. White or black?"
@@ -258,6 +297,7 @@ label scene4:
 
         # best_move +1
         "Defend.":
+            $ best_move += 1
             rv "...Huh."
             li "Is it good or bad?"
             rv "It was unexpected."
@@ -272,6 +312,7 @@ label scene4:
 
         # best_move +1
         "Attack.":
+            $ best_move += 1
             rv "Hm."
 
         "Defend.":
@@ -297,20 +338,23 @@ label scene4:
 
         # best_move +1
         "Move queen.":
+            $ best_move += 1
             rv "Oh wow."
 
         "Move rook.":
             rv "oh wow."
 
     # not sure if we have to put dollar sign or not for this one?
-    if best_move >= 2:
-        chess_win = True
+    $ if best_move >= 2:
+        $ chess_win = True
 
     if chess_win:
 
         rv "Bad move, [pg]. I win."
 
         #li->rv big points, some points for rv->pg
+        $ arr[1] += 5
+        $ arr[2] += 3
 
         rv "Good game, though. You caught me off guard a couple of times."
 
@@ -318,6 +362,9 @@ label scene4:
     else:
 
         rv "...I’m resigning. Good game, [pg]. You put up a good fight."
+
+        $ arr[0] += 5
+        $ arr[2] += 3
 
         # rv->pg some points, li->pg big points
 
@@ -334,17 +381,21 @@ label scene4:
 
         # best option, points for li->pg
         "I would love to teach you how to play.":
+            $ arr[0] += 5
             li "Awesome! You might have to go easy on me at first, haha."
 
         # maybe like 1-2 points for li->pg
         "Having a match would be fun.":
+            $ arr[0] += 2
             # best option for li->rv, points for li->rv
+            $ arr[1] += 5
             rv "I could teach you how to play."
             li "You will? Thanks!"
             "{i}Damn, I could have done that.{/i}"
 
         "Yeah, maybe next time.":
             # best option for li->rv, points for li->rv
+            $ arr[1] += 5
             rv "I could teach you how to play."
             li "You will? Thanks!"
             "{i}Damn, I could have done that.{/i}"
@@ -356,4 +407,6 @@ label scene4:
     "{i}[rv] is a pretty set on getting [li]...{/i}"
 
     "{i}...but I’m just as determined.{/i}"
+
+    return arr
 
