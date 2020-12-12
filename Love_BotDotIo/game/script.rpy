@@ -4,7 +4,7 @@
 # name of the character.
 
 define e = Character(_('Eileen'))
-define li = Character(_('Love_Interest'))
+define li = Character(_('Love_Intrest'))
 define rv = Character(_('Rival'))
 define cf = Character(_('Childhood_Friend'))
 define rm = Character(_('Roommate'))
@@ -60,7 +60,7 @@ label start:
     $ state = [0,0,0]
     while count < 10:
         $ scene = scenes[count].label
-        state = call expression scene from _call_expression
+        call expression scene from _call_expression
         $ count += 1
 
 
