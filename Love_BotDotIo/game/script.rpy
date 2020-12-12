@@ -9,6 +9,9 @@ define rv = Character(_('Rival'))
 define cf = Character(_('Childhood_Friend'))
 define rm = Character(_('Roommate'))
 define pg = Character(_('player character'))
+define pat = Character(_('Prof. Pat'))
+define sesh = Character(_('Prof. Sesh'))
+
 
 init python:
 

@@ -65,7 +65,7 @@ label scene10:
 
     hide cf at right with easeoutright
 
-    if rival_player:
+    if state[2] > state[0]:
 
         li "I have some other friends to go and congratulate, too. Let’s meet up back here, yeah?"
 
@@ -96,7 +96,7 @@ label scene10:
 
         "Sure."
 
-        if player_won:
+        if state[0] > state[1]:
             jump li_pg_route
         else:
             jump li_rv_route

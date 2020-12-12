@@ -13,7 +13,7 @@ label scene6:
     show rv at left
 
     # Check rival meter against player's
-    if rival_meter > player_meter:
+    if state[1] > state[0]:
         jump rival_higher
     else:
         jump player_higher
@@ -133,27 +133,31 @@ label scene6:
                 "Is it because I’m here, too?":
                     li "Um, maybe? Hahaha..."
                     li "It does help that I’m with someone I trust."
-                    jump .smalltalk
+                    jump smalltalk
 
 
                 "Yeah, I guess you get used to it.":
-                    jump .smalltalk
+                    jump smalltalk
 
-            default .menuset = set()
-            menu .smalltalk:
-                set .menuset
+            default menuset = set()
+            menu smalltalk:
+                set menuset
                 "How's planning the show going so far?":
                     li "It’s going great! We’re getting ready for rehearsals of the full show soon. Got to make sure everyone’s on track!"
                     pg "Are you on track?"
                     li "...Sort of? Haha. I’d like to think I am. I’m still not satisfied, but it’s getting there."
                     menu:
                         "I’m sure all this dedication is going to amount to something great.":
+                            $ state[2] = state[2]
                         "You’re close, just a little bit left.":
+                            $ state[2] = state[2]
 
                     li "Thanks! And your help is definitely making the process easier. You picked up the needed skills really quick, it’s kind of impressive!"
                     menu:
                         "Got to make sure I’m on track, too.":
+                            $ state[2] = state[2]
                         "Just a part of helping out.":
+                            $ state[2] = state[2]
 
                     li "I really appreciate it. I haven’t figured it out yet, but when it’s over, I’ll make sure to make you guys some sort of meal. It’s the least I can do!"
 
@@ -162,12 +166,16 @@ label scene6:
                     li "Apple pie is my favorite...but I didn’t think you were the type to like it, too."
                     menu:
                         "I bet it tasted as good as it smelled.":
+                            $ state[2] = state[2]
                         "I wish I could have some.":
+                            $ state[2] = state[2]
 
                     li "I have a bit of it left! I could give you a slice when we head back."
                     menu:
                         "I’ve loved it since I was a kid!":
+                            $ state[2] = state[2]
                         "I’ve warmed up to it.":
+                            $ state[2] = state[2]
                     li "That’s good! Well, the recipe I used is one that runs in the family, so there’s some secret ingredients in there. Still apple pie, nonetheless!"
                     menu:
                         "Secret ingredients?":
@@ -175,7 +183,7 @@ label scene6:
                             pg "Fair enough."
 
                         "I can’t wait to try it.":
-                    li "Yeah, I’m confident you’ll like it!"
+                            li "Yeah, I’m confident you’ll like it!"
 
                 "What're you thinking about?":
                     li "I’m thinking about how nice the weather is. Kind of cliche, isn’t it? But it’s not too hot, not too cold. The sky is blue. What’s not to appreciate?"
@@ -185,7 +193,9 @@ label scene6:
                             li "Me? Hahaha...what about me?"
                             menu:
                                 "Just about how lucky I was to ride this with you.":
+                                    $ state[2] = state[2]
                                 "Well you’re my riding buddy, so why wouldn’t I be?":
+                                    $ state[2] = state[2]
                             li "I guess that’s a given...should I think about you too, then?"
                             li "Though the only thought to come to mind is that I’m glad we’re riding this together. Definitely better than being by myself!"
 

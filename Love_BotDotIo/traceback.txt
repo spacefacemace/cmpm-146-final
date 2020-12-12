@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scene10.rpy", line 68, in script
+    if rival_player:
+  File "game/scene10.rpy", line 68, in <module>
+    if rival_player:
+NameError: name 'rival_player' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scene10.rpy", line 68, in script
+    if rival_player:
+  File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scene10.rpy", line 68, in <module>
+    if rival_player:
+NameError: name 'rival_player' is not defined
+
+Windows-7-6.1.7601-SP1
+Ren'Py 7.3.5.606
+Love_BotDotIo 1.0
+Fri Dec 11 20:23:07 2020
