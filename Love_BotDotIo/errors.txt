@@ -11,4 +11,4 @@ File "game/scene6.rpy", line 144: expected 'simple_expression' not found.
         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 11 19:26:15 2020
+Fri Dec 11 19:30:34 2020

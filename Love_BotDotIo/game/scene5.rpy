@@ -100,21 +100,21 @@ label scene5:
             $ state[0] += 5
             # some points for li->rv
             $ state[1] += 2
-            rv "We’d help if it were 100, right, [pg]?
+            rv "We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "20 is...":
             # best option for rv, points for li->rv
             $ state[1] += 5
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?
+            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "It’s a lot.":
             # best option for rv, points for li->rv
             $ state[1] += 5
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?
+            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
     cf "We’ll make sure the group listens to you guys, too. They can get...rowdy, but I’m sure you two can handle it."
