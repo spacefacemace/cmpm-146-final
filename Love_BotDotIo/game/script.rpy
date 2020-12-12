@@ -57,9 +57,10 @@ label start:
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
     $ count = 0
-    while count > 0:
+    $ state = [0,0,0]
+    while count < 10:
         $ scene = scenes[count].label
-        call expression scene from _call_expression
+        state = call expression scene from _call_expression
         $ count += 1
 
 
