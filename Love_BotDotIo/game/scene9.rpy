@@ -10,9 +10,6 @@
 
 label scene9:
 
-    # first elem: li->pg, second elem: li->rv, third elem: rv->pg
-    $ arr = [0, 0, 0]
-
     scene bens_house
 
     show cf at right
@@ -40,24 +37,24 @@ label scene9:
         
         # best option, points for li->pg
         "It’s a bit bittersweet.":
-            $ arr[0] += 5
+            $ state[0] += 5
             li "I totally get it! You go through all this and then..."
             rv "Just like that, it’s about to end." # (1-2 pts li->rv)
-            $ arr[1] += 1
+            $ state[1] += 1
             li "Yep, exactly."
 
 
         "I’m glad it’s over.":
-            $ arr[2] += 2
+            $ state[2] += 2
             rv "Well, yeah, but also...it’s bittersweet, kind of."
             rv "...Geez, that was cheesy. Don’t tell anyone I said that."
             li "Haha, I won’t tell."
-            $ arr[1] += 3
+            $ state[1] += 3
 
         "I’m not sure what to think.":
             li "I totally get it! You go through all this and then..."
             rv "Just like that, it’s about to end."
-            $ arr[1] += 3
+            $ state[1] += 3
             li "Yep, exactly."
 
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"
@@ -66,18 +63,18 @@ label scene9:
         
         "Is it a lot?":
             rv "Well, no matter how much, I’ll listen to it. You can count on that." # a lot of points for li->rv
-            $ arr[1] += 4
+            $ state[1] += 4
 
         # best option, points for li->pg
         "I’m looking forward to it.":
-            $ arr[0] += 5
+            $ state[0] += 5
             rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
-            $ arr[1] += 3
+            $ state[1] += 3
 
         # 1-2 points for li->pg
         "Wonder what it could be...":
             rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
-            $ arr[1] += 3
+            $ state[1] += 3
 
     li "Oh, an audience? Then I’ll make sure it’s good."
 
@@ -107,7 +104,7 @@ label scene9:
 
         # best option, points for li->pg
         "You made it bearable.":
-            $ arr[0] += 5
+            $ state[0] += 5
             li "Me...?"
             li "That’s the first time someone’s said that to me."
             li "Well then...I’m honored!"
@@ -115,7 +112,7 @@ label scene9:
 
         # 1-2 points for li->pg
         "I’m ready for what’s next.":
-            $ arr[0] += 2
+            $ state[0] += 2
             li "Me too! A new chapter in life is always exciting."
             li "There’s a thought I always have, though...the thought of time moving forward."
 
@@ -129,18 +126,18 @@ label scene9:
         
         # subtract points for li->pg(?)
         "It’s only because his dad is the CEO.":
-            $ arr[0] -= 2
+            $ state[0] -= 2
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
         # 1-2 points for li->rv
         "He sure has his life figured out.":
-            $ arr[1] += 2
+            $ state[1] += 2
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
         # 1-2 pts for li->rv but 3-4 for li->pg
         "He just has a head start, we still have time.":
-            $ arr[1] += 2
-            $ arr[0] += 4
+            $ state[1] += 2
+            $ state[0] += 4
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
     li "I’m sure we’ll be fine."
@@ -149,16 +146,16 @@ label scene9:
         
         # best options, pts for li->pg
         "Yep, we will be.":
-            $ arr[0] += 5
+            $ state[0] += 5
             li "...What a mood we’re in. Let’s change that."
 
         # 1 pt for li->pg
         "That’s the plan.":
-            $ arr[0] += 1
+            $ state[0] += 1
             li "...What a mood we’re in. Let’s change that."
 
         "2 pts for li->pg":
-            $ arr[0] += 2
+            $ state[0] += 2
             li "...What a mood we’re in. Let’s change that."
 
     li "I’m going to check on the others. What about you?"
@@ -189,4 +186,4 @@ label scene9:
 
     "{i}I just hope I don’t end up regretting it.{/i}"
 
-    return arr
+    jump after9
