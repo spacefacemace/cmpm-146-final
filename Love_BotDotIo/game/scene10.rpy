@@ -196,9 +196,9 @@ label li_pg_route:
         "Nope.":
             li "That’s...wow, this ended up going really well! I didn’t expect this at all!"
 
-    li: “...Didn’t expect this at all...”
+    li "...Didn’t expect this at all..."
 
-    li: “Um, then...what are we, then?”
+    li "Um, then...what are we, then?"
 
     menu:
 
@@ -233,7 +233,7 @@ label li_rv_route:
 
     li "Should I just say it straight up? Maybe it’ll be easier than trying to figure out what I had planned before."
 
-li: “I wanted to tell you that...later on, I’m going to tell [rv] that I like him.”
+li "I wanted to tell you that...later on, I’m going to tell [rv] that I like him."
 
     menu:
 
