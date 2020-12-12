@@ -2,9 +2,63 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 58: expected 'simple_expression' not found.
-    call expression scene from _call_expression
-                    ^
+File "game/scene10.rpy", line 14: expected statement.
+    li: "About time, too! We’ve all made it through college!"
+      ^
+
+File "game/scene10.rpy", line 16: expected statement.
+    rv: "Yeah, about that -- why are you guys last to graduate? Making us wait like this..."
+      ^
+
+File "game/scene10.rpy", line 199: expected statement.
+    li: “...Didn’t expect this at all...”
+      ^
+
+File "game/scene10.rpy", line 201: expected statement.
+    li: “Um, then...what are we, then?”
+      ^
+
+File "game/scene10.rpy", line 236: expected statement.
+    li: “I wanted to tell you that...later on, I’m going to tell [rv] that I like him.”
+      ^
+
+File "game/scene4.rpy", line 307: expected statement.
+    chess_win = True
+              ^
+
+File "game/scene5.rpy", line 106: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+                rv "Not bad at all. We’d help if it were 100, right, [pg]?
+
+File "game/scene6.rpy", line 41: choice menuitem expects a non-empty block.
+    "I'm not giving up yet.":
+                             ^
+
+File "game/scene6.rpy", line 50: choice menuitem expects a non-empty block.
+    "Just try to get on [li]'s good side even more?":
+                                                     ^
+
+File "game/scene6.rpy", line 130: expected 'word' not found.
+    default .menuset = set()
+            ^
+
+File "game/scene6.rpy", line 132: expected 'simple_expression' not found.
+    set .menuset
+        ^
+
+File "game/scene8.rpy", line 151: indentation mismatch.
+
+File "game/scene9.rpy", line 111: expected statement.
+    li: “Me...?”
+      ^
+
+File "game/scene9.rpy", line 112: expected statement.
+    li: “That’s the first time someone’s said that to me.”
+      ^
+
+File "game/scene9.rpy", line 113: expected statement.
+    li: “Well then...I’m honored!”
+      ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 04 20:47:23 2020
+Fri Dec 11 18:44:41 2020

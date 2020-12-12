@@ -28,7 +28,8 @@ label scene1:
 
     li "Yay, you’re here at last!  What took you so long?"
 
-        "Sorry, my last class went over a little bit."
+    menu:
+        "Sorry, my last class went over a little bit.":
 
             $ state[0] = state[0] + 1
 
@@ -36,7 +37,7 @@ label scene1:
 
             "{i}[li] is nice, funny, and endearing. Pretty upbeat. Pretty in general. She’s all the good cliches of any love interest in a visual novel. It’s nice hanging out with her, but...{/i}"
 
-        "I forgot we were meeting up."
+        "I forgot we were meeting up.":
 
             $ state[1] = state[1] + 1
 
@@ -48,7 +49,7 @@ label scene1:
 
 
 
-        "I got distracted admiring all the scenery on the way here."
+        "I got distracted admiring all the scenery on the way here.":
 
             $ state[1] = state[1] + 2
             $ state[2] = state[2] + 2
@@ -74,13 +75,14 @@ label scene1:
 
     li "Not even a little bit?"
 
-        "We can’t avoid the future. It’s natural that we think about it."
+    menu:
+        "We can’t avoid the future. It’s natural that we think about it.":
 
             $ state[0] = state[0] + 2
 
             li "See! [pg] agrees with me. Thanks for the backup."
 
-        "Yeah, there’s really no point."
+        "Yeah, there’s really no point.":
 
             $ state[2] = state[2] + 2
 
@@ -90,9 +92,9 @@ label scene1:
 
             pg "That’s too on the nose."
 
-        "I haven’t really thought about that."
+        "I haven’t really thought about that.":
 
-
+            $ state[2] = state[2]
 
     cf "Well, no matter what, [li], you’ve got to think somewhat ahead. How’s the planning for the last show?"
 
@@ -108,7 +110,8 @@ label scene1:
 
     li "Just a little bit... It’s the behind-the-scenes stuff I’m worried about. Not a lot of people in the group want to perform and do that at the same time. I don’t blame them -- it’s a lot."
 
-        "Maybe we could help out?"
+    menu:
+        "Maybe we could help out?":
 
             $ state[0] = state[0] + 2
             $ state[2] = state[2] + 1
@@ -119,7 +122,7 @@ label scene1:
 
             rv "Well...anything else, too."
 
-        "We could help -- I was going to go anyway to watch it, but why not support you guys behind-the-scenes as well?"
+        "We could help -- I was going to go anyway to watch it, but why not support you guys behind-the-scenes as well?":
 
             $ state[0] = state[0] + 4
 
@@ -129,21 +132,24 @@ label scene1:
 
             rv "Well...anything else, too."
 
-        "..."
+        "...":
 
             rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
 
             $ state[1] = state[1] + 3
 
-                "Yeah, I’m more than happy to help."
+            menu:
+                "Yeah, I’m more than happy to help.":
 
                     $ state[0] = state[0] + 1
 
-                "I guess I could help out."
+                "I guess I could help out.":
+
+                    $ state[2] = state[2]
 
 
 
-        "That seems like a lot."
+        "That seems like a lot.":
 
             $ state[0] = state[0] + 1
 
@@ -151,21 +157,27 @@ label scene1:
 
             $ state[1] = state[1] + 3
 
-                "Yeah, I’m more than happy to help."
+            menu:
+                "Yeah, I’m more than happy to help.":
 
                     $ state[0] = state[0] + 1
 
-                "I guess I could help out."
+                "I guess I could help out.":
+
+                    $ state[2] = state[2]
 
 
 
     li "Are you sure about this?"
 
-        "Absolutely! Anything to make the show run smoothly."
+    menu:
+        "Absolutely! Anything to make the show run smoothly.":
 
             $ state[0] = state[0] + 1
 
-        "Well since I got roped into it, I have no choice now."
+        "Well since I got roped into it, I have no choice now.":
+
+            $ state[2] = state[2]
 
 
 
@@ -173,4 +185,4 @@ label scene1:
 
     li "Thanks, guys! I really appreciate it. Wow, I’m glad we’re doing something together before moving on. It’ll be fun!"
 
-    return state
+    jump after1

@@ -1,1 +1,1 @@
-{"location": {"callable": {}, "screen": {}, "define": {}, "transform": {}, "label": {}}, "size": [1280, 720], "name": "", "version": "", "error": true}
+{"location": {"callable": {}, "screen": {}, "define": {}, "transform": {}, "label": {"scene1": ["game/scene1.rpy", 4]}}, "size": [1280, 720], "name": "", "version": "", "error": true}
