@@ -40,19 +40,21 @@ label scene9:
 
         # best option, points for li->pg
         "It’s a bit bittersweet.":
-            $ state[0] += 5
+            $ pg_state[6] += 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,3,0,0,0]))
+            "{i}[response]{/i}"
             li "I totally get it! You go through all this and then..."
             rv "Just like that, it’s about to end." # (1-2 pts li->rv)
-            $ state[1] += 1
             li "Yep, exactly."
 
 
         "I’m glad it’s over.":
-            $ state[2] += 2
+            $ pg_state[6] -= 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,-1,0,0,0]))
+            "{i}[response]{/i}"
             rv "Well, yeah, but also...it’s bittersweet, kind of."
             rv "...Geez, that was cheesy. Don’t tell anyone I said that."
             li "Haha, I won’t tell."
-            $ state[1] += 3
 
         "I’m not sure what to think.":
             li "I totally get it! You go through all this and then..."
@@ -65,19 +67,26 @@ label scene9:
     menu:
 
         "Is it a lot?":
+            $ pg_state[4] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Well, no matter how much, I’ll listen to it. You can count on that." # a lot of points for li->rv
-            $ state[1] += 4
+
 
         # best option, points for li->pg
         "I’m looking forward to it.":
-            $ state[0] += 5
+            $ pg_state[4] += 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
-            $ state[1] += 3
 
         # 1-2 points for li->pg
         "Wonder what it could be...":
+            $ pg_state[5] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,2,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
-            $ state[1] += 3
+
 
     li "Oh, an audience? Then I’ll make sure it’s good."
 
@@ -107,7 +116,10 @@ label scene9:
 
         # best option, points for li->pg
         "You made it bearable.":
-            $ state[0] += 5
+            $ pg_state[3] += 3
+            $ pg_state[7] += 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,3,0,0,0,3,0,0]))
+            "{i}[response]{/i}"
             li "Me...?"
             li "That’s the first time someone’s said that to me."
             li "Well then...I’m honored!"
@@ -115,7 +127,9 @@ label scene9:
 
         # 1-2 points for li->pg
         "I’m ready for what’s next.":
-            $ state[0] += 2
+            $ pg_state[0] += 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([1,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "Me too! A new chapter in life is always exciting."
             li "There’s a thought I always have, though...the thought of time moving forward."
 
@@ -129,18 +143,23 @@ label scene9:
 
         # subtract points for li->pg(?)
         "It’s only because his dad is the CEO.":
-            $ state[0] -= 2
+            $ pg_state[4] -= 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-3,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
         # 1-2 points for li->rv
         "He sure has his life figured out.":
-            $ state[1] += 2
+            $ pg_state[0] -= 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([-1,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
         # 1-2 pts for li->rv but 3-4 for li->pg
         "He just has a head start, we still have time.":
-            $ state[1] += 2
-            $ state[0] += 4
+            $ pg_state[1] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,2,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
     li "I’m sure we’ll be fine."
@@ -149,17 +168,20 @@ label scene9:
 
         # best options, pts for li->pg
         "Yep, we will be.":
-            $ state[0] += 5
+            $ pg_state[1] += 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "...What a mood we’re in. Let’s change that."
 
         # 1 pt for li->pg
         "I hope so.":
-            $ state[0] += 1
             li "...What a mood we’re in. Let’s change that."
 
         # 2 pts for li->pg
         "That’s the plan.":
-            $ state[0] += 2
+            $ pg_state[0] += 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([1,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "...What a mood we’re in. Let’s change that."
 
     li "I’m going to check on the others. What about you?"

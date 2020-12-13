@@ -34,7 +34,9 @@ label scene1:
     menu:
         "Sorry, my last class went over a little bit.":
 
-            $ state[0] = state[0] + 1
+            $ pg_state[2] = pg_state[2] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,2,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             li "I guess that sort of thing happens. At least you’re here now. Come on, [rv], make room for them to sit down. You can’t eat standing up!"
 
@@ -42,7 +44,9 @@ label scene1:
 
         "I forgot we were meeting up.":
 
-            $ state[1] = state[1] + 1
+            $ pg_state[2] = pg_state[2] - 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             rv "Should I move for someone that forgot about meeting their friends?"
 
@@ -54,8 +58,9 @@ label scene1:
 
         "I got distracted admiring all the scenery on the way here.":
 
-            $ state[1] = state[1] + 2
-            $ state[2] = state[2] + 2
+            $ pg_state[3] = pg_state[3] = 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,3,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             rv "That’s incredibly...cheesy."
 
@@ -81,13 +86,17 @@ label scene1:
     menu:
         "We can’t avoid the future. It’s natural that we think about it.":
 
-            $ state[0] = state[0] + 2
+            $ pg_state[1] = pg_state[1] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,2,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             li "See! [pg] agrees with me. Thanks for the backup."
 
         "Yeah, there’s really no point.":
 
-            $ state[2] = state[2] + 2
+            $ pg_state[1] = pg_state[1] - 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,-2,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             li "Hmm, then I guess living in the present is some sort of bliss."
 
@@ -97,7 +106,8 @@ label scene1:
 
         "I haven’t really thought about that.":
 
-            $ state[2] = state[2]
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
     cf "Well, no matter what, [li], you’ve got to think somewhat ahead. How’s the planning for the last show?"
 
@@ -116,8 +126,10 @@ label scene1:
     menu:
         "Maybe we could help out?":
 
-            $ state[0] = state[0] + 2
-            $ state[2] = state[2] + 1
+            $ pg_state[2] = pg_state[2] + 2
+            $ pg_state[4] = pg_state[4] + 4
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,2,0,4,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             rv "That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
@@ -127,7 +139,10 @@ label scene1:
 
         "We could help -- I was going to go anyway to watch it, but why not support you guys behind-the-scenes as well?":
 
-            $ state[0] = state[0] + 4
+            $ pg_state[4] = pg_state[4] + 4
+            $ pg_state[3] = pg_state[3] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,2,4,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
             rv "Um...yeah, same with me. That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
@@ -139,35 +154,35 @@ label scene1:
 
             rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
 
-            $ state[1] = state[1] + 3
-
             menu:
                 "Yeah, I’m more than happy to help.":
 
-                    $ state[0] = state[0] + 1
+                    $ pg_state[2] = pg_state[2] + 1
+                    $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,0,0,0,0,0,0]))
+                    "{i}[response]{/i}"
 
                 "I guess I could help out.":
 
-                    $ state[2] = state[2]
+                    $ pg_state[2] = pg_state[2]
 
 
 
         "That seems like a lot.":
 
-            $ state[0] = state[0] + 1
+            $ pg_state[1] = pg_state[1] + 1
 
             rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
-
-            $ state[1] = state[1] + 3
 
             menu:
                 "Yeah, I’m more than happy to help.":
 
-                    $ state[0] = state[0] + 1
+                    $ pg_state[2] = pg_state[2] + 1
+                    $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,1,0,0,0,0,0,0,0]))
+                    "{i}[response]{/i}"
 
                 "I guess I could help out.":
 
-                    $ state[2] = state[2]
+                    $ pg_state[2] = pg_state[2]
 
 
 
@@ -176,11 +191,16 @@ label scene1:
     menu:
         "Absolutely! Anything to make the show run smoothly.":
 
-            $ state[0] = state[0] + 1
+            $ pg_state[3] = pg_state[3] + 2
+            $ pg_state[4] = pg_state[4] + 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,2,3,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
         "Well since I got roped into it, I have no choice now.":
 
-            $ state[2] = state[2]
+            $ pg_state[4] = pg_state[4] - 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
+            "{i}[response]{/i}"
 
 
 

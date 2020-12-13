@@ -32,21 +32,29 @@ label scene5:
 
         # best option, points for li->pg
         "Of course.":
-            $ state[0] += 5
+            $ pg_state[0] += 2
+            $ pg_state[2] += 2
+            $ pg_state[7] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,2,0,0,0,0,2,0,0]))
+            "{i}[response]{/i}"
             # maybe some points for li->rv
-            $ state[1] += 3
             rv "Same with me. I’m not the type to back down from a challenge."
 
 
         "It could take some getting used to...":
             # best option for rv, points for li->rv
-            $ state[1] += 5
+            $ pg_state[7] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,0,-2,0,0]))
+            "{i}[response]{/i}"
             rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
 
 
         "Maybe?":
             # best option for rv, points for li->rv
-            $ state[1] += 5
+            $ pg_state[0] -= 3
+            $ pg_state[2] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([-3,0,-2,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
 
     rv "I’ve got a high level of tolerance with all the sports I’ve played, believe me."
@@ -58,9 +66,13 @@ label scene5:
 
         # best option, points for li->pg
         "Don’t count me out, [rv]. I’ll do my best to help, too.":
-            $ state[0] += 5
+            $ pg_state[0] += 3
+            $ pg_state[4] += 1
+            $ pg_state[7] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,1,0,0,2,0,0]))
+            "{i}[response]{/i}"
             # some points for li->rv
-            $ state[1] += 3
+
             rv "Of course I won’t count you out."
             rv "...Well I guess I might have left you out there for a bit. Sorry."
             rv "I don’t doubt that you can put in the work."
@@ -73,7 +85,10 @@ label scene5:
 
         "It looks like [rv]’s got this whole show covered...":
             # maybe lower li->rv points for this one?
-            $ state[1] -= 2
+            $ pg_state[0] -= 3
+            $ pg_state[7] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,0,0,0,-2,0,0]))
+            "{i}[response]{/i}"
             rv "...Are backing out of this?"
             rv "No, you just made it seem like you got it, you know. I’m here too."
             rv "...Well I guess I might have left you out there for a bit. Sorry."
@@ -99,23 +114,28 @@ label scene5:
 
         # best option, points for li->pg
         "Not at all.":
-            $ state[0] += 5
+            $ pg_state[2] += 2
+            $ pg_state[7] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,2,0,0,0,0,2,0,0]))
+            "{i}[response]{/i}"
             # some points for li->rv
-            $ state[1] += 2
+
             rv "We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "20 is...":
             # best option for rv, points for li->rv
-            $ state[1] += 5
             rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 
 
         "It’s a lot.":
             # best option for rv, points for li->rv
-            $ state[1] += 5
+            $ pg_state[2] -= 2
+            $ pg_state[7] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,0,0,-2,0,0]))
+            "{i}[response]{/i}"
             rv "Not bad at all. We’d help if it were 100, right, [pg]?"
             "I don’t doubt that you can put in the work."
 

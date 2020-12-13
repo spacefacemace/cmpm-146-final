@@ -8,13 +8,13 @@ define li = Character(_('Love_Intrest'))
 define rv = Character(_('Rival'))
 define cf = Character(_('Childhood_Friend'))
 define rm = Character(_('Roommate'))
-define pg = Character(_('player character'))
-define pat = Character(_('Prof. Pat'))
-define sesh = Character(_('Prof. Sesh'))
+define pg = Character(_('player_character'))
+define pat = Character(_('Prof._Pat'))
+define sesh = Character(_('Prof._Sesh'))
 
 
 init python:
-
+    import random
     scenes = []
 
     class Scene(object):
@@ -35,6 +35,43 @@ init python:
     Scene("scene8", _("Scene1 Name"))
     Scene("scene9", _("Scene1 Name"))
     Scene("scene10", _("Scene1 Name"))
+
+    class LoveInterest(object):
+        def __init__(self, interests):
+            self.interests = interests
+
+        def getResponse(self, statement):
+             rating = 0
+             count = 0
+             while count < len(self.interests):
+                 rating = rating + (self.interests[count]*statement[count])
+                 count = count + 1
+             return rating
+
+        def textResponse(self, rate):
+            if(rate <= -7):
+                return "She really didn't like that response"
+            elif(rate <= -2):
+                return "She doesn't look happy"
+            elif(rate < 2):
+                return "She looks indifferent"
+            elif(rate < 7):
+                return "She looks happy"
+            elif(rate >= 7):
+                return "She loved that response"
+
+    interest = [random.randrange(-5, 5, 1), #Confidence
+                random.randrange(-5, 5, 1), #Empathy
+                random.randrange(-5, 5, 1), #Responsibility
+                random.randrange(-5, 5, 1), #Romantic
+                random.randrange(-5, 5, 1), #Caring
+                random.randrange(-5, 5, 1), #Humor
+                random.randrange(-5, 5, 1), #Intelligence
+                random.randrange(-5, 5, 1), #Cool
+                random.randrange(-5, 5, 1),
+                random.randrange(-5, 5, 1)]
+
+    LoveInterest = LoveInterest(interest)
 
 
 
@@ -62,8 +99,10 @@ label start:
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
 
-    $ state = [0,0,0]
+    $ pg_state = [0,0,0,0,0,0,0,0,0,0]
+    $ rv_state = [0,0,0,0,0,0,0,0,0,0]
 
+    "This Love Interest has multipliers [interest]"
 
     jump scene1
 label after1:
@@ -85,7 +124,7 @@ label after8:
 label after9:
     jump scene10
 label after10:
-    "state is [state]"
+    "state is [pg_state]"
 
 
 

@@ -18,7 +18,7 @@ label scene6:
     show rv at left
 
     # Check rival meter against player's
-    if state[1] > state[0]:
+    if LoveInterest.getResponse(rv_state) > LoveInterest.getResponse(pg_state):
         jump rival_higher
     else:
         jump player_higher
@@ -28,7 +28,6 @@ label scene6:
         rv "Since the max for the gondola is two people, how about I ride with [li], and [pg] could ride with [cf]?"
 
         li "That sounds like a good idea!"
-        $ state[1] += 4
 
         pg "{i}Wow, he’s really trying to get her. It’s not his first time doing this, huh? Or maybe I’m just a really bad rival.{/i}"
 
@@ -46,30 +45,32 @@ label scene6:
         menu:
             "I'm not giving up yet.":
 
-                $ state[0] += 2
+                $ pg_state[0] = pg_state[0] + 2
+                $ pg_state[7] += 2
 
             "It's definitely going to be difficult.":
 
-                $ state[2] = state[2]
+                $ pg_state[0] = pg_state[0] - 2
 
             "I'm not sure what's going to happen...":
 
-                $ state[2] = state[2]
+                $ pg_state[0] = pg_state[0] - 2
+                $ pg_state[6] = pg_state[6] - 2
 
         cf "What are you planning to do?"
 
         menu:
             "Just try to get on [li]'s good side even more?":
 
-                $ state[2] = state[2]
+                $ pg_state[4] = pg_state[4] + 1
 
             "I'm still not sure.":
 
-                $ state[2] = state[2]
+                $ pg_state[6] = pg_state[6] - 1
 
             "Do you have any advice?":
 
-                $ state[2] = state[2]
+                $ pg_state[3] = pg_state[3] + 2
 
 
         cf "Hmm, well, I'd try to be as forward -- no, try to be {i}more{/i} forward than [rv]. Play his game, but do it better."
@@ -77,7 +78,7 @@ label scene6:
         menu:
             "How do I do that?":
                 label cf_advice:
-                    $ state[0] += 1
+                    $ pg_state[3] += 2
                     cf "Take charge, think of what [li] would like to hear. Don’t let him take up all of [li]’s time! You have to get her to see you in a good way, too. Then I think you have more of a chance."
                     pg "Since when did you get so good at giving advice?"
                     cf "Haha... I'm not too sure."
@@ -101,7 +102,11 @@ label scene6:
         menu:
             "You could go with me.":
                 li "Oh... that sounds good!"
-                $ state[0] += 4
+                $ pg_state[7] += 2
+                $ pg_state[3] += 2
+                $ pg_state[0] += 2
+                $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,0,2,0,0,0,2,0,0]))
+                "{i}[response]{/i}"
                 jump li_pg_gondola
 
             "...":
@@ -140,7 +145,10 @@ label scene6:
 
             menu:
                 "Is it because I’m here, too?":
-                    $ state[0] += 5
+                    $ pg_state[3] += 5
+                    $ pg_state[7] += 1
+                    $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,5,0,0,0,1,0,0]))
+                    "{i}[response]{/i}"
                     li "Um, maybe? Hahaha..."
                     li "It does help that I’m with someone I trust."
                     jump smalltalk
@@ -158,16 +166,16 @@ label scene6:
                     li "...Sort of? Haha. I’d like to think I am. I’m still not satisfied, but it’s getting there."
                     menu:
                         "I’m sure all this dedication is going to amount to something great.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
                         "You’re close, just a little bit left.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
 
                     li "Thanks! And your help is definitely making the process easier. You picked up the needed skills really quick, it’s kind of impressive!"
                     menu:
                         "Got to make sure I’m on track, too.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
                         "Just a part of helping out.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
 
                     li "I really appreciate it. I haven’t figured it out yet, but when it’s over, I’ll make sure to make you guys some sort of meal. It’s the least I can do!"
 
@@ -176,16 +184,16 @@ label scene6:
                     li "Apple pie is my favorite...but I didn’t think you were the type to like it, too."
                     menu:
                         "I bet it tasted as good as it smelled.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
                         "I wish I could have some.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
 
                     li "I have a bit of it left! I could give you a slice when we head back."
                     menu:
                         "I’ve loved it since I was a kid!":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
                         "I’ve warmed up to it.":
-                            $ state[2] = state[2]
+                            $ pg_state[2] = pg_state[2]
                     li "That’s good! Well, the recipe I used is one that runs in the family, so there’s some secret ingredients in there. Still apple pie, nonetheless!"
                     menu:
                         "Secret ingredients?":
@@ -200,17 +208,25 @@ label scene6:
                     li "What about you, [pg]?"
                     menu:
                         "I’m thinking about...you?":
-                            $ state[0] += 2
+                            $ pg_state[3] += 2
                             li "Me? Hahaha...what about me?"
                             menu:
                                 "Just about how lucky I was to ride this with you.":
-                                    $ state[2] = state[2]
+                                    $ pg_state[3] = pg_state[3] + 2
+                                    $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,4,0,0,0,0,0,0]))
+                                    "{i}[response]{/i}"
                                 "Well you’re my riding buddy, so why wouldn’t I be?":
-                                    $ state[2] = state[2]
+                                    $ pg_state[5] = pg_state[5] + 2
+                                    $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,2,0,2,0,0,0,0]))
+                                    "{i}[response]{/i}"
                             li "I guess that’s a given...should I think about you too, then?"
                             li "Though the only thought to come to mind is that I’m glad we’re riding this together. Definitely better than being by myself!"
 
                         "I’m thinking about the weather, too.":
+                            $ pg_state[0] = pg_state[0] - 3
+                            $ pg_state[7] = pg_state[7] - 2
+                            $ response = LoveInterest.textResponse(LoveInterest.getResponse([-3,0,0,0,0,0,0,-2,0,0]))
+                            "{i}[response]{/i}"
                             li "Fair enough. The weather affects all of us."
 
             li "Looks like we’re getting off soon."
@@ -230,12 +246,12 @@ label scene6:
             pg "{i}Be more forward. Alright, let’s do this.{/i}"
         menu:
             "What about those funnel cakes?":
-                $ state[0] += 2
+                $ pg_state[0] += 1
+                $ pg_state[7] += 1
                 li "Funnel cakes sound good right now! I haven’t had those in forever."
 
             "Same here.":
                 rv "What about that funnel cake place?"
-                $ state[1] += 2
                 li "I haven’t had those in forever -- let’s get those."
 
         # Switch background to funnel cake shop
@@ -247,18 +263,20 @@ label scene6:
 
         menu:
             "I can pay for you, [li].":
-                $ state[0] += 2
+                $ pg_state[0] += 3
+                $ pg_state[7] += 4
+                $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,0,0,0,4,0,0]))
+                "{i}[response]{/i}"
                 li "Are you sure about that, [pg]?"
                 pg "Yeah, I don’t mind."
                 rv "Then count me in, too."
-                $ state[2] += 3
                 cf "[pg] is paying? Nice."
                 pg "...Alright, alright."
                 pg "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
 
             "Wonder what I should get…":
+                $ pg_state[4] -= 1
                 rv "I can pay for you, [li]."
-                $ state[1] += 4
                 li "Woah, really? ...Thanks!"
                 pg "{i}...Missed opportunity there.{/i}"
 

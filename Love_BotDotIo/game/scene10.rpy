@@ -67,7 +67,7 @@ label scene10:
 
     hide cf at right with easeoutright
 
-    if state[2] > state[0]:
+    if False == True:
 
         li "I have some other friends to go and congratulate, too. Let’s meet up back here, yeah?"
 
@@ -98,7 +98,7 @@ label scene10:
 
         "Sure."
 
-        if state[0] > state[1]:
+        if LoveInterest.getResponse(rv_state) < LoveInterest.getResponse(pg_state):
             jump li_pg_route
         else:
             jump li_rv_route

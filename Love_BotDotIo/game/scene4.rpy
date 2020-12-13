@@ -29,11 +29,18 @@ label scene4:
 
         # best option, points for li->pg
         "Yeah, we’re gonna clean all this stuff tomorrow.":
-            $ state[0] += 5
+            $ pg_state[2] = pg_state[2] + 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,3,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
+
             rv "I sure hope so."
             cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
         "Watch out for that pizza box.":
+            $ pg_state[2] = pg_state[2] - 2
+            $ pg_state[5] = pg_state[5] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,2,0,0,0,0]))
+            "{i}[response]{/i}"
             # best option for rv, points for li->rv
             $ state[1] += 5
             rv "Don’t you think you should clean your place up a little?"
@@ -42,30 +49,37 @@ label scene4:
 
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
-                        $ state[0] += 2
+                        $ pg_state[2] += 1
+                        $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,0,0,0,0,0,0]))
+                        "{i}[response]{/i}"
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
                 # lower points for li->pg
                 "We’ll see about that.":
-                        $ state[0] -= 4
+                        $ pg_state[2] -= 3
+                        $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-3,0,0,0,0,0,0,0]))
+                        "{i}[response]{/i}"
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
         "(silence)":
             # best option for rv, points for li->rv
             rv "Don’t you think you should clean your place up a little?"
-            $ state[1] += 5
 
             menu:
 
                 # 1-2 points for li->pg
                 "Yeah, we'll clean it.":
-                    $ state[0] += 1
-                    cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
+                        $ pg_state[2] += 1
+                        $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,0,0,0,0,0,0]))
+                        "{i}[response]{/i}"
+                        cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
                 # lower points for li->pg
                 "We’ll see about that.":
-                    $ state[0] -= 4
-                    cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
+                        $ pg_state[2] -= 3
+                        $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-3,0,0,0,0,0,0,0]))
+                        "{i}[response]{/i}"
+                        cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
     cf "While we’re at it, let’s get [rm] in it, too."
 
@@ -75,19 +89,19 @@ label scene4:
 
         # best option, points for li->pg
         "He’s playing Minecraft. I can go get him.":
-            $ state[0] += 5
+            $ pg_state[4] += 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "Can’t have him missing out!"
 
 
         "He’s probably playing Minecraft.":
             # best option for rv, points for li->rv
-            $ state[1] += 5
             rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
 
         "I dunno, his room?":
             # best option for rv, points for li->rv
-            $ state[1] += 5
             rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
     hide cf
@@ -107,25 +121,33 @@ label scene4:
 
         # best option, points for li->pg
         "Clear the table.":
-            $ state[1] += 5
+            $ pg_state[2] += 3
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,3,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             "Should I clear the table?"
             li "That'd be great!"
 
 
         "Set up the food.":
             # 1-2 points for li->pg
-            $ state[0] += 2
+            $ pg_state[2] += 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             "Should I set up the food?"
             # 1-2 points for li->rv
             rv "Shouldn’t we clear the table first?"
-            $ state[1] += 2
+
             li "Yeah, that first, then the food!"
 
 
         "Wait.":
+
+            $ pg_state[2] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             # best option for rv, points for li->rv
             rv "Shouldn’t we clear the table first?"
-            $ state[0] += 5
+
             li "That’s a good idea!"
 
     li "All set. Alright, let’s dig in!"
@@ -159,7 +181,9 @@ label scene4:
 
         # best option, points for li->pg
         "[rm] mentioned it when we first moved in.":
-            $ state[0] += 3
+            $ pg_state[4] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,2,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rm "Yes, we had a chess set. Though I don’t know how to play it {i}well{/i}."
 
 
@@ -181,21 +205,25 @@ label scene4:
 
         "Do you know how to play, [rv]?":
             # 1-2 points for li->rv
-            $ state[1] += 2
+            $ pg_state[6] = pg_state[6] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,2,0,0,0]))
+            "{i}[response]{/i}"
             rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
 
 
         "Are you good at it, [rv]?":
             # 1-2 points for li->rv
-            $ state[1] += 2
+            $ pg_state[6] = pg_state[6] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,2,0,0,0]))
+            "{i}[response]{/i}"
             rv "Of course. I had to get good if I wanted to beat my dad, and he had a really high score."
 
         # some points for rv->pg, 1-2 points for li->pg
         "What are you to say that, [rv]?":
-            $ state[0] += 2
-            $ state[2] += 3
-            # 2-3 points for li->rv
-            $ state[2] += 3
+            $ pg_state[6] = pg_state[6] + 2
+            $ pg_state[0] = pg_state[0] + 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([1,0,0,0,0,0,2,0,0,0]))
+            "{i}[response]{/i}"
             rv "Because I know how to play well? I had to get good if I wanted to beat my dad, and he had a really high score."
 
 
@@ -207,21 +235,24 @@ label scene4:
 
         "Of course, I’m not very good though.":
             # 1-2 points for li->rv
-            $ state[1] += 2
+            $ pg_state[0] = pg_state[0] - 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([-1,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Aren’t you modest? Why don’t we figure out how good you really are?"
 
         # 2-3 points for li->pg
         "Of course, I’m decent at it.":
-            $ state[0] += 3
-            # 2-3 points for li->rv
-            $ state[1] += 3
+            $ pg_state[0] = pg_state[0] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Then you wouldn’t mind playing a game against me, would you?"
 
         # 2-3 points for li->pg and rv->pg
         "Of course, I might be even better than [rv].":
-            $ state[0] += 3
-            $ state[2] += 3
-            # 2-3 points for li->rv
+            $ pg_state[0] = pg_state[0] + 4
+            $ pg_state[1] = pg_state[1] - 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([4,-1,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Those are some big words..."
             $ state[1] += 3
             rv "If that’s the case, then you wouldn’t mind playing a game against me, would you?"
@@ -230,20 +261,23 @@ label scene4:
 
         # 2-3 points for li->pg and rv->pg
         "Bring it on.":
-            $ state[0] += 3
-            $ state[2] += 3
+            $ pg_state[0] = pg_state[0] + 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Then let’s set up the board."
 
         # 2-3 points for li->pg, high points for rv->pg
         "Let’s see how good you really are.":
-            $ state[0] += 3
-            $ state[2] += 5
+            $ pg_state[0] = pg_state[0] + 4
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([4,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Then let’s set up the board."
 
         # 1-2 points for li->pg and rv->pg
         "I’ll try my best.":
-            $ state[0] += 2
-            $ state[2] += 2
+            $ pg_state[0] = pg_state[0] - 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([-1,0,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "Then let’s set up the board."
 
     rv "Alright. White or black?"
@@ -352,8 +386,10 @@ label scene4:
         rv "Bad move, [pg]. I win."
 
         #li->rv big points, some points for rv->pg
-        $ state[1] += 5
-        $ state[2] += 3
+        $ pg_state[0] = pg_state[0] - 2
+        $ pg_state[7] = pg_state[7] - 5
+        $ response = LoveInterest.textResponse(LoveInterest.getResponse([-2,0,0,0,0,0,0,-5,0,0]))
+        "{i}[response]{/i}"
 
         rv "Good game, though. You caught me off guard a couple of times."
 
@@ -362,8 +398,10 @@ label scene4:
 
         rv "...I’m resigning. Good game, [pg]. You put up a good fight."
 
-        $ state[0] += 5
-        $ state[2] += 3
+        $ pg_state[0] = pg_state[0] + 2
+        $ pg_state[7] = pg_state[7] + 5
+        $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,0,0,0,0,0,5,0,0]))
+        "{i}[response]{/i}"
 
         # rv->pg some points, li->pg big points
 
@@ -380,21 +418,24 @@ label scene4:
 
         # best option, points for li->pg
         "I would love to teach you how to play.":
-            $ state[0] += 5
+            $ pg_state[4] += 3
+            $ pg_state[7] += 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,2,0,0]))
+            "{i}[response]{/i}"
             li "Awesome! You might have to go easy on me at first, haha."
 
         # maybe like 1-2 points for li->pg
         "Having a match would be fun.":
-            $ state[0] += 2
             # best option for li->rv, points for li->rv
-            $ state[1] += 5
             rv "I could teach you how to play."
             li "You will? Thanks!"
             "{i}Damn, I could have done that.{/i}"
 
         "Yeah, maybe next time.":
             # best option for li->rv, points for li->rv
-            $ state[1] += 5
+            $ pg_state[4] -= 2
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
+            "{i}[response]{/i}"
             rv "I could teach you how to play."
             li "You will? Thanks!"
             "{i}Damn, I could have done that.{/i}"

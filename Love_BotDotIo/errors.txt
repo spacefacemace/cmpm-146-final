@@ -2,29 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/scene6.rpy", line 150: choice menuitem expects a non-empty block.
-    "I’m sure all this dedication is going to amount to something great.":
-                                                                          ^
-
-File "game/scene6.rpy", line 155: choice menuitem expects a non-empty block.
-    "Got to make sure I’m on track, too.":
-                                          ^
-
-File "game/scene6.rpy", line 164: choice menuitem expects a non-empty block.
-    "I bet it tasted as good as it smelled.":
-                                             ^
-
-File "game/scene6.rpy", line 169: choice menuitem expects a non-empty block.
-    "I’ve loved it since I was a kid!":
-                                       ^
-
-File "game/scene6.rpy", line 177: choice menuitem expects a non-empty block.
-    "I can’t wait to try it.":
-                              ^
-
-File "game/scene6.rpy", line 187: choice menuitem expects a non-empty block.
-    "Just about how lucky I was to ride this with you.":
-                                                        ^
+File "game/script.rpy", line 74: invalid syntax
+    LoveInterest = new LoveInterest(interest)
+                                   ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 11 20:04:51 2020
+Sat Dec 12 21:49:57 2020
