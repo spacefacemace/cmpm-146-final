@@ -1,0 +1,610 @@
+// SCENE #
+----------
+// Menu # (will be going in order)
+// Player's option [what player's pick means]
+//	AI's Choices
+//	First choice: (points for certain characteristics in here)
+----------
+
+SCENE1
+----------
+Menu 1
+(1) "Sorry, my last class went over a little bit." [pg picked neutral]
+	First choice (empathy +2, responsibility +1)
+	rv "That kind of thing happens."
+
+	Second choice (empathy -2, responsibility -1)
+	rv "Then just leave early?"
+	"It was an important lecture, though?"
+	rv "...Sure."
+
+	Third choice (humor +1)
+	rv "I think it'd be a power move if you just left early. The professor will never see it coming."
+	li "Power move?"
+	rv "Yeah?"
+	li "Hm...haha, I guess I can see it."
+
+(2) "I forgot we were meeting up" [pg didn't pick best]
+	First choice (confident +1, empathy -1)
+	rv "Should I move for someone that forgot about meeting their friends?"
+	rv "..."
+	rv "Well since you’re here, I might as well."
+
+	Second choice: (humor +1, empathy -1)
+	rv "Hmm...don't want to."
+	li "Aw, come on, [rv]."
+	rv "..."
+	rv "I'm kidding, I'm kidding."
+		
+	Third choice: (empathy +2)
+	rv "Sure, sure. Just don't do it again, okay?"
+
+(3) "I got distracted admiring all the scenery on the way here." [pg picked best]
+
+	First choice: (romantic +1)
+	rv "That’s incredibly...cheesy, but I get it."
+	li "I totally understand! I’d do the same thing."
+
+	Second choice: (empathy +1)
+	rv "You know what? I get it."
+
+	Third choice (empathy -1)
+	rv "Well next time, speed it up."
+
+Menu 2
+(1) "We can’t avoid the future. It’s natural that we think about it." [pg picked best]
+	First choice (intelligent -1)
+	rv "...Maybe I'm just missing something. Whatever."
+
+	Second choice (empathy +1, cool +1)
+	rv "I may be missing something, but I won't argue with it."
+
+(2) "Yeah, there's really no point." [pg didn't pick best]
+	First choice (cool +1, empathy -2)
+	li "Hmm, then I guess living in the present is some sort of bliss."
+	rv "Besides, you might be missing something around you right now."
+	"{i}That’s too on the nose.{/i}"
+
+	Second choice: (empathy +1, cool +2)
+	rv "If it makes you feel better, [li], if you live in the present, you might notice something."
+	"{i}That’s too on the nose.{/i}"
+
+(3) "I haven’t really thought about that." [pg picked neutral]
+	First choice: (empathy +2, cool +2)
+	rv "Well, if it makes you feel better, [li], if you live in the present, you might notice something."
+	"{i}That’s too on the nose.{/i}"
+
+	Second choice: (empathy +3)
+	"...But I will now."
+	rv "Good for you, [pg]."
+	rv "Well, if it makes you feel better, [li], if you live in the present, you might notice something."
+
+Menu 3
+(1) "Maybe we could help out?" [pg picked sorta best]
+	First choice (caring -3, cool +1)
+	rv "Do we have to?"
+	"Hey, come on..."
+	rv "..."
+	rv "Well if there's that sort of pressure, I might as well."
+
+	Second choice (cool +2, caring +2)
+	rv "Yeah, I was going to go and watch it anyway to support you guys."
+	rv "But helping is also support, right?"
+
+	Third choice (caring +2)
+	rv "Yeah, I'm with [pg]. We could help."
+
+(2) "We could help -- I was going to go anyway to watch it, but why not support you guys behind-the-scenes as well?" [pg picked best, rv can offer right away or not]
+	First choice: (cool -1, caring +2)
+	rv "Um...yeah, yeah, same with me. That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
+	pg "Just that?"
+	rv "Well...anything else, too."
+
+	Second choice: (cool +2, caring +1)
+	rv "That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
+
+	Third choice: (caring -2, cool +2)
+	rv "We?"
+	"Don't you want to?"
+	rv "...Of course! That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
+
+	Fourth choice (caring -3, cool +1)
+	rv "Do we have to?"
+	"Hey, come on..."
+	rv "..."
+	rv "Well if there's that sort of pressure, I might as well."
+
+(3 or 4) "...", "That seems like a lot." [pg didn't pick best]
+	First choice (cool +3, responsibility +3, empathy +3)
+	rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
+
+	Second choice: (cool +4, responsibility +2, empathy +2)
+	rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
+	rv "We'd get to hang out quite a bit, too."
+
+	Third choice (cool -2, empathy -3)
+	rv "Well...that's a predicament."
+	cf "You guys could, I dunno...help out?"
+	rv "Could we?"
+	cf "It would be greatly appreciated."
+	rv "...I guess we could."
+
+	Fourth choice (confident -2)
+	rv "Yep, seems a little difficult."
+	cf "You guys could, I dunno...help out?"
+	rv "Could we?"
+	cf "It would be greatly appreciated."
+	rv "...I guess we could."
+
+Menu 4
+(1) "Absolutely! Anything to make the show run smoothly." [pg picked best]
+	First choice (caring +2, responsibility +1)
+	rv "Agreed. If it all helps out, I'm fine with that."
+
+	Second choice (caring -1, cool -2)
+	rv "That's a little extra, don't you think?"
+	rv "...I guess I agree."
+
+	Third choice (cool +3)
+	rv "Yep, with us there, we might just make it the best show yet."
+
+(2) "Well since I got roped into it, I have no choice now." [pg didn't pick best]
+	First choice (empathy -2, cool -2)
+	rv "Saying it like that...well, I might agree a bit."
+	rv "But a team effort isn't always bad, I guess."
+
+	Second choice (empathy +1, responsibility +2)
+	rv "The more the merrier, right?"
+	rv "A team effort is always better."
+
+	Third choice (caring -2, responsibility +2)
+	rv "What a...choice set of words, [pg]."
+	rv "Even if you've been roped in, you'll do your best, right?"
+	rv "I would hope so."
+
+
+(also remove the rv "Yup, I'm sure" from the scene since rv is answering in this menu)
+----------
+
+SCENE2
+----------
+----------
+
+SCENE3
+----------
+----------
+
+SCENE4
+----------
+Menu 1
+(1) "Yeah, we’re gonna clean all this stuff tomorrow." [pg picked best]
+	First choice (empathy -2)
+	rv "...I sure hope so."
+
+	Second choice (empathy +2, responsibility -2)
+	rv "Well if it makes you feel better, my place kinda looks like this, too."
+
+	Third choice (responsibility +2, empathy -2)
+	rv "I'd never let my place get to this point."
+
+	Fourth choice (cool +3)
+	rv "Maybe I could come over and help. We are sorta neighbors, after all."
+	rv "Just not in the morning. I'm at the gym during that time."
+
+(2 or 3) "Watch out for that pizza box.", "(silence)" [pg didn't pick best]
+	First choice (empathy -2, responsibility +2)
+	rv "Don’t you think you should clean your place up a little?"
+
+	Second choice (responsibility -2, empathy +2)
+	rv "Well if it makes you feel better, my place kinda looks like this, too."
+	rv "But don't you think you should clean up a bit?"
+
+	Third choice (empathy +2)
+	rv "Well...we've all been there with this sort of thing."
+	rv "Don't you think you should clean up, though?"
+
+Menu 2
+(1) "He’s playing Minecraft. I can go get him." [pg picked best]
+	no AI option
+
+(2 or 3) "He’s probably playing Minecraft.", "I dunno, his room?" [pg didn't pick best]
+	First choice (caring +1, cool +2)
+	rv "Why don’t you go get him, [pg]? See if he wants to hang out."
+	
+	Second choice (caring +2, cool +2)
+	rv "You know him well, don't you?"
+	rv "Why don’t you go get him, [pg]? See if he wants to hang out."
+
+	Third choice (caring +3, cool +2)
+	rv "Has he been at it all day?"
+	"Yep, I don't think I've seen him at all."
+	rv "Then why don’t you go get him, [pg]? See if he wants to hang out."
+
+Menu 3
+(1) "Clear the table." [pg picked best]
+	No AI options
+
+(2) "Set up the food." [pg picked decent]
+	First choice: (responsibility +3)
+	rv "Shouldn't we clear the table first?"
+
+	Second choice (responsibility +2, cool +1)
+	rv "We should probably clear the table first."
+
+	Third choice (responsibility +2, humor +1)
+	rv "Nice try. We should probably clear the table first."
+
+(3) "Wait." [pg didn't pick best]
+	First choice: (responsibility +3)
+	rv "Shouldn't we clear the table first?"
+
+	Second choice (responsibility +2, cool +1)
+	rv "We should probably clear the table first."
+
+Menu 5
+(1 or 2) "Do you know how to play, [rv]?", "Are you good at it, [rv]?"
+	First choice (intelligent +2, confident +2)
+	rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
+
+	Second choice (intelligent -1, confident +2)
+	rv "Well, my dad taught me, and he was a pretty good player."
+	rv "He beat me a lot, but I got better because of it."
+
+	Third choice (intelligent +1, confident +2)
+	rv "Huh. Didn't expect you to ask me."
+	rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
+
+	Fourth choice (intelligent +1, confident -2)
+	rv "Well...sort of. My dad taught me how to play."
+	rv "But he was so good I could barely beat him no matter how much I tried."
+
+(3) "What are you to say that, [rv]?"
+	First choice (intelligent +2, caring -2)
+	rv "Because I know how to play well? I had to get good if I wanted to beat my dad, and he had a really high score."
+
+	Second choice (intelligent +2, cool -2)
+	rv "Woah."
+	rv "You're right though..."
+	rv "I know how to play. I had to get good if I wanted to beat my dad, and he had a really high score."
+
+Menu 11
+(1) "I would love to teach you how to play." [pg picked best]
+	no AI option for this one
+
+(2) "Having a match would be fun." [pg picked decent]
+	First choice (cool +2, caring +2)
+	rv "I could teach you how to play."
+	li "You will? Thanks!"
+	"{i}Damn, I could have done that.{/i}"
+
+	Second choice (cool +1, caring +3)
+	rv "Yeah, it'll be fun once you know how to play. I could teach you."
+	li "You will? Thanks!"
+	"{i}Damn, I could have done that.{/i}"
+
+(3) "Yeah, maybe next time." [best option for li->rv]
+	First choice (cool +2, caring +2)
+	rv "I could teach you how to play."
+	li "You will? Thanks!"
+	"{i}Damn, I could have done that.{/i}"
+
+	Second choice (cool +1, caring +3)
+	rv "Yeah, it'll be fun once you know how to play. I could teach you."
+	li "You will? Thanks!"
+	"{i}Damn, I could have done that.{/i}"
+----------
+
+SCENE5
+----------
+Menu 1
+(1) "Of course." [pg picks best]
+	First choice (confident +3, cool +1)
+	rv "Yup. I’m not the type to back down from a challenge."
+
+	Second choice (confident +2, cool +3)
+	rv "And I agree with [pg]. I’m not the type to back down from a challenge."
+	
+(2) "It could take some getting used to..." [pg didn't pick the best]
+	First choice (confident +3, caring -2)
+	rv "I’ll be fine, 100% -- I’m not the type to back down from a challenge."
+
+	Second choice (confident +2, caring +3)
+	rv "Hey, I'm here for support, [pg]."
+	rv "Besides, I’m not the type to back down from a challenge."
+
+Menu 2
+(1 or 2) "Don’t count me out, [rv]. I’ll do my best to help, too.", "I’m here too, [rv]." [pg picked best]
+	First choice (caring -2, cool +2)
+	rv "...Well I guess I might have left you out there for a bit. Sorry."
+	rv "I don’t doubt that you can put in the work."
+
+	Second choice (caring +2, cool +1)
+	rv "Didn't mean to leave you out. I don't doubt that you can put in the work."
+	rv "I like the confidence, though."
+
+(3) "It looks like [rv]’s got this whole show covered..." [pg didn't pick best]
+	no AI options for this (but add like +3 confidence points for li->rv)
+
+Menu 3
+(1) "Not at all." [pg picked best]
+	First choice (confident +2, cool +2)
+	rv "We’d help if it were 100, right, [pg]?"
+
+	Second choice (confident +1)
+	rv "I agree, it's not bad."
+
+(2 or 3) "20 is..." or "It’s a lot." [pg didn't pick best]
+	First choice (confident +3, cool +2)
+	rv "We’d help if it were 100, right, [pg]?"
+
+	Second choice (caring +3, cool +2)
+	rv "Don't be so down on yourself, [pg]. We can do it."
+----------
+
+SCENE6 (menus are from after the two branches; it's all the funnel cake stuff basically)
+----------
+Menu 1
+(1) "What about those funnel cakes?" [pg picked best]
+	no AI options
+
+(2) "Same here." [pg didn't pick best]
+	First choice (caring +2, cool +2)
+	rv "Same appetite, huh?"
+	rv "What about that funnel cake place?"
+	li "I haven’t had those in forever -- let’s get those."
+
+	Second choice (cool +3, romantic +2)
+	rv "What about that funnel cake place?"
+	li "I haven’t had those in forever -- let’s get those."
+
+Menu 2
+(1) "I can pay for you, [li]." [pg picked best]
+	First choice (humor +2, responsibility -1)
+	li "Are you sure about that, [pg]?"
+	"Yeah, I don’t mind."
+	rv "Then count me in, too."
+	cf "[pg] is paying? Nice."
+	"...Alright, alright."
+	"{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+
+	Second choice (responsibility -1, caring +2)
+	li "Are you sure about that, [pg]?"
+	"Yeah, I don’t mind."
+	rv "Well that's nice of you, [pg]."
+	"Yes...you want me to pay for yours, too?"
+	cf "[pg] is paying? Nice."
+	"...Alright, alright. I guess it's all on me."
+	"{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+
+	Third choice (caring -3, responsibility +2)
+	rv "Hmph...I could do the same thing."
+	"...But you didn't offer."
+	rv "Right. Well, I guess you beat me to it. Wanna add my order, too?"
+	cf "Count me in as well!"
+	"...Alright, alright. I guess it's all on me."
+	"{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+
+(if player doesn't offer rv immediately does, +3 for cool, +2 for confident)
+----------
+
+SCENE7
+----------
+Menu 2
+(1) "I don’t think that’s a good idea..."
+	First choice (cool -2, caring +2)
+	rv "Ugh, you're right."
+
+	Second choice (cool +2, responsibility -2)
+	rv "Even if this is a rehearsal, I want this to go well, but..."
+	rv "Ugh, you're right."
+
+(2) "You shouldn’t leave your post, you need to be here when they do come." [pg picked best]
+	First choice (cool -2, caring +2)
+	rv "Ugh, you're right."
+
+	Second choice (cool +2, responsibility -2)
+	rv "Even if this is a rehearsal, I want this to go well, but..."
+	rv "Ugh, you're right."
+
+(3) "You need to be here." [pg picked second best]
+	First choice (cool -2, caring +2)
+	rv "Ugh, you're right."
+
+	Second choice (cool +2, responsibility -2)
+	rv "Even if this is a rehearsal, I want this to go well, but..."
+	rv "Ugh, you're right."
+
+Menu 3
+(1) "I think they get it, [rv]." [neutral]
+	First choice (caring -2, cool +2)
+	rv "I guess I was a little harsh. Sorry about that."
+
+	Second choice (caring -2, responsibility +2)
+	rv "...Right, right."
+	rv "I guess I was a little harsh. Sorry about that."
+
+(2) "It’s fine, what matters is that they’re here." [pg picked best]
+	First choice (caring -2, cool +2)
+	rv "I guess I was a little harsh. Sorry about that."
+
+	Second choice (caring -2, responsibility +2)
+	rv "...Right, right."
+	rv "I guess I was a little harsh. Sorry about that."
+
+(3) "You don’t need to be so harsh." [pg picked second best]
+	First choice (caring -2, responsibility +2)
+	rv "...Right, right."
+	rv "I guess I was a little harsh. Sorry about that."
+
+	Second choice (caring -3, cool +2)
+	rv "I’m not trying to be?"
+	rv "...Does it seem that way?"
+	rv "If it does, sorry."
+
+Menu 4
+(1) "After-party?" [neutral]
+	no AI options
+
+(2) "Kind of...?" [pg points subtracted]
+	First choice (caring +3)
+	rv "Yeah...[li] said something about it a few days ago."
+
+	First choice (caring +2, responsibility +1)
+	rv "Come on, at least pay a little attention."
+	rv "[li] said something about it a few days ago."
+
+(3) "Did I miss something?"
+	First choice (caring +3)
+	rv "Yeah...[li] said something about it a few days ago."
+
+	First choice (caring +2, responsibility +1)
+	rv "Come on, at least pay a little attention."
+	rv "[li] said something about it a few days ago."
+
+Menu 6
+(1) "Then we’ll make sure to do our best." [pg picked best]
+	First choice (confident +2, cool +2)
+	rv "Exactly. Though it wouldn’t hurt if we did better tomorrow."
+	rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
+	
+	Second choice (confident +3, cool +1)
+	rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+	rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
+
+(2) "Hopefully that’s the case." [pg picked second best]
+	First choice (confident +3, cool +1)
+	rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+	rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
+
+	Second choice (confident +1, intelligent +2)
+	rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
+
+(3) "We’ll try." [neutral]
+	First choice (confident +3, cool +1)
+	rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+	rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
+
+	Second choice (confident +1, intelligent +2)
+	rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
+----------
+	
+SCENE8
+----------
+Menu 1
+(1 or 2) "Are you ready?", "You think you’ll be okay?" [pg picked kinda best]
+	First choice (caring +2, cool -1)
+	rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+
+	Second choice (caring +3, cool -2)
+	rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+	rv "But I can get where you're coming from, [pg]."
+
+(3) "You’re going to do great. You’ve worked really hard on this." [pg picked best]
+	no AI options
+
+Menu 2
+(1 or 2) "I don’t see why not.", "I think so." [pg picked kinda best]
+	no AI options
+
+(3) "Of course it will, we’ll make sure of it."
+	First choice (cool +2, caring +1)
+	rv "[pg]’s right. It’s why we’re helping out."
+
+	First choice (cool +3)
+	rv "[pg]’s right. It’s why we’re helping out."
+	rv "You gotta do your best while we're watching, too."
+	li "Haha, of course!"
+
+Menu 7
+(1) "Congratulate [li]." [pg picked best]
+	First choice (caring +1, cool +2)
+	"Congratulations, [li], the show was a success!"
+	rv "Yep, and from me and [pg] -- here you go."
+
+	Second choice (caring +2, humor +2)
+	"Congratulations, [li], the show was a success!"
+	rv "You beat me to it."
+	rv "Anyway, congrats, [li]. From me and [pg] -- here you go."
+
+(2) "Greet [li]."
+	First choice (cool +1, caring +2)
+	rv "Congrats on the show, [li]. I’d say it went pretty well?"
+	"Oh, here’s something for you."
+
+	Second choice (caring +2, romantic +1)
+	rv "Congrats on the show, [li]. I’d say it went pretty well?"
+	rv "[pg] and I have something for you."
+	"Yup, here it is."
+
+Menu 8
+(1 or 2) "If it meant the show was more enjoyable for you, then it was worth it.", "It’s no big deal."
+	First choice (cool +1, caring +1)
+	rv "Yeah, what [pg] said. It’s nice that the last show went well."
+
+	Second choice (caring +2)
+	rv "Yeah, no worries. You should enjoy your final show, after all."
+
+Menu 9
+(1) "I wouldn’t miss it for the world." [pg picked best]
+	First choice (cool +1)
+	rv "Same here."
+
+	Second choice (caring +1)
+	rv "You have a way with words, [pg]."
+	rv "I have nothing to say except...well, same."
+
+(2) "Right, the after-party..." [neutral]
+	no AI options for this one
+
+(3) "That completely slipped my mind." [pg didn't pick best]
+	no AI options for this one
+----------
+
+SCENE9
+----------
+Menu 1
+(1) "It's a bit bittersweet." [pg picked best]
+	no AI options for this one
+
+(2 or 3) "I’m glad it’s over.", "I’m not sure what to think."
+	First choice (intelligent +2, empathy +1)
+	li "I totally get it! You go through all this and then..."
+	rv "Just like that, it’s about to end."
+	li "Yep, exactly."
+
+	Second choice (empathy +1, romantic +2)
+	rv "Well if we're blanking..."
+	rv "Wait, I got it."
+	rv "It’s bittersweet, kind of."
+	rv "...Geez, that was cheesy. Don’t tell anyone I said that."
+	li "Haha, I won’t tell."
+
+Menu 2
+(1) "Is it a lot?" [neutral]
+	First choice (humor -1, romantic +2)
+	rv "Haha, very funny, [pg]...I think."
+	"Yep, sarcasm."
+	rv "Well, no matter how much, I’ll listen to it. You can count on that."
+
+	Second choice (romantic +1)
+	rv "Well, no matter how much, I’ll listen to it. You can count on that."
+
+(2) "I’m looking forward to it." [pg picked best]
+	First choice (romantic +2)
+	rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that."
+
+	Second choice (caring +2)
+	rv "Don't worry, we'll listen."
+
+(3) "Wonder what it could be..." [pg picked second best]
+	First choice (caring +2)
+	rv "Don't worry, we'll listen."
+
+	Third choice (humor +1, romantic +2)
+	rv "Hmm, I wonder, too."
+	"Hmm."
+	rv "Hmm."
+	rv "Well, we'll listen. Don't worry."
+----------
+	
+	
