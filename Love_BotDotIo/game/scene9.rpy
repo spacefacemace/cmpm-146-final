@@ -10,6 +10,9 @@
 
 label scene9:
 
+    #image bens_house = Frame("")
+    #image out_bens_house = Frame("")
+
     scene bens_house
 
     show cf at right
@@ -150,11 +153,12 @@ label scene9:
             li "...What a mood we’re in. Let’s change that."
 
         # 1 pt for li->pg
-        "That’s the plan.":
+        "I hope so.":
             $ state[0] += 1
             li "...What a mood we’re in. Let’s change that."
 
-        "2 pts for li->pg":
+        # 2 pts for li->pg
+        "That’s the plan.":
             $ state[0] += 2
             li "...What a mood we’re in. Let’s change that."
 

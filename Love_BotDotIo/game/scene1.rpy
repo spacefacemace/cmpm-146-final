@@ -3,6 +3,9 @@
 
 label scene1:
 
+    image that_one_food_truck = Frame("that_one_food_truck.png")
+    image picnic_tables = Frame("picnic_tables.jpg")
+
     scene that_one_food_truck
 
     show cf

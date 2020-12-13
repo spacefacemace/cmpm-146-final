@@ -11,6 +11,7 @@
 
 label scene4:
 
+    image pg_cf_rm_apartment = Frame("pg_cf_rm_apartment.jpg")
 
     # the stuff for the chess stuff in this scene.
     $ chess_win = False

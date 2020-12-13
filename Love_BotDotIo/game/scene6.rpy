@@ -3,6 +3,11 @@
 # rival_meter
 
 label scene6:
+
+    image sc_boardwalk = Frame("sc_boardwalk.jpg")
+    image inside_gondola = Frame("inside_gondola.jpg")
+    image funnel_cake_shop = Frame("funnel_cake_shop.jpg")
+
     $ interact_with_li = False
 
     # Define boardwalk image
@@ -96,7 +101,7 @@ label scene6:
         menu:
             "You could go with me.":
                 li "Oh... that sounds good!"
-                $ state += 4
+                $ state[0] += 4
                 jump li_pg_gondola
 
             "...":

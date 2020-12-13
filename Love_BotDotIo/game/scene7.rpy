@@ -9,6 +9,8 @@
 
 label scene7:
 
+    image second_stage = Frame("second_stage.jpg")
+
     scene second_stage
 
     show rv

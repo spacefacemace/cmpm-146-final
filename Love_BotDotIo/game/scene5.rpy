@@ -8,6 +8,8 @@
 
 label scene5:
 
+    image second_stage = Frame("second_stage.jpg")
+
     scene second_stage
 
     show cf at right
@@ -39,13 +41,13 @@ label scene5:
         "It could take some getting used to...":
             # best option for rv, points for li->rv
             $ state[1] += 5
-            rv "I’ll be fine, 100% -- I’m not the type to back down from a challenge."
+            rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
 
 
         "Maybe?":
             # best option for rv, points for li->rv
             $ state[1] += 5
-            rv "I’ll be fine, 100% -- I’m not the type to back down from a challenge."
+            rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
 
     rv "I’ve got a high level of tolerance with all the sports I’ve played, believe me."
 

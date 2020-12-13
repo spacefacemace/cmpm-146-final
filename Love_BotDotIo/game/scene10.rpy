@@ -3,6 +3,8 @@
 
 label scene10:
 
+    image quarry_amphitheatre = Frame("quarry_amphitheatre.jpg")
+
     scene quarry_amphitheatre
 
     show cf at right
