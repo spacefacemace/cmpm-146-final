@@ -10,8 +10,8 @@
 
 label scene9:
 
-    #image bens_house = Frame("studentlounge.jpg")
-    #image out_bens_house = Frame("out_bens_house.jpg")
+    image bens_house = Frame("studentlounge.jpg")
+    image out_bens_house = Frame("out_bens_house.jpg")
 
     scene bens_house
 
@@ -59,7 +59,6 @@ label scene9:
         "I’m not sure what to think.":
             li "I totally get it! You go through all this and then..."
             rv "Just like that, it’s about to end."
-            $ state[1] += 3
             li "Yep, exactly."
 
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"

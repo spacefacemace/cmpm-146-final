@@ -42,7 +42,6 @@ label scene4:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,2,0,0,0,0]))
             "{i}[response]{/i}"
             # best option for rv, points for li->rv
-            $ state[1] += 5
             rv "Don’t you think you should clean your place up a little?"
 
             menu:
@@ -254,7 +253,6 @@ label scene4:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([4,-1,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
             rv "Those are some big words..."
-            $ state[1] += 3
             rv "If that’s the case, then you wouldn’t mind playing a game against me, would you?"
 
     menu:
