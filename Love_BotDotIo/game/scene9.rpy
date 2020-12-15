@@ -10,8 +10,8 @@
 
 label scene9:
 
-    #image bens_house = Frame("")
-    #image out_bens_house = Frame("")
+    #image bens_house = Frame("studentlounge.jpg")
+    #image out_bens_house = Frame("out_bens_house.jpg")
 
     scene bens_house
 
