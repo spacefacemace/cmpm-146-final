@@ -599,8 +599,8 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
-               li "You will? Thanks!"
-               "{i}Damn, I could have done that.{/i}"
+                li "You will? Thanks!"
+                "{i}Damn, I could have done that.{/i}"
 
 
         "Yeah, maybe next time.":
@@ -623,8 +623,8 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
-               li "You will? Thanks!"
-               "{i}Damn, I could have done that.{/i}"
+                li "You will? Thanks!"
+                "{i}Damn, I could have done that.{/i}"
 
     "{i}But that was a good game overall.{/i}"
 
