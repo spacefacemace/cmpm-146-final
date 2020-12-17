@@ -15,7 +15,7 @@ define sesh = Character(_('Prof._Sesh'))
 
 init python:
     import random
-    import numpy as np 
+    import numpy as np
     from sklearn.linear_model import LinearRegression
     scenes = []
 
@@ -62,14 +62,14 @@ init python:
             elif(rate >= 7):
                 return "She loved that response"
 
-    interest = [random.randrange(-5, 5, 1), #Confidence
-                random.randrange(-5, 5, 1), #Empathy
-                random.randrange(-5, 5, 1), #Responsibility
-                random.randrange(-5, 5, 1), #Romantic
-                random.randrange(-5, 5, 1), #Caring
+    interest = [random.randrange(-3, 5, 1), #Confidence
+                random.randrange(0, 5, 1), #Empathy
+                random.randrange(-2.5, 5, 1), #Responsibility
+                random.randrange(-4, 5, 1), #Romantic
+                random.randrange(-3, 4, 1), #Caring
                 random.randrange(-5, 5, 1), #Humor
-                random.randrange(-5, 5, 1), #Intelligence
-                random.randrange(-5, 5, 1), #Cool
+                random.randrange(-2, 3, 1), #Intelligence
+                random.randrange(-3, 4, 1), #Cool
                 random.randrange(-5, 5, 1),
                 random.randrange(-5, 5, 1)]
 
@@ -111,7 +111,7 @@ init python:
 
             dialogueOptions - List of the values associated with available dialogue options
             '''
-            
+
             '''
             Multivariate linear regression.
 
@@ -119,7 +119,7 @@ init python:
 
             Data organization: [([dialogueVal, ...], responseVal), ...]
             '''
-            dialogueValues = [i[0] for i in self.sceneResults] 
+            dialogueValues = [i[0] for i in self.sceneResults]
             responseValues  = [j[1] for j in self.sceneResults]
             if len(dialogueOptions) != len(responseValues):
                 raise ValueError("Data in dialogueValues and responseValues not the same size")
@@ -160,7 +160,7 @@ init python:
                     else:
                         bestOption = [i for i in option]
                         prevDiffs = [j for j in diffs]
-            
+
             # Return the best choice corresponding to an available dialogue option for Rival
             return bestOption
 
