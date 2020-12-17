@@ -45,7 +45,7 @@ label scene5:
                 $ rv_state[7] += 1
                 rv "Yup. I’m not the type to back down from a challenge."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[0] += 2
                 $ rv_state[7] += 3
                 rv "And I agree with [pg]. I’m not the type to back down from a challenge."
@@ -63,7 +63,7 @@ label scene5:
                 $ rv_state[4] -= 2
                 rv "I’ll be fine, 100% -- I’m not the type to back down from a challenge."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[0] += 2
                 $ rv_state[4] += 3
                 rv "Hey, I'm here for support, [pg]."
@@ -102,7 +102,7 @@ label scene5:
                 rv "...Well I guess I might have left you out there for a bit. Sorry."
                 rv "I don’t doubt that you can put in the work."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 1
                 rv "Didn't mean to leave you out. I don't doubt that you can put in the work."
@@ -118,7 +118,7 @@ label scene5:
                 rv "...Well I guess I might have left you out there for a bit. Sorry."
                 rv "I don’t doubt that you can put in the work."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 1
                 rv "Didn't mean to leave you out. I don't doubt that you can put in the work."
@@ -171,7 +171,7 @@ label scene5:
                 $ rv_state[7] += 1
                 rv "We’d help if it were 100, right, [pg]?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[0] += 1
                 rv "I agree, it's not bad."
 
@@ -185,7 +185,7 @@ label scene5:
                 $ rv_state[7] += 2
                 rv "We’d help if it were 100, right, [pg]?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] += 2
                 rv "Don't be so down on yourself, [pg]. We can do it."
@@ -204,7 +204,7 @@ label scene5:
                 $ rv_state[7] += 2
                 rv "We’d help if it were 100, right, [pg]?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] += 2
                 rv "Don't be so down on yourself, [pg]. We can do it."
