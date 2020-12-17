@@ -100,13 +100,13 @@ label scene8:
             "{i}[response]{/i}"
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,1,0,0],[0,0,0,0,3,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,1,0,0],[0,0,0,0,3,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 1
                 rv "[pg]’s right. It’s why we’re helping out."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 3
                 rv "[pg]’s right. It’s why we’re helping out."
                 rv "You gotta do your best while we're watching, too."
@@ -223,14 +223,14 @@ label scene8:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,4,0,0,3,0,0]))
             "{i}[response]{/i}"
             
-	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,2,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,2,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 1
                 $ rv_state[7] += 2
                 pg "Congratulations, [li], the show was a success!"
                 rv "Yep, and from me and [pg] -- here you go."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[4] += 2
                 pg "Congratulations, [li], the show was a success!"
@@ -244,14 +244,14 @@ label scene8:
             "{i}[response]{/i}"
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,2,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,2,2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 1
                 rv "Congrats on the show, [li]. I’d say it went pretty well?"
                 pg "Oh, here’s something for you."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[3] += 1
                 rv "Congrats on the show, [li]. I’d say it went pretty well?"
@@ -275,13 +275,13 @@ label scene8:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,3,0,0,0,0,1,0,0,0]))
             "{i}[response]{/i}"
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,1,0,0],[0,0,0,0,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,1,0,0],[0,0,0,0,2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] += 1
                 $ rv_state[4] += 1
                 rv "Yeah, what [pg] said. It’s nice that the last show went well."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 rv "Yeah, no worries. You should enjoy your final show, after all."
 
@@ -338,12 +338,12 @@ label scene8:
             "{i}[response]{/i}"
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,0,0,0,1,0,0],[0,0,0,0,1,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,0,0,0,1,0,0],[0,0,0,0,1,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] += 1
                 rv "Same here."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 1
                 rv "You have a way with words, [pg]."
                 rv "I have nothing to say except...well, same."
