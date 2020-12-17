@@ -1,0 +1,11 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 8: invalid syntax
+    pip2 install --target game/python-packages numpy
+                ^
+    
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Wed Dec 16 21:27:17 2020

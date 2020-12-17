@@ -5,7 +5,7 @@
 
 define e = Character(_('Eileen'))
 define li = Character(_('Love_Intrest'))
-define rv = Character(_('Rival'))
+define rv = Character(_('Chad'))
 define cf = Character(_('Childhood_Friend'))
 define rm = Character(_('Roommate'))
 define pg = Character(_('player_character'))
