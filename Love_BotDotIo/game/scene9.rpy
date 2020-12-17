@@ -52,14 +52,41 @@ label scene9:
             $ pg_state[6] -= 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,-1,0,0,0]))
             "{i}[response]{/i}"
-            rv "Well, yeah, but also...it’s bittersweet, kind of."
-            rv "...Geez, that was cheesy. Don’t tell anyone I said that."
-            li "Haha, I won’t tell."
+            $ rv_response = rival.findBestFit([0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[6] += 2
+                $ rv_state[1] += 1
+                li "I totally get it! You go through all this and then..."
+	            rv "Just like that, it’s about to end."
+	            li "Yep, exactly."
+
+            elif(rv_response == 2):
+                $ rv_state[1] += 1
+                $ rv_state[3] += 3
+                rv "Well if we're blanking..."
+	            rv "Wait, I got it."
+	            rv "It’s bittersweet, kind of."
+	            rv "...Geez, that was cheesy. Don’t tell anyone I said that."
+	            li "Haha, I won’t tell."
+
 
         "I’m not sure what to think.":
-            li "I totally get it! You go through all this and then..."
-            rv "Just like that, it’s about to end."
-            li "Yep, exactly."
+            $ rv_response = rival.findBestFit([0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[6] += 2
+                $ rv_state[1] += 1
+                li "I totally get it! You go through all this and then..."
+	            rv "Just like that, it’s about to end."
+	            li "Yep, exactly."
+
+            elif(rv_response == 2):
+                $ rv_state[1] += 1
+                $ rv_state[3] += 3
+                rv "Well if we're blanking..."
+	            rv "Wait, I got it."
+	            rv "It’s bittersweet, kind of."
+	            rv "...Geez, that was cheesy. Don’t tell anyone I said that."
+	            li "Haha, I won’t tell."
 
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"
 
@@ -69,22 +96,49 @@ label scene9:
             $ pg_state[4] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Well, no matter how much, I’ll listen to it. You can count on that." # a lot of points for li->rv
+            $ rv_response = rival.findBestFit([0,0,0,2,0,-1,0,0,0,0],[0,0,0,1,0,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[5] -= 1
+                $ rv_state[3] += 3
+                rv "Haha, very funny, [pg]...I think."
+	            pg "Yep, sarcasm."
+	            rv "Well, no matter how much, I’ll listen to it. You can count on that."
 
+            elif(rv_response == 2):
+                $ rv_state[3] += 1
+                rv "Well, no matter how much, I’ll listen to it. You can count on that."
 
         # best option, points for li->pg
         "I’m looking forward to it.":
             $ pg_state[4] += 3
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
+            $ rv_response = rival.findBestFit([0,0,0,2,0,0,0,0,0,0],[0,0,0,0,2,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[3] += 2
+                rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that."
+
+            elif(rv_response == 2):
+                $ rv_state[4] += 2
+                rv "Don't worry, we'll listen."
 
         # 1-2 points for li->pg
         "Wonder what it could be...":
             $ pg_state[5] += 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,2,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that." # (maybe like 2-3 li->rv)
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,0,0,0],[0,0,0,2,0,1,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 2
+                rv "Don't worry, we'll listen."
+
+            elif(rv_response == 2):
+                $ rv_state[5] += 1
+                $ rv_state[3] += 2
+                rv "Hmm, I wonder, too."
+	            pg "Hmm."
+                rv "Hmm."
+                rv "Well, we'll listen. Don't worry."
 
 
     li "Oh, an audience? Then I’ll make sure it’s good."
