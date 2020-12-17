@@ -244,15 +244,28 @@ label scene6:
 
         if not interact_with_li:
             pg "{i}Be more forward. Alright, let’s do this.{/i}"
+
         menu:
+
             "What about those funnel cakes?":
                 $ pg_state[0] += 1
                 $ pg_state[7] += 1
                 li "Funnel cakes sound good right now! I haven’t had those in forever."
 
             "Same here.":
-                rv "What about that funnel cake place?"
-                li "I haven’t had those in forever -- let’s get those."
+                $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,2,0,0],[0,0,0,2,3,0,0,0,0,0])
+                if(rv_response == 1):
+                    $ rv_state[4] += 2
+                    $ rv_state[7] += 2
+                    rv "Same appetite, huh?"
+                    rv "What about that funnel cake place?"
+                    li "I haven’t had those in forever -- let’s get those."
+
+                 elif(rv_response == 2):
+                    $ rv_state[4] += 3
+                    $ rv_state[3] += 2
+                    rv "What about that funnel cake place?"
+                    li "I haven’t had those in forever -- let’s get those."
 
         # Switch background to funnel cake shop
         scene funnel_cake_shop
@@ -262,20 +275,49 @@ label scene6:
         show rv at left
 
         menu:
+
             "I can pay for you, [li].":
                 $ pg_state[0] += 3
                 $ pg_state[7] += 4
                 $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,0,0,0,4,0,0]))
                 "{i}[response]{/i}"
-                li "Are you sure about that, [pg]?"
-                pg "Yeah, I don’t mind."
-                rv "Then count me in, too."
-                cf "[pg] is paying? Nice."
-                pg "...Alright, alright."
-                pg "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+                
+                $ rv_response = rival.findBestFit([0,0,-1,0,0,2,0,0,0,0],[0,0,-1,0,2,0,0,0,0],[0,0,2,0,-3,0,0,0,0,0])
+                if(rv_response == 1):
+                    $ rv_state[2] -= 1
+                    $ rv_state[5] += 2
+                    li "Are you sure about that, [pg]?"
+                    pg "Yeah, I don’t mind."
+                    rv "Then count me in, too."
+                    cf "[pg] is paying? Nice."
+                    pg "...Alright, alright."
+                    "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
 
-            "Wonder what I should get…":
+                 elif(rv_response == 2):
+                    $ rv_state[2] -= 1
+                    $ rv_state[4] += 2
+                    li "Are you sure about that, [pg]?"
+                    pg "Yeah, I don’t mind."
+                    rv "Well that's nice of you, [pg]."
+                    pg "Yes...you want me to pay for yours, too?"
+                    cf "[pg] is paying? Nice."
+                    pg "...Alright, alright. I guess it's all on me."
+                    "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+
+                 elif(rv_response == 3):
+                    $ rv_state[4] -= 3
+                    $ rv_state[2] += 2
+                    rv "Hmph...I could do the same thing."
+                    pg "...But you didn't offer."
+                    rv "Right. Well, I guess you beat me to it. Wanna add my order, too?"
+                    cf "Count me in as well!"
+                    pg "...Alright, alright. I guess it's all on me."
+                    "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
+
+            "Wonder what I should get...":
                 $ pg_state[4] -= 1
+                $ rv_state[0] += 2
+                $ rv_state[7] += 3
                 rv "I can pay for you, [li]."
                 li "Woah, really? ...Thanks!"
                 pg "{i}...Missed opportunity there.{/i}"
