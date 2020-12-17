@@ -149,7 +149,7 @@ label scene1:
                 $ rv_state[6] -= 1
                 rv "...Maybe I'm just missing something. Whatever."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[7] += 1
                 rv "I may be missing something, but I won't argue with it."
