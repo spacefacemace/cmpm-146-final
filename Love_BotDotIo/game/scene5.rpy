@@ -38,7 +38,17 @@ label scene5:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,2,0,0,0,0,2,0,0]))
             "{i}[response]{/i}"
             # maybe some points for li->rv
-            rv "Same with me. I’m not the type to back down from a challenge."
+
+            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[2,0,0,0,0,0,0,3,0,0])
+            if(rv_response == 1):
+                $ rv_state[0] += 3
+                $ rv_state[7] += 1
+                rv "Yup. I’m not the type to back down from a challenge."
+
+             elif(rv_response == 2):
+                $ rv_state[0] += 2
+                $ rv_state[7] += 3
+                rv "And I agree with [pg]. I’m not the type to back down from a challenge."
 
 
         "It could take some getting used to...":
@@ -46,7 +56,18 @@ label scene5:
             $ pg_state[7] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,0,-2,0,0]))
             "{i}[response]{/i}"
-            rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
+
+            $ rv_response = rival.findBestFit([2,0,0,0,-2,0,0,0,0,0],[2,0,0,0,3,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[0] += 2
+                $ rv_state[4] -= 2
+                rv "I’ll be fine, 100% -- I’m not the type to back down from a challenge."
+
+             elif(rv_response == 2):
+                $ rv_state[0] += 2
+                $ rv_state[4] += 3
+                rv "Hey, I'm here for support, [pg]."
+                rv "Besides, I’m not the type to back down from a challenge."
 
 
         "Maybe?":
@@ -55,6 +76,7 @@ label scene5:
             $ pg_state[2] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([-3,0,-2,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
+            $ rv_state[0] += 2
             rv "I’ll be fine, 100%% -- I’m not the type to back down from a challenge."
 
     rv "I’ve got a high level of tolerance with all the sports I’ve played, believe me."
@@ -73,14 +95,34 @@ label scene5:
             "{i}[response]{/i}"
             # some points for li->rv
 
-            rv "Of course I won’t count you out."
-            rv "...Well I guess I might have left you out there for a bit. Sorry."
-            rv "I don’t doubt that you can put in the work."
+            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] -= 2
+                $ rv_state[7] += 2
+                rv "...Well I guess I might have left you out there for a bit. Sorry."
+                rv "I don’t doubt that you can put in the work."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 2
+                $ rv_state[7] += 1
+                rv "Didn't mean to leave you out. I don't doubt that you can put in the work."
+                rv "I like the confidence, though."
 
 
         "I’m here too, [rv].":
-            rv "...Well I guess I might have left you out there for a bit. Sorry."
-            rv "I don’t doubt that you can put in the work."
+            
+            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] -= 2
+                $ rv_state[7] += 2
+                rv "...Well I guess I might have left you out there for a bit. Sorry."
+                rv "I don’t doubt that you can put in the work."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 2
+                $ rv_state[7] += 1
+                rv "Didn't mean to leave you out. I don't doubt that you can put in the work."
+                rv "I like the confidence, though."
 
 
         "It looks like [rv]’s got this whole show covered...":
@@ -89,6 +131,9 @@ label scene5:
             $ pg_state[7] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,0,0,0,-2,0,0]))
             "{i}[response]{/i}"
+
+            $ rv_state[0] += 3
+
             rv "...Are backing out of this?"
             rv "No, you just made it seem like you got it, you know. I’m here too."
             rv "...Well I guess I might have left you out there for a bit. Sorry."
@@ -120,14 +165,30 @@ label scene5:
             "{i}[response]{/i}"
             # some points for li->rv
 
-            rv "We’d help if it were 100, right, [pg]?"
-            "I don’t doubt that you can put in the work."
+            $ rv_response = rival.findBestFit([2,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[0] += 2
+                $ rv_state[7] += 1
+                rv "We’d help if it were 100, right, [pg]?"
+
+             elif(rv_response == 2):
+                $ rv_state[0] += 1
+                rv "I agree, it's not bad."
 
 
         "20 is...":
             # best option for rv, points for li->rv
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
-            "I don’t doubt that you can put in the work."
+            
+            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+            if(rv_response == 1):
+                $ rv_state[0] += 3
+                $ rv_state[7] += 2
+                rv "We’d help if it were 100, right, [pg]?"
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 3
+                $ rv_state[7] += 2
+                rv "Don't be so down on yourself, [pg]. We can do it."
 
 
         "It’s a lot.":
@@ -136,8 +197,17 @@ label scene5:
             $ pg_state[7] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,0,0,-2,0,0]))
             "{i}[response]{/i}"
-            rv "Not bad at all. We’d help if it were 100, right, [pg]?"
-            "I don’t doubt that you can put in the work."
+
+            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+            if(rv_response == 1):
+                $ rv_state[0] += 3
+                $ rv_state[7] += 2
+                rv "We’d help if it were 100, right, [pg]?"
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 3
+                $ rv_state[7] += 2
+                rv "Don't be so down on yourself, [pg]. We can do it."
 
     cf "We’ll make sure the group listens to you guys, too. They can get...rowdy, but I’m sure you two can handle it."
 
