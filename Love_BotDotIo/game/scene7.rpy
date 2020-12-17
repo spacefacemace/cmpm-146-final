@@ -61,13 +61,13 @@ label scene7:
         "I don’t think that’s a good idea...":
             $ pg_state[2] += 1
             
-	    $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
                 rv "Ugh, you're right."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[3] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
@@ -78,13 +78,13 @@ label scene7:
             $ pg_state[2] += 3
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
                 rv "Ugh, you're right."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[2] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
@@ -95,13 +95,13 @@ label scene7:
             $ pg_state[2] += 2
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-2,0,0],[0,0,-2,0,0,0,0,2,0,0])
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
                 rv "Ugh, you're right."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[2] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
@@ -134,13 +134,13 @@ label scene7:
 
         "I think they get it, [rv].":
             
-	    $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,2,0,0],[0,0,2,0,-2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,2,0,0],[0,0,2,0,-2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
                 rv "i guess I was a little harsh. Sorry about that."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[2] -= 2
                 rv "...Right, right."
@@ -151,13 +151,13 @@ label scene7:
             $ pg_state[1] += 2
             # 1-2 points for li->rv
             
-	    $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,2,0,0],[0,0,2,0,-2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,2,0,0],[0,0,2,0,-2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
                 rv "i guess I was a little harsh. Sorry about that."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[2] -= 2
                 rv "...Right, right."
@@ -168,14 +168,14 @@ label scene7:
         "You don’t need to be so harsh.":
             $ pg_state[1] += 3
             
-	    $ rv_response = rival.findBestFit([0,0,2,0,-2,0,0,0,0,0],[0,0,0,0,-3,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([0,0,2,0,-2,0,0,0,0,0],[0,0,0,0,-3,0,0,2,0,0])
             if(rv_response == 1):
                 $ rv_state[4] -= 2
                 $ rv_state[2] += 2
                 rv "...Right, right."
                 rv "I guess I was a little harsh. Sorry about that."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 2
                 rv "I’m not trying to be?"
@@ -200,12 +200,12 @@ label scene7:
         "Kind of...?":
             $ pg_state[2] -= 2
             
-	    $ rv_response = rival.findBestFit([0,0,0,0,3,0,0,0,0,0],[0,0,1,0,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,3,0,0,0,0,0],[0,0,1,0,2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 3
                 rv "Yeah...[li] said something about it a few days ago."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[2] += 1
                 $ rv_state[4] += 2
                 rv "Come on, at least pay a little attention."
@@ -216,12 +216,12 @@ label scene7:
             $ pg_state[2] -= 2
             
 
-	    $ rv_response = rival.findBestFit([0,0,0,0,3,0,0,0,0,0],[0,0,1,0,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([0,0,0,0,3,0,0,0,0,0],[0,0,1,0,2,0,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 3
                 rv "Yeah...[li] said something about it a few days ago."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[2] += 1
                 $ rv_state[4] += 2
                 rv "Come on, at least pay a little attention."
@@ -271,14 +271,14 @@ label scene7:
             "{i}[response]{/i}"
             # 1-2 points for li->rv
             
-	    $ rv_response = rival.findBestFit([2,0,0,0,0,0,0,2,0,0],[3,0,0,0,0,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([2,0,0,0,0,0,0,2,0,0],[3,0,0,0,0,0,0,1,0,0])
             if(rv_response == 1):
                 $ rv_state[7] += 2
                 $ rv_state[0] += 2
                 rv "Exactly. Though it wouldn’t hurt if we did better tomorrow."
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
@@ -291,14 +291,14 @@ label scene7:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,1,0,0,0,0,0]))
             "{i}[response]{/i}"
             
-	    $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,2,0,0,0])
+            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,2,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[6] += 2
                 $ rv_state[0] += 1
                 rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
@@ -309,14 +309,14 @@ label scene7:
             rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
             rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
-	    $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,2,0,0,0])
+            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,2,0,0,0])
             if(rv_response == 1):
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[6] += 2
                 $ rv_state[0] += 1
                 rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
