@@ -264,6 +264,13 @@ label start:
 
     "This Love Interest has multipliers [interest]"
 
+    # Prompt the player to enter a name
+    $ player_character = renpy.input("Type in a name.")
+    $ player_character = player_character.strip()
+    # Or result to default name
+    if player_character == "":
+        $ player_character = "Bobby Joe"
+
     jump scene1
 label after1:
     jump scene2
