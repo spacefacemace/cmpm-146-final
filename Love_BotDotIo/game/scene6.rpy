@@ -261,7 +261,7 @@ label scene6:
                     rv "What about that funnel cake place?"
                     li "I haven’t had those in forever -- let’s get those."
 
-                 elif(rv_response == 2):
+                elif(rv_response == 2):
                     $ rv_state[4] += 3
                     $ rv_state[3] += 2
                     rv "What about that funnel cake place?"
@@ -293,7 +293,7 @@ label scene6:
                     pg "...Alright, alright."
                     "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
 
-                 elif(rv_response == 2):
+                elif(rv_response == 2):
                     $ rv_state[2] -= 1
                     $ rv_state[4] += 2
                     li "Are you sure about that, [pg]?"
@@ -304,7 +304,7 @@ label scene6:
                     pg "...Alright, alright. I guess it's all on me."
                     "{i}I ended up paying for more than what I expected but...it’s fine.{/i}"
 
-                 elif(rv_response == 3):
+                elif(rv_response == 3):
                     $ rv_state[4] -= 3
                     $ rv_state[2] += 2
                     rv "Hmph...I could do the same thing."
