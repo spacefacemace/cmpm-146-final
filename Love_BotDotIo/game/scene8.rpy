@@ -35,7 +35,19 @@ label scene8:
             $ pg_state[4] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,1,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+            
+
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-1,0,0],[0,0,0,0,3,0,0,-2,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 2
+                $ rv_state[7] -= 1
+                rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 3
+                $ rv_state[7] -= 2
+                rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+                rv "But I can get where you're coming from, [pg]."
 
         "You think you’ll be okay?":
             #points for li->rv
@@ -43,6 +55,18 @@ label scene8:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
             rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+
+            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-1,0,0],[0,0,0,0,3,0,0,-2,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 2
+                $ rv_state[7] -= 1
+                rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 3
+                $ rv_state[7] -= 2
+                rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+                rv "But I can get where you're coming from, [pg]."
 
         # best option, points for li->pg
         "You’re going to do great. You’ve worked really hard on this.":
@@ -74,7 +98,19 @@ label scene8:
             $ pg_state[4] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([2,0,0,2,1,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "[pg]’s right. It’s why we’re helping out."
+            
+
+	    $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,1,0,0],[0,0,0,0,3,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 2
+                $ rv_state[7] += 1
+                rv "[pg]’s right. It’s why we’re helping out."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 3
+                rv "[pg]’s right. It’s why we’re helping out."
+                rv "You gotta do your best while we're watching, too."
+                li "Haha, of course!"
 
 
     rv "Anyway, your music’s queued up, [li]. Is she good to go, [pg]?"
@@ -186,15 +222,41 @@ label scene8:
             $ pg_state[4] += 4
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,4,0,0,3,0,0]))
             "{i}[response]{/i}"
-            "Congratulations, [li], the show was a success!"
-            rv "Yep, and from me and [pg] -- here you go."
+            
+	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,2,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 1
+                $ rv_state[7] += 2
+                pg "Congratulations, [li], the show was a success!"
+                rv "Yep, and from me and [pg] -- here you go."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 2
+                $ rv_state[4] += 2
+                pg "Congratulations, [li], the show was a success!"
+                rv "You beat me to it."
+                rv "Anyway, congrats, [li]. From me and [pg] -- here you go."
+
 
         "Greet [li].":
             $ pg_state[4] -= 3
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-3,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Congrats on the show, [li]. I’d say it went pretty well?" # points for li->rv
-            "Oh, here’s something for you."
+            
+
+	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,2,2,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[4] += 2
+                $ rv_state[7] += 1
+                rv "Congrats on the show, [li]. I’d say it went pretty well?"
+                pg "Oh, here’s something for you."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 2
+                $ rv_state[3] += 1
+                rv "Congrats on the show, [li]. I’d say it went pretty well?"
+                rv "[pg] and I have something for you."
+                pg "Yup, here it is."
 
     li "Flowers? You shouldn’t have."
 
@@ -212,6 +274,16 @@ label scene8:
             $ pg_state[6] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,3,0,0,0,0,1,0,0,0]))
             "{i}[response]{/i}"
+
+	    $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,1,0,0],[0,0,0,0,2,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[7] += 1
+                $ rv_state[4] += 1
+                rv "Yeah, what [pg] said. It’s nice that the last show went well."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 2
+                rv "Yeah, no worries. You should enjoy your final show, after all."
 
         "It’s no big deal.":
             rv "Yeah, no worries. You should enjoy your final show, after all." # a lot of points for li->rv
@@ -264,7 +336,17 @@ label scene8:
             $ pg_state[5] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,1,0,2,0,0]))
             "{i}[response]{/i}"
-            rv "Same here." # give li->rv like one pity point he's trying
+            
+
+	    $ rv_response = rival.findBestFit([0,0,0,0,0,0,0,1,0,0],[0,0,0,0,1,0,0,0,0,0])
+            if(rv_response == 1):
+                $ rv_state[7] += 1
+                rv "Same here."
+
+             elif(rv_response == 2):
+                $ rv_state[4] += 1
+                rv "You have a way with words, [pg]."
+                rv "I have nothing to say except...well, same."
 
         "Right, the after-party...":
             cf "Did you forget? Good thing we’re going together, then."
