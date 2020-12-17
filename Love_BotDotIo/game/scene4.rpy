@@ -38,17 +38,17 @@ label scene4:
                 $ rv_state[1] -= 2
                 rv "...I sure hope so."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 2
                 $ rv_state[2] -= 2
                 rv "Well if it makes you feel better, my place kinda looks like this, too."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
                 rv "I'd never let my place get to this point."
 
-             elif(rv_response == 4):
+            elif(rv_response == 4):
                 $ rv_state[7] += 3
                 rv "Maybe I could come over and help. We are sorta neighbors, after all."
                 rv "Just not in the morning. I'm at the gym during that time."
@@ -66,13 +66,13 @@ label scene4:
                 $ rv_state[2] += 2
                 rv "Don’t you think you should clean your place up a little?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 2
                 $ rv_state[2] -= 2
                 rv "Well if it makes you feel better, my place kinda looks like this, too."
                 rv "But don't you think you should clean up a bit?"
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[1] += 2
                 rv "Well...we've all been there with this sort of thing."
                 rv "Don't you think you should clean up, though?"
@@ -103,13 +103,13 @@ label scene4:
                 $ rv_state[2] += 2
                 rv "Don’t you think you should clean your place up a little?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 2
                 $ rv_state[2] -= 2
                 rv "Well if it makes you feel better, my place kinda looks like this, too."
                 rv "But don't you think you should clean up a bit?"
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[1] += 2
                 rv "Well...we've all been there with this sort of thing."
                 rv "Don't you think you should clean up, though?"
@@ -154,13 +154,13 @@ label scene4:
                 $ rv_state[7] += 2
                 rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "You know him well, don't you?"
                 rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[4] += 3
                 $ rv_state[7] += 2
                 rv "Has he been at it all day?"
@@ -178,13 +178,13 @@ label scene4:
                 $ rv_state[7] += 2
                 rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "You know him well, don't you?"
                 rv "Why don’t you go get him, [pg]? See if he wants to hang out."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[4] += 3
                 $ rv_state[7] += 2
                 rv "Has he been at it all day?"
@@ -229,12 +229,12 @@ label scene4:
                 $ rv_state[2] += 3
                 rv "Shouldn't we clear the table first?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[2] += 2
                 $ rv_state[7] += 1
                 rv "We should probably clear the table first."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[2] += 2
                 $ rv_state[5] += 1
                 rv "Nice try. We should probably clear the table first."
@@ -253,7 +253,7 @@ label scene4:
                 $ rv_state[2] += 3
                 rv "Shouldn't we clear the table first?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[2] += 2
                 $ rv_state[7] += 1
                 rv "We should probably clear the table first."
@@ -324,14 +324,14 @@ label scene4:
                 $ rv_state[6] += 2
                 rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[0] += 2
                 $ rv_state[6] -= 1
                 rv "Well, my dad taught me, and he was a pretty good player."
                 rv "He beat me a lot, but I got better because of it."
 
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[0] += 2
                 $ rv_state[6] += 1
                 rv "Huh. Didn't expect you to ask me."
@@ -351,14 +351,14 @@ label scene4:
                 $ rv_state[6] += 2
                 rv "Of course, and I’m good at it, too. My dad taught me how to play, and it was hard to beat him."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[0] += 2
                 $ rv_state[6] -= 1
                 rv "Well, my dad taught me, and he was a pretty good player."
                 rv "He beat me a lot, but I got better because of it."
 
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[0] += 2
                 $ rv_state[6] += 1
                 rv "Huh. Didn't expect you to ask me."
@@ -378,7 +378,7 @@ label scene4:
                 $ rv_state[6] += 2
                 rv "Because I know how to play well? I had to get good if I wanted to beat my dad, and he had a really high score."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] -= 2
                 $ rv_state[6] += 2
                 rv "Woah."
@@ -594,7 +594,7 @@ label scene4:
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 1
                 $ rv_state[7] += 3
                 rv "Woah."
@@ -618,7 +618,7 @@ label scene4:
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 1
                 $ rv_state[7] += 3
                 rv "Woah."
