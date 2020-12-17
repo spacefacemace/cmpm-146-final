@@ -244,6 +244,8 @@ init python:
             self.appendSceneResult((prediction[:10], LoveInterest.getResponse(bestOption)))
             return bestOption
 
+    rival = Rival()
+
 # The game starts here.
 
 label start:
