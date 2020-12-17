@@ -86,7 +86,7 @@ label scene2:
 
     li "Umm...I still don’t know. You both made very good points."
 
-    rv: “Well you have to decide on one."
+    rv "Well you have to decide on one."
 
     li "I know, but I think I still need time to think it over. Thanks anyway. You both have given me a lot to think about."
 
