@@ -43,7 +43,7 @@ label scene8:
                 $ rv_state[7] -= 1
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] -= 2
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
@@ -62,7 +62,7 @@ label scene8:
                 $ rv_state[7] -= 1
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] -= 2
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
