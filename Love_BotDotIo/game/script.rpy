@@ -2,12 +2,12 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
+define player_character = ''
 define li = Character(_('Anabelle_Willow'))
 define rv = Character(_('Chad'))
 define cf = Character(_('Joshua'))
 define rm = Character(_('Vernon'))
-define pg = Character(_('player_character'))
+define pg = Character(_(player_character))
 define pat = Character(_('Prof._Pat'))
 define sesh = Character(_('Prof._Sesh'))
 
@@ -265,6 +265,13 @@ label start:
     $ rv_state = [0,0,0,0,0,0,0,0,0,0]
 
     "This Love Interest has multipliers [interest]"
+
+    # Prompt the player to enter a name
+    $ player_character = renpy.input("Type in a name.")
+    $ player_character = player_character.strip()
+    # Or result to default name
+    if player_character == "":
+        $ player_character = "Bobby Joe"
 
     jump scene1
 label after1:
