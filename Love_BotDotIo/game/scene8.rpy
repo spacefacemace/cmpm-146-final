@@ -87,9 +87,31 @@ label scene8:
 
     "{i}We’ve seen this a million times, but it’s as captivating as the first time.{/i}"
 
+    if LoveInterest.getResponse(rv_state) > LoveInterest.getResponse(pg_state):
+        # rival's song is picked, rival gets some big points
+
+        "{i}When [li] said she was picking [rv]'s song, he looked really proud.{/i}"
+
+        "{i}I mean, I would be, too.{/i}"
+
+        "{i}To be on [li]'s side is pretty critical at this point.{/i}"
+
+        "{i}Well, even if it's not mine, it's fine. I mean, I'm here -- I still want to support her.{/i}"
+
+    else: # player's song is picked, player gets some big points
+
+        "{i}I'm glad she picked my song. It feels nice to be on [li]'s good side.{/i}"
+
+        "{i}Although [rv] did seem a little bummed about it.{/i}"
+
+        "{i}But we're rivals nonetheless. I think he understands.{/i}"
+
+        "{i}And I like what she did with the song. Of course I do.{/i}"
+
     "{i}[li] is good. She’s very passionate about it, and that’s what makes it so interesting to watch.{/i}"
 
     "{i}You can really tell that this is one of her favorite things to do.{/i}"
+    
 
     rv "...Psst. Hey."
 
