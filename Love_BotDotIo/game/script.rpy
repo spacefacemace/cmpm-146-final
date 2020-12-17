@@ -3,11 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character(_('Eileen'))
-define li = Character(_('Love_Intrest'))
+define li = Character(_('Anabelle_Willow'))
 define rv = Character(_('Chad'))
-define cf = Character(_('Childhood_Friend'))
-define rm = Character(_('Roommate'))
+define cf = Character(_('Joshua'))
+define rm = Character(_('Vernon'))
 define pg = Character(_('player_character'))
 define pat = Character(_('Prof._Pat'))
 define sesh = Character(_('Prof._Sesh'))
@@ -253,20 +252,12 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
-
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
 
     # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
 
     $ pg_state = [0,0,0,0,0,0,0,0,0,0]
     $ rv_state = [0,0,0,0,0,0,0,0,0,0]
