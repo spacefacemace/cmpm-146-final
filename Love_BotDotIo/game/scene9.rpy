@@ -57,17 +57,17 @@ label scene9:
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
                 li "I totally get it! You go through all this and then..."
-	            rv "Just like that, it’s about to end."
-	            li "Yep, exactly."
+                rv "Just like that, it’s about to end."
+                li "Yep, exactly."
 
             elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[3] += 3
                 rv "Well if we're blanking..."
-	            rv "Wait, I got it."
-	            rv "It’s bittersweet, kind of."
-	            rv "...Geez, that was cheesy. Don’t tell anyone I said that."
-	            li "Haha, I won’t tell."
+                rv "Wait, I got it."
+                rv "It’s bittersweet, kind of."
+                rv "...Geez, that was cheesy. Don’t tell anyone I said that."
+                li "Haha, I won’t tell."
 
 
         "I’m not sure what to think.":
@@ -76,17 +76,17 @@ label scene9:
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
                 li "I totally get it! You go through all this and then..."
-	            rv "Just like that, it’s about to end."
-	            li "Yep, exactly."
+                rv "Just like that, it’s about to end."
+                li "Yep, exactly."
 
             elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[3] += 3
                 rv "Well if we're blanking..."
-	            rv "Wait, I got it."
-	            rv "It’s bittersweet, kind of."
-	            rv "...Geez, that was cheesy. Don’t tell anyone I said that."
-	            li "Haha, I won’t tell."
+                rv "Wait, I got it."
+                rv "It’s bittersweet, kind of."
+                rv "...Geez, that was cheesy. Don’t tell anyone I said that."
+                li "Haha, I won’t tell."
 
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"
 
@@ -101,8 +101,8 @@ label scene9:
                 $ rv_state[5] -= 1
                 $ rv_state[3] += 3
                 rv "Haha, very funny, [pg]...I think."
-	            pg "Yep, sarcasm."
-	            rv "Well, no matter how much, I’ll listen to it. You can count on that."
+                pg "Yep, sarcasm."
+                rv "Well, no matter how much, I’ll listen to it. You can count on that."
 
             elif(rv_response == 2):
                 $ rv_state[3] += 1
@@ -136,7 +136,7 @@ label scene9:
                 $ rv_state[5] += 1
                 $ rv_state[3] += 2
                 rv "Hmm, I wonder, too."
-	            pg "Hmm."
+                pg "Hmm."
                 rv "Hmm."
                 rv "Well, we'll listen. Don't worry."
 
