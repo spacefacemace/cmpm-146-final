@@ -48,14 +48,14 @@ label scene1:
                 $ rv_state[2] += 1
                 rv "That kind of thing happens."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] -= 2
                 $ rv_state[2] -= 1
                 rv "Then just leave early?"
                 "It was an important lecture, though?"
                 rv "...Sure."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[5] += 1
                 rv "I think it'd be a power move if you just left early. The professor will never see it coming."
                 li "Power move?"
@@ -80,7 +80,7 @@ label scene1:
                 rv "..."
                 rv "Well since you’re here, I might as well."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] -= 1
                 $ rv_state[5] += 1
                 rv "Hmm...don't want to."
@@ -88,7 +88,7 @@ label scene1:
                 rv "..."
                 rv "I'm kidding, I'm kidding."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[1] += 2
                 rv "Sure, sure. Just don't do it again, okay?"
 
@@ -110,11 +110,11 @@ label scene1:
                 rv "That’s incredibly...cheesy, but I get it."
                 li "I totally understand! I’d do the same thing."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 1
                 rv "You know what? I get it."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[1] -= 1
                 rv "Well next time, speed it up."
 
@@ -168,7 +168,7 @@ label scene1:
                 rv "Besides, you might be missing something around you right now."
                 "{i}That’s too on the nose.{/i}"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[7] += 2
                 rv "If it makes you feel better, [li], if you live in the present, you might notice something."
@@ -186,7 +186,7 @@ label scene1:
                 rv "Well, if it makes you feel better, [li], if you live in the present, you might notice something."
                 "{i}That’s too on the nose.{/i}"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 3
                 pg "...But I will now."
                 rv "Good for you, [pg]."
@@ -223,13 +223,13 @@ label scene1:
                 rv "..."
                 rv "Well if there's that sort of pressure, I might as well."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "Yeah, I was going to go and watch it anyway to support you guys."
                 rv "But helping is also support, right?"
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[4] += 2
                 rv "Yeah, I'm with [pg]. We could help."
 
@@ -246,14 +246,14 @@ label scene1:
                 $ rv_state[7] += 1
                 rv "That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "We?"
                 pg "Don't you want to?"
                 rv "...Of course! That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 1
                 rv "Do we have to?"
@@ -270,14 +270,14 @@ label scene1:
                 $ rv_state[2] += 3
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] += 4
                 $ rv_state[1] += 2
                 $ rv_state[2] += 2
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
                 rv "We'd get to hang out quite a bit, too."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[0] -= 2
                 rv "Yep, seems a little difficult."
                 cf "You guys could, I dunno...help out?"
@@ -309,14 +309,14 @@ label scene1:
                 $ rv_state[2] += 3
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[7] += 4
                 $ rv_state[1] += 2
                 $ rv_state[2] += 2
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
                 rv "We'd get to hang out quite a bit, too."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[0] -= 2
                 rv "Yep, seems a little difficult."
                 cf "You guys could, I dunno...help out?"
@@ -353,13 +353,13 @@ label scene1:
                 $ rv_state[4] += 2
                 rv "Agreed. If it all helps out, I'm fine with that."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[4] -= 1
                 $ rv_state[7] -= 2
                 rv "That's a little extra, don't you think?"
                 rv "...I guess I agree."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[3] += 3
                 rv "Yep, with us there, we might just make it the best show yet."
 
@@ -376,13 +376,13 @@ label scene1:
                 rv "Saying it like that...well, I might agree a bit."
                 rv "But a team effort isn't always bad, I guess."
 
-             elif(rv_response == 2):
+            elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[2] += 2
                 rv "The more the merrier, right?"
                 rv "A team effort is always better."
 
-             elif(rv_response == 3):
+            elif(rv_response == 3):
                 $ rv_state[2] += 2
                 $ rv_state[4] -= 2
                 rv "What a...choice set of words, [pg]."
