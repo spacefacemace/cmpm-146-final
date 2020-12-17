@@ -15,6 +15,9 @@ label scene2:
             li "Oh. Hey. Good timing."
 
         "Is anything troubling you?": # best option for li->pg
+            $ pg_state[1] = pg_state[1] + 1
+            $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,0,0,0,0,0,0,0,0]))
+            "{i}[response]{/i}"
             li "It's nothing much. A bit silly, really."
 
     "What’s up?"
@@ -95,5 +98,3 @@ label scene2:
     rv "Guess we’ll just have to wait and see."
 
     jump after2
-
-

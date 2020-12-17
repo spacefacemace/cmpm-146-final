@@ -3582,4 +3582,10 @@ Texture testing:
 - Hardware max texture size: 32768
 - 64px textures work.
 - 128px textures work.
-- 256px texture
+- 256px textures work.
+- 512px textures work.
+- 1024px textures work.
+- 2048px textures work.
+Root FBO is: 0
+FBO Maximum Texture Size: 2048
+Total time until interface ready: 1377.90900016s
