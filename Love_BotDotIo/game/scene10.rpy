@@ -38,8 +38,10 @@ label scene10:
     show li_happyblush at left
     li "I can’t help it, though -- doesn’t everyone get sappy with this sort of thing?"
 
+    show rv_smiling
+
     menu:
-        show rv_smiling
+
         "Yeah, it can’t be helped.":
             rv "I’m not good at that sort of stuff, but...today’s pretty special, so I’ll give you a pass, [li]."
 
