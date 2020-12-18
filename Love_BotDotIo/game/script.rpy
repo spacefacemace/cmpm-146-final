@@ -1,10 +1,10 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define player_character = ''
 define li = Character(_('Anabelle_Willow'))
-define rv = Character(_('Chad'))
+define rv = Character(_('Aaron'))
 define cf = Character(_('Joshua'))
 define rm = Character(_('Vernon'))
 define pg = Character(_(player_character))
