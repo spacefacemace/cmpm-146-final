@@ -19,8 +19,8 @@ label scene4:
 
     scene pg_cf_rm_apartment
 
-    show cf at right
-    show li_joy at left
+    show cfimg cf at right
+    show luvchar li_joy at left
     show rivchar rv
 
     cf "Don’t mind all the mess."
@@ -197,8 +197,8 @@ label scene4:
                 pg "Yep, I don't think I've seen him at all."
                 rv "Then why don’t you go get him, [pg]? See if he wants to hang out."
 
-    hide cf
-    show rm at right
+    hide cfimg cf
+    show roommate rm at right
 
     rm "Woah, there’s certainly more people here."
 
@@ -271,7 +271,7 @@ label scene4:
     # fade here?
 
     hide rivchar rv
-    show cf_happy
+    show cfimg cf_happy
 
     cf "Wow, that was exceptionally good."
 
@@ -285,17 +285,17 @@ label scene4:
 
     pg "[cf] usually doesn’t eat sushi, but I guess he couldn’t taste it considering he finished one and a half bottles of the cherry-flavored one?"
 
-    show cf_disappointed
+    show cfimg cf_disappointed
     cf "You know me too well, [pg]."
 
-    show cf
+    show cfimg cf
     cf "What was that?"
 
     rm "Oh, it’s my chess set. I was wondering where that went."
 
-    show cf_shocked
+    show cfimg cf_shocked
     cf "We had a chess set?"
-    show cf
+    show cfimg cf
 
     menu:
 
@@ -314,8 +314,8 @@ label scene4:
         "I didn’t know that, either.":
             rm "Yes, we had a chess set. Though I don’t know how to play it {i}well{/i}."
 
-    hide cf
-    show rv
+    hide cfimg cf
+    show rivchar rv
 
     rv "You’d be at some competition right now if you did."
 
@@ -394,12 +394,12 @@ label scene4:
                 $ rv_state[4] -= 2
                 $ rv_state[6] += 2
                 rv "Woah."
-                show rv_happy
+                show rivchar rv_happy
                 rv "You're right though..."
                 rv "I know how to play. I had to get good if I wanted to beat my dad, and he had a really high score."
 
 
-    show rv
+    show rivchar rv
     li "Do you know how to play, [pg]?"
 
     "{i}Do I...?{/i}"
@@ -556,7 +556,7 @@ label scene4:
     if chess_win:
 
         rv "Bad move, [pg]. I win."
-        show rv_smirking
+        show rivchar rv_smirking
 
         #li->rv big points, some points for rv->pg
         $ pg_state[0] = pg_state[0] - 2
@@ -564,7 +564,7 @@ label scene4:
         $ response = LoveInterest.textResponse(LoveInterest.getResponse([-2,0,0,0,0,0,0,-5,0,0]))
         "{i}[response]{/i}"
 
-        show rv_happy
+        show rivchar rv_happy
         rv "Good game, though. You caught me off guard a couple of times."
 
 
@@ -579,12 +579,12 @@ label scene4:
 
         # rv->pg some points, li->pg big points
 
-    show rv
+    show rivchar rv
     rm "That was...thrilling, yet not-so-thrilling at the same time."
 
     cf "Should have drank a bit more."
 
-    show li_happy at left
+    show luvint li_happy at left
     li "It was! Even if I wasn’t sure what was going on...[rv], [pg], you were both pretty cool!"
 
     li "If I learned how to play, maybe I could play next time..."
@@ -597,7 +597,7 @@ label scene4:
             $ pg_state[7] += 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,2,0,0]))
             "{i}[response]{/i}"
-            show li_happy2 at left
+            show luvint li_happy2 at left
             li "Awesome! You might have to go easy on me at first, haha."
 
         # maybe like 1-2 points for li->pg
@@ -609,7 +609,7 @@ label scene4:
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "I could teach you how to play."
-                show li_happy2 at left
+                show luvint li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -618,7 +618,7 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
-                show li_happy2 at left
+                show luvint li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -635,7 +635,7 @@ label scene4:
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "I could teach you how to play."
-                show li_happy2 at left
+                show luvint li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -644,7 +644,7 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
-                show li_happy2 at left
+                show luvint li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 

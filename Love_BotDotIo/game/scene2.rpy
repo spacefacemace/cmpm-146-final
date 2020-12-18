@@ -7,26 +7,26 @@ label scene2:
 
     scene parking_lot
 
-    show li_sad
+    show luvint li_sad
 
     li "Hmmmm...Maybe...No no no..."
 
     menu:
 
         "Hey there.":
-            show li_joy
+            show luvint li_joy
             li "Oh. Hey. Good timing."
 
         "Is anything troubling you?": # best option for li->pg
             $ pg_state[1] = pg_state[1] + 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
-            show li_tired
+            show luvint li_tired
             li "It's nothing much. A bit silly, really."
 
     pg "What’s up?"
 
-    show li_tired
+    show luvint li_tired
     li "I’m just not sure about what song to use for my segment of the dance show. I mean, I do have ideas in my head, but I just can’t decide on just one."
 
     pg "Can you list them out for me? Maybe I can help."
@@ -35,13 +35,13 @@ label scene2:
 
     pg "Well-."
 
-    show rv at right
+    show rivchar rv at right
 
     rv "Hey. What’s going on over here?"
 
     pg "Gah!"
 
-    show li_happy2
+    show luvint li_happy2
     li "Oh hi, [rv]!"
 
     pg "Where did you come from?"
@@ -51,14 +51,14 @@ label scene2:
     menu:
 
         "Could you have done so without sneaking up on us?":
-            show rv_sad at right
+            show rivchar rv_sad at right
             rv "Geez. Sorry. I’ll be more careful next time."
 
         "Cool. Maybe you could help us with something.":
             rv "Um, sure. What do you need my help with?"
 
-    show li_joy
-    show rv at right
+    show luvint li_joy
+    show rivchar rv at right
     li "Oh right. [pg] and I were just talking about which song I should use for the dance."
 
     rv "I’m listening."
@@ -96,12 +96,12 @@ label scene2:
 
     pg "So what do you think, [li]?"
 
-    show li_serious
+    show luvint li_serious
     li "Umm...I still don’t know. You both made very good points."
 
     rv "Well you have to decide on one."
 
-    show li_tired
+    show luvint li_tired
     li "I know, but I think I still need time to think it over. Thanks anyway. You both have given me a lot to think about."
 
     pg "So who won?"

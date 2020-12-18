@@ -8,7 +8,7 @@ label scene1:
 
     scene that_one_food_truck
 
-    show cf
+    show cfimg cf
 
     cf "There you are, [pg]! I already got the sandwich you like to get. Let’s go meet them!"
 
@@ -21,9 +21,9 @@ label scene1:
 
     scene picnic_tables
 
-    show cf at right
+    show cfimg cf at right
     show luvint li_happy at left
-    show rv
+    show rivchar rv
 
     "{i}There she is, [li]. Who knows how long I’ve had a crush on her -- well, I moved into the apartment complex we’re all at during the summer, so it’s some time in-between.{/i}"
 
@@ -165,14 +165,14 @@ label scene1:
                 $ rv_state[1] -= 2
                 $ rv_state[7] -= 1
                 li "Hmm, then I guess living in the present is some sort of bliss."
-                show rv_smirking
+                show rivchar rv_smirking
                 rv "Besides, you might be missing something around you right now."
                 "{i}That’s too on the nose.{/i}"
 
             elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[7] += 2
-                show rv_smirking
+                show rivchar rv_smirking
                 rv "If it makes you feel better, [li], if you live in the present, you might notice something."
                 "{i}That’s too on the nose.{/i}"
 
@@ -185,7 +185,7 @@ label scene1:
             if(rv_response == 1):
                 $ rv_state[1] += 2
                 $ rv_state[7] += 1
-                show rv_smirking
+                show rivchar rv_smirking
                 rv "Well, if it makes you feel better, [li], if you live in the present, you might notice something."
                 "{i}That’s too on the nose.{/i}"
 
@@ -193,14 +193,14 @@ label scene1:
                 $ rv_state[1] += 3
                 pg "...But I will now."
                 rv "Good for you, [pg]."
-                show rv_smirking
+                show  rivchar rv_smirking
                 rv "Well, if it makes you feel better, [li], if you live in the present, you might notice something."
 
-    show rv
+    show rivchar rv
 
     cf "Well, no matter what, [li], you’ve got to think somewhat ahead. How’s the planning for the last show?"
 
-    show li_tired at left
+    show luvint li_tired at left
     li "Don’t even get me started!"
 
     "{i}[cf] and [li] are in one of the dance groups on campus. It’s how they met. [li] was actually the one to recommend [cf] our current living situation.{/i}"
@@ -238,7 +238,7 @@ label scene1:
 
             elif(rv_response == 3):
                 $ rv_state[4] += 2
-                show rv_happy
+                show rivchar rv_happy
                 rv "Yeah, I'm with [pg]. We could help."
 
         "We could help -- I was going to go anyway to watch it, but why not support you guys behind-the-scenes as well?":
@@ -252,7 +252,7 @@ label scene1:
             if(rv_response == 1):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 1
-                show rv_happy
+                show rivchar rv_happy
                 rv "That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
             elif(rv_response == 2):
@@ -260,13 +260,13 @@ label scene1:
                 $ rv_state[7] += 2
                 rv "We?"
                 pg "Don't you want to?"
-                show rv_happy
+                show rivchar rv_happy
                 rv "...Of course! That’s a good idea. I’m a big, strong guy -- I could help out some heavy-lifting."
 
             elif(rv_response == 3):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 1
-                show rv_sad
+                show rivchar rv_sad
                 rv "Do we have to?"
                 pg "Hey, come on..."
                 rv "..."
@@ -286,12 +286,12 @@ label scene1:
                 $ rv_state[1] += 2
                 $ rv_state[2] += 2
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
-                show rv_happy
+                show rivchar rv_happy
                 rv "We'd get to hang out quite a bit, too."
 
             elif(rv_response == 3):
                 $ rv_state[0] -= 2
-                show rv_sad
+                show rivchar rv_sad
                 rv "Yep, seems a little difficult."
                 cf "You guys could, I dunno...help out?"
                 rv "Could we?"
@@ -327,12 +327,12 @@ label scene1:
                 $ rv_state[1] += 2
                 $ rv_state[2] += 2
                 rv "Well maybe we could do something to help out? Since it’s so important to you, I’m sure we could take some time out of our lives to do so -- right, [pg]?"
-                show rv_happy
+                show rivchar rv_happy
                 rv "We'd get to hang out quite a bit, too."
 
             elif(rv_response == 3):
                 $ rv_state[0] -= 2
-                show rv_sad
+                show rivchar rv_sad
                 rv "Yep, seems a little difficult."
                 cf "You guys could, I dunno...help out?"
                 rv "Could we?"
@@ -351,8 +351,8 @@ label scene1:
                     $ pg_state[2] = pg_state[2]
 
 
-    show rv
-    show li_blush at left
+    show rivchar rv
+    show luvint li_blush at left
     li "Are you sure about this?"
 
     menu:
@@ -395,22 +395,22 @@ label scene1:
             elif(rv_response == 2):
                 $ rv_state[1] += 1
                 $ rv_state[2] += 2
-                show rv_happy
+                show rivchar rv_happy
                 rv "The more the merrier, right?"
                 rv "A team effort is always better."
 
             elif(rv_response == 3):
                 $ rv_state[2] += 2
                 $ rv_state[4] -= 2
-                show rv_sad
+                show rivchar rv_sad
                 rv "What a...choice set of words, [pg]."
-                show rv
+                show rivchar rv
                 rv "Even if you've been roped in, you'll do your best, right?"
                 rv "I would hope so."
 
 
-    show rv
-    show li_happy2 at left
+    show rivchar rv
+    show luvint li_happy2 at left
     li "Thanks, guys! I really appreciate it. Wow, I’m glad we’re doing something together before moving on. It’ll be fun!"
 
     jump after1
