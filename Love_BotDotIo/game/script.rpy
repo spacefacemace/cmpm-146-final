@@ -350,21 +350,21 @@ label start:
 
     jump scene1
 label after1: #show this scene in demo
-    jump scene2
+    #jump scene2
 label after2:
-    jump scene3
+    #jump scene3
 label after3:
-    jump scene4
+    #jump scene4
 label after4:
-    jump scene5
+    #jump scene5
 label after5:
-    jump scene6
+    #jump scene6
 label after6:
-    jump scene7
+    #jump scene7
 label after7:
-    jump scene8
+    #jump scene8
 label after8:
-    jump scene9
+    #jump scene9
 label after9:
     jump scene10
 label after10: #show this scene in demo
