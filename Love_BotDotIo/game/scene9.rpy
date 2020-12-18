@@ -22,11 +22,17 @@ label scene9:
 
     cf "...Did you go through it?"
 
+    show rm_suspicious at left
     rm "What? Of course not. I have manners."
 
     cf "Why are you here again?"
 
     rm "Because [li] invited me?"
+
+    hide rm_suspicious
+    hide cf
+    show li_tired
+    show rv at right
 
     li "It’d be a shame if he was left in your apartment all by himself!"
 
@@ -36,6 +42,8 @@ label scene9:
 
     rv "On one hand, thank god. On the other hand..."
 
+    show li_joy
+
     menu:
 
         # best option, points for li->pg
@@ -44,6 +52,7 @@ label scene9:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,3,0,0,0]))
             "{i}[response]{/i}"
             li "I totally get it! You go through all this and then..."
+            show rv_smiling at right
             rv "Just like that, it’s about to end." # (1-2 pts li->rv)
             li "Yep, exactly."
 
@@ -57,6 +66,7 @@ label scene9:
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
                 li "I totally get it! You go through all this and then..."
+                show rv_smiling at right
                 rv "Just like that, it’s about to end."
                 li "Yep, exactly."
 
@@ -66,6 +76,7 @@ label scene9:
                 rv "Well if we're blanking..."
                 rv "Wait, I got it."
                 rv "It’s bittersweet, kind of."
+                show rv_embarassed at right
                 rv "...Geez, that was cheesy. Don’t tell anyone I said that."
                 li "Haha, I won’t tell."
 
@@ -76,6 +87,7 @@ label scene9:
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
                 li "I totally get it! You go through all this and then..."
+                show rv_smiling at right
                 rv "Just like that, it’s about to end."
                 li "Yep, exactly."
 
@@ -85,9 +97,12 @@ label scene9:
                 rv "Well if we're blanking..."
                 rv "Wait, I got it."
                 rv "It’s bittersweet, kind of."
+                show rv_embarassed at right
                 rv "...Geez, that was cheesy. Don’t tell anyone I said that."
                 li "Haha, I won’t tell."
 
+    show rv at right
+    show li_serious
     li "...I was going to say some more stuff, but I should probably save that spiel for later, huh?"
 
     menu:
@@ -140,13 +155,13 @@ label scene9:
                 rv "Hmm."
                 rv "Well, we'll listen. Don't worry."
 
-
+    show li_happy
     li "Oh, an audience? Then I’ll make sure it’s good."
 
     # (then fade to like later that night, li rv and pg are outside)
     scene out_bens_house
     show rv at right
-    show li
+    show li_joy
 
     rv "I should get going. I want to wake up early tomorrow to go to the gym."
 
@@ -173,7 +188,9 @@ label scene9:
             $ pg_state[7] += 3
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,3,0,0,0,3,0,0]))
             "{i}[response]{/i}"
+            show li_blush
             li "Me...?"
+            show li_happyblush
             li "That’s the first time someone’s said that to me."
             li "Well then...I’m honored!"
             li "There’s a thought I always have, though...the thought of time moving forward."
@@ -183,13 +200,16 @@ label scene9:
             $ pg_state[0] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([1,0,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
+            show li_happy
             li "Me too! A new chapter in life is always exciting."
             li "There’s a thought I always have, though...the thought of time moving forward."
 
+    show li_joy
     li "There’s a lot to get in order when moving on."
 
     li "At this point, it’s the type where we have to get our life together."
 
+    show li_tired
     li "Though I’m sure [rv] has something figured out. He always does. He mentioned working at his dad’s business? That must be fun."
 
     menu:
@@ -215,6 +235,7 @@ label scene9:
             "{i}[response]{/i}"
             li "Ah, what am I thinking? We’re just in our 20’s. In the end, there’s no rush."
 
+    show li_joy
     li "I’m sure we’ll be fine."
 
     menu:
@@ -243,7 +264,7 @@ label scene9:
 
     li "Alright! Feel free to come back inside whenever."
 
-    hide li at easeoutleft
+    hide li_joy at easeoutleft
 
     "{i}In about a week, we’ll be graduating, one by one.{/i}"
 
