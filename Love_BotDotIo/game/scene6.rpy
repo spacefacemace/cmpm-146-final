@@ -35,7 +35,7 @@ label scene6:
         scene inside_gondola
 
         hide rv
-        hide li
+        hide li_joy
         show cf at center
 
         "[rv] and [li] get on the gondola. You and [cf] get on the next one."
@@ -142,7 +142,7 @@ label scene6:
             scene inside_gondola
 
             show li_joy
-            hide rv
+            hide rv_angry
             hide cf
 
             li "I used to be scared of this as a kid because of how high up we are, but it’s not so bad now."

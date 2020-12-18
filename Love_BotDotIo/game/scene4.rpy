@@ -295,6 +295,7 @@ label scene4:
 
     show cf_shocked
     cf "We had a chess set?"
+    show cf
 
     menu:
 

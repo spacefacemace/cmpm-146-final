@@ -41,12 +41,15 @@ label scene8:
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] -= 1
+                show rv_happy
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
             elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] -= 2
+                show rv_happy
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+                show rv
                 rv "But I can get where you're coming from, [pg]."
 
         "You think you’ll be okay?":
@@ -54,18 +57,21 @@ label scene8:
             $ pg_state[1] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,1,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
-            rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+           # rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
             $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,-1,0,0],[0,0,0,0,3,0,0,-2,0,0])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] -= 1
+                show rv_happy
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
 
             elif(rv_response == 2):
                 $ rv_state[4] += 3
                 $ rv_state[7] -= 2
+                show rv_happy
                 rv "Of course, [li]’s worked hard up to this point. From all the sports I’ve played, I know that type of thing won’t go to waste. [li], you’ll do great."
+                show rv
                 rv "But I can get where you're coming from, [pg]."
 
         # best option, points for li->pg
@@ -76,7 +82,8 @@ label scene8:
             "{i}[response]{/i}"
             rv "Yeah, from all the sports I’ve played, I know that type of thing won’t go to waste."
 
-    show li at right
+    show rv
+    show li_happy at right
 
     li "Thanks! I’m nervous, but it’s nervous excitement. I think it’ll help...somehow, haha. But you’re right, I’ve worked hard on this! It’ll show, right?"
 
@@ -110,16 +117,17 @@ label scene8:
                 $ rv_state[4] += 3
                 rv "[pg]’s right. It’s why we’re helping out."
                 rv "You gotta do your best while we're watching, too."
+                show li_happy2 at right
                 li "Haha, of course!"
-
 
     rv "Anyway, your music’s queued up, [li]. Is she good to go, [pg]?"
 
     pg "Yep, in 5...4...3...2...1."
 
+    show li_joy at right
     li "Alright, here I go!"
 
-    hide li at easeoutright
+    hide li_joy at easeoutright
 
     "{i}We’ve seen this a million times, but it’s as captivating as the first time.{/i}"
 
@@ -177,6 +185,7 @@ label scene8:
 
     rv "I don’t really have much else to say."
 
+    show rv_angry
     rv "But you know, [pg], you’re making it kind of hard."
 
     menu:
@@ -189,6 +198,7 @@ label scene8:
 
     rv "I mean, look at where we are."
 
+    show rv
     rv "Honestly, that’s kind of commendable."
 
     menu:
@@ -213,7 +223,7 @@ label scene8:
     scene outside_second_stage
 
     show rv at right
-    show li at left
+    show li_joy at left
 
     menu:
 
@@ -228,6 +238,7 @@ label scene8:
                 $ rv_state[4] += 1
                 $ rv_state[7] += 2
                 pg "Congratulations, [li], the show was a success!"
+                show rv_smiling at right
                 rv "Yep, and from me and [pg] -- here you go."
 
             elif(rv_response == 2):
@@ -235,6 +246,7 @@ label scene8:
                 $ rv_state[4] += 2
                 pg "Congratulations, [li], the show was a success!"
                 rv "You beat me to it."
+                show rv_smiling at right
                 rv "Anyway, congrats, [li]. From me and [pg] -- here you go."
 
 
@@ -260,11 +272,16 @@ label scene8:
 
     li "Flowers? You shouldn’t have."
 
+    show li_happyblush at left
     li "No, really, I love flowers, but keeping them alive..."
 
     li "I’ll try my best, haha."
 
+    show li_happy2 at left
     li "I know I keep saying it, but thank you for your help! It’s thanks to you that the show was enjoyable. Everyone was less worried, me included. I think that ease of mind made our performances all the more better!"
+
+    show rv at right
+    show li_joy
 
     menu:
 
@@ -289,9 +306,9 @@ label scene8:
             rv "Yeah, no worries. You should enjoy your final show, after all." # a lot of points for li->rv
 
 
-    show cf
+    show cf_happy
     hide rv at easeoutright
-    hide li at easeoutleft
+    hide li_joy at easeoutleft
 
     cf "Guys, you won’t believe who came to see the show! It’s two of my favorite teachers here, Pat and Sesh."
 
@@ -308,7 +325,7 @@ label scene8:
 
     sesh "Anyway, that’s all we wanted to say. And also, good job, [cf]."
 
-    hide li
+    hide li_joy
     show cf
 
     cf "Wow, thanks!"
@@ -317,10 +334,12 @@ label scene8:
     hide sesh at easeoutright
 
     show rv at right
-    show li at left
+    show li_joy at left
 
+    show cf_disappointed
     cf "...I do good in this, but not so much his classes."
 
+    show cf
     cf "Anyway!"
 
     cf "Did I miss anything?"
@@ -357,12 +376,14 @@ label scene8:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-3,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
             "No, I don’t."
+            show cf_disappointed
             cf "We literally made plans yesterday about going together! But with all the mayhem that was going on, I could see how it’d be easy to forget."
             "Of course, I wouldn’t miss it."
 
+    show cf
     li "Awesome! See you guys later, then!"
 
-    hide li at easeoutleft
+    hide li_joy at easeoutleft
 
     rv "Yeah, see you guys, too."
 
@@ -374,8 +395,10 @@ label scene8:
 
     "Yep. I could tell you did your absolute best, [cf]."
 
+    show cf_happy
     cf "Haha, well...I know [li]’s probably said it, but thanks for the help. We couldn’t have done it without you."
 
+    show cf
     cf "Then should we get ready to head over to the after-party?"
 
     cf "Won’t matter if we’re late, but...you know how it is."
