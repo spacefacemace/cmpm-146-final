@@ -282,6 +282,7 @@ init python:
 
 
     rival = Rivals([0,0,0,0,0,0,0,0,0,0])
+    #rival = Rival()
 
 # The game starts here.
 
