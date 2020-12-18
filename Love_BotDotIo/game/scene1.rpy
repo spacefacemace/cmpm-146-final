@@ -22,7 +22,7 @@ label scene1:
     scene picnic_tables
 
     show cf at right
-    show li_happy at left
+    show luvint li_happy at left
     show rv
 
     "{i}There she is, [li]. Who knows how long I’ve had a crush on her -- well, I moved into the apartment complex we’re all at during the summer, so it’s some time in-between.{/i}"

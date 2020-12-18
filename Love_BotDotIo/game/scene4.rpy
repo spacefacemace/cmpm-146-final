@@ -21,7 +21,7 @@ label scene4:
 
     show cf at right
     show li_joy at left
-    show rv
+    show rivchar rv
 
     cf "Don’t mind all the mess."
 
@@ -36,7 +36,7 @@ label scene4:
             $ rv_response = rival.findBestFit([[0,-2,0,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,-2,2,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,3,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
-                show rv_sad
+                show rivchar rv_sad
                 rv "...I sure hope so."
 
             elif(rv_response == 2):
@@ -47,13 +47,13 @@ label scene4:
             elif(rv_response == 3):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
-                show rv_angry
+                show rivchar rv_angry
                 rv "I'd never let my place get to this point."
 
             elif(rv_response == 4):
                 $ rv_state[7] += 3
                 rv "Maybe I could come over and help. We are sorta neighbors, after all."
-                show rv_happy
+                show rivchar rv_happy
                 rv "Just not in the morning. I'm at the gym during that time."
 
         "Watch out for that pizza box.":
@@ -67,7 +67,7 @@ label scene4:
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
-                show rv_angry
+                show rivchar rv_angry
                 rv "Don’t you think you should clean your place up a little?"
 
             elif(rv_response == 2):
@@ -105,7 +105,7 @@ label scene4:
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
-                show rv_angry
+                show rivchar rv_angry
                 rv "Don’t you think you should clean your place up a little?"
 
             elif(rv_response == 2):
@@ -135,7 +135,7 @@ label scene4:
                         "{i}[response]{/i}"
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
-    show rv
+    show rivchar rv
     cf "While we’re at it, let’s get [rm] in it, too."
 
     li "Yeah, where is he?"
@@ -233,7 +233,7 @@ label scene4:
             $ rv_response = rival.findBestFit([[0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[2] += 3
-                show rv_angry
+                show rivchar rv_angry
                 rv "Shouldn't we clear the table first?"
 
             elif(rv_response == 2):
@@ -265,12 +265,12 @@ label scene4:
                 $ rv_state[7] += 1
                 rv "We should probably clear the table first."
 
-    show rv
+    show rivchar rv
     li "All set. Alright, let’s dig in!"
 
     # fade here?
 
-    hide rv
+    hide rivchar rv
     show cf_happy
 
     cf "Wow, that was exceptionally good."
