@@ -11,6 +11,35 @@ define pg = Character(_(player_character))
 define pat = Character(_('Prof._Pat'))
 define sesh = Character(_('Prof._Sesh'))
 
+# images under luvint tag
+image luvint li_angry = "li_angry.png"
+image luvint li_blush = "li_blush.png"
+image luvint li_confused = "li_confused.png"
+image luvint li_happy = "li_happy.png"
+image luvint li_happy2 = "li_happy2.png"
+image luvint li_happyblush = "li_happyblush.png"
+image luvint li_joy = "li_joy.png"
+image luvint li_judgement = "li_judgement.png"
+image luvint li_sad = "li_sad.png"
+image luvint li_sad2 = "li_sad2.png"
+image luvint li_serious = "li_serious.png"
+image luvint li_tired = "li_tired.png"
+image luvint li_tsundere = "li_tsundere.png"
+# images under roommate tag
+image roommate rm = "rm.png"
+image roommate rm_angry = "rm_angry.png"
+image roommate rm_glad = "rm_glad.png"
+image roommate rm_smile = "rm_smile.png"
+image roommate rm_suspicious = "rm_suspicious.png"
+# images under rivchar tag
+image rivchar rv = "rv.png"
+image rivchar rv_angry = "rv_angry.png"
+image rivchar rv_crying = "rv_crying.png"
+image rivchar rv_embarassed = "rv_embarassed.png"
+image rivchar rv_happy = "rv_happy.png"
+image rivchar rv_sad = "rv_sad.png"
+image rivchar rv_smiling = "rv_smiling.png"
+image rivchar rv_smirking = "rv_smirking.png"
 
 init python:
     import random
