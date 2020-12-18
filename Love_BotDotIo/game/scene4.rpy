@@ -33,7 +33,7 @@ label scene4:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,3,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,-2,0,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,-2,2,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,3,0,0])
+            $ rv_response = rival.findBestFit([[0,-2,0,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,-2,2,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,3,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 show rv_sad
@@ -62,8 +62,8 @@ label scene4:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,2,0,0,0,0]))
             "{i}[response]{/i}"
             # best option for rv, points for li->rv
-            
-            $ rv_response = rival.findBestFit([0,-2,2,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0,0])
+
+            $ rv_response = rival.findBestFit([[0,-2,2,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
@@ -101,7 +101,7 @@ label scene4:
             # best option for rv, points for li->rv
 
 
-            $ rv_response = rival.findBestFit([0,-2,2,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,-2,2,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,2,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
@@ -154,7 +154,7 @@ label scene4:
             # best option for rv, points for li->rv
 
 
-            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] += 1
                 $ rv_state[7] += 2
@@ -178,7 +178,7 @@ label scene4:
             # best option for rv, points for li->rv
 
 
-            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,1,0,0,2,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] += 1
                 $ rv_state[7] += 2
@@ -228,9 +228,9 @@ label scene4:
             "{i}[response]{/i}"
             pg "Should I set up the food?"
             # 1-2 points for li->rv
-            
 
-            $ rv_response = rival.findBestFit([0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0])
+
+            $ rv_response = rival.findBestFit([[0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[2] += 3
                 show rv_angry
@@ -255,7 +255,7 @@ label scene4:
             # best option for rv, points for li->rv
 
 
-            $ rv_response = rival.findBestFit([0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[2] += 3
                 rv "Shouldn't we clear the table first?"
@@ -330,7 +330,7 @@ label scene4:
             "{i}[response]{/i}"
 
 
-            $ rv_response = rival.findBestFit([2,0,0,0,0,0,2,0,0,0],[2,0,0,0,0,0,-1,0,0,0],[-2,0,0,0,0,0,1,0,0,0])
+            $ rv_response = rival.findBestFit([[2,0,0,0,0,0,2,0,0,0],[2,0,0,0,0,0,-1,0,0,0],[-2,0,0,0,0,0,1,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 2
                 $ rv_state[6] += 2
@@ -357,7 +357,7 @@ label scene4:
             "{i}[response]{/i}"
 
 
-            $ rv_response = rival.findBestFit([2,0,0,0,0,0,2,0,0,0],[2,0,0,0,0,0,-1,0,0,0],[-2,0,0,0,0,0,1,0,0,0])
+            $ rv_response = rival.findBestFit([[2,0,0,0,0,0,2,0,0,0],[2,0,0,0,0,0,-1,0,0,0],[-2,0,0,0,0,0,1,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 2
                 $ rv_state[6] += 2
@@ -384,7 +384,7 @@ label scene4:
             "{i}[response]{/i}"
 
 
-            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,2,0,0,0],[0,0,0,0,0,0,2,-2,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,-2,0,2,0,0,0],[0,0,0,0,0,0,2,-2,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] -= 2
                 $ rv_state[6] += 2
@@ -604,7 +604,7 @@ label scene4:
         "Having a match would be fun.":
             # best option for li->rv, points for li->rv
 
-            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
@@ -630,7 +630,7 @@ label scene4:
             "{i}[response]{/i}"
 
 
-            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,3,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2

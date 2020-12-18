@@ -61,7 +61,7 @@ label scene9:
             $ pg_state[6] -= 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,-1,0,0,0]))
             "{i}[response]{/i}"
-            $ rv_response = rival.findBestFit([0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
@@ -82,7 +82,7 @@ label scene9:
 
 
         "I’m not sure what to think.":
-            $ rv_response = rival.findBestFit([0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,1,0,0,0,0,2,0,0,0],[0,1,0,3,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[6] += 2
                 $ rv_state[1] += 1
@@ -111,7 +111,7 @@ label scene9:
             $ pg_state[4] -= 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
             "{i}[response]{/i}"
-            $ rv_response = rival.findBestFit([0,0,0,2,0,-1,0,0,0,0],[0,0,0,1,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,2,0,-1,0,0,0,0],[0,0,0,1,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[5] -= 1
                 $ rv_state[3] += 3
@@ -128,7 +128,7 @@ label scene9:
             $ pg_state[4] += 3
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,0,0,0]))
             "{i}[response]{/i}"
-            $ rv_response = rival.findBestFit([0,0,0,2,0,0,0,0,0,0],[0,0,0,0,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,2,0,0,0,0,0,0],[0,0,0,0,2,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[3] += 2
                 rv "Me too. No matter how much you’ll say, I’ll listen to it. You can count on that."
@@ -142,7 +142,7 @@ label scene9:
             $ pg_state[5] += 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,2,0,0,0,0]))
             "{i}[response]{/i}"
-            $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,0,0,0],[0,0,0,2,0,1,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,2,0,0,0,0,0],[0,0,0,2,0,1,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] += 2
                 rv "Don't worry, we'll listen."

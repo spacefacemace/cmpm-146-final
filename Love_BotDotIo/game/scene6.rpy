@@ -265,7 +265,7 @@ label scene6:
                 li "Funnel cakes sound good right now! I haven’t had those in forever."
 
             "Same here.":
-                $ rv_response = rival.findBestFit([0,0,0,0,2,0,0,2,0,0],[0,0,0,2,3,0,0,0,0,0])
+                $ rv_response = rival.findBestFit([[0,0,0,0,2,0,0,2,0,0],[0,0,0,2,3,0,0,0,0,0]])
                 if(rv_response == 1):
                     $ rv_state[4] += 2
                     $ rv_state[7] += 2
@@ -293,8 +293,8 @@ label scene6:
                 $ pg_state[7] += 4
                 $ response = LoveInterest.textResponse(LoveInterest.getResponse([3,0,0,0,0,0,0,4,0,0]))
                 "{i}[response]{/i}"
-                
-                $ rv_response = rival.findBestFit([0,0,-1,0,0,2,0,0,0,0],[0,0,-1,0,2,0,0,0,0],[0,0,2,0,-3,0,0,0,0,0])
+
+                $ rv_response = rival.findBestFit([[0,0,-1,0,0,2,0,0,0,0],[0,0,-1,0,2,0,0,0,0],[0,0,2,0,-3,0,0,0,0,0]])
                 if(rv_response == 1):
                     $ rv_state[2] -= 1
                     $ rv_state[5] += 2

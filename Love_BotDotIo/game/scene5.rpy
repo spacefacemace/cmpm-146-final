@@ -41,7 +41,7 @@ label scene5:
             "{i}[response]{/i}"
             # maybe some points for li->rv
 
-            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,1,0,0],[2,0,0,0,0,0,0,3,0,0])
+            $ rv_response = rival.findBestFit([[3,0,0,0,0,0,0,1,0,0],[2,0,0,0,0,0,0,3,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 3
                 $ rv_state[7] += 1
@@ -61,7 +61,7 @@ label scene5:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,0,-2,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([2,0,0,0,-2,0,0,0,0,0],[2,0,0,0,3,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[2,0,0,0,-2,0,0,0,0,0],[2,0,0,0,3,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 2
                 $ rv_state[4] -= 2
@@ -102,7 +102,7 @@ label scene5:
             "{i}[response]{/i}"
             # some points for li->rv
 
-            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] -= 2
                 $ rv_state[7] += 2
@@ -119,8 +119,8 @@ label scene5:
 
 
         "I’m here too, [rv].":
-            
-            $ rv_response = rival.findBestFit([0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0])
+
+            $ rv_response = rival.findBestFit([[0,0,0,0,-2,0,0,1,0,0],[0,0,0,0,2,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] -= 2
                 $ rv_state[7] += 2
@@ -179,7 +179,7 @@ label scene5:
             "{i}[response]{/i}"
             # some points for li->rv
 
-            $ rv_response = rival.findBestFit([2,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[2,0,0,0,0,0,0,1,0,0],[1,0,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 2
                 $ rv_state[7] += 1
@@ -192,8 +192,8 @@ label scene5:
 
         "20 is...":
             # best option for rv, points for li->rv
-            
-            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+
+            $ rv_response = rival.findBestFit([[3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 3
                 $ rv_state[7] += 2
@@ -212,7 +212,7 @@ label scene5:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,-2,0,0,0,0,-2,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([[3,0,0,0,0,0,0,2,0,0],[0,0,0,0,3,0,0,2,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 3
                 $ rv_state[7] += 2

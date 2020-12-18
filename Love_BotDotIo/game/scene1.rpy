@@ -42,7 +42,7 @@ label scene1:
 
             "{i}[li] is nice, funny, and endearing. Pretty upbeat. Pretty in general. She’s all the good cliches of any love interest in a visual novel. It’s nice hanging out with her, but...{/i}"
 
-            $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] += 2
                 $ rv_state[2] += 1
@@ -72,7 +72,7 @@ label scene1:
 
             "{i}[li] is nice, funny, and endearing. Pretty upbeat. Pretty in general. She’s all the good cliches of any love interest in a visual novel. It’s nice hanging out with her, but...{/i}"
 
-            $ rv_response = rival.findBestFit([1,-1,0,0,0,0,0,0,0,0],[0,-1,0,0,0,1,0,0,0,0],[0,2,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[1,-1,0,0,0,0,0,0,0,0],[0,-1,0,0,0,1,0,0,0,0],[0,2,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[0] += 2
                 $ rv_state[1] -= 1
@@ -104,7 +104,7 @@ label scene1:
 
             "{i}[li] is nice, funny, and endearing. Pretty upbeat. Pretty in general. She’s all the good cliches of any love interest in a visual novel. It’s nice hanging out with her, but...{/i}"
 
-            $ rv_response = rival.findBestFit([0,0,0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,-1,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0],[0,-1,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[3] += 1
                 rv "That’s incredibly...cheesy, but I get it."
@@ -144,7 +144,7 @@ label scene1:
 
             li "See! [pg] agrees with me. Thanks for the backup."
 
-            $ rv_response = rival.findBestFit([0,0,0,0,0,0,-1,0,0,0],[0,1,0,0,0,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,0,0,-1,0,0,0],[0,1,0,0,0,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[6] -= 1
                 rv "...Maybe I'm just missing something. Whatever."
@@ -160,7 +160,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,-2,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,-2,0,0,0,0,0,1,0,0],[0,1,0,0,0,0,0,2,0,0])
+            $ rv_response = rival.findBestFit([[0,-2,0,0,0,0,0,1,0,0],[0,1,0,0,0,0,0,2,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[7] -= 1
@@ -181,7 +181,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,2,0,0,0,0,0,2,0,0],[0,3,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,2,0,0,0,0,0,2,0,0],[0,3,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] += 2
                 $ rv_state[7] += 1
@@ -221,7 +221,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,2,0,4,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,0,0,0,-3,0,0,1,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,-3,0,0,1,0,0],[0,0,0,0,2,0,0,2,0,0],[0,0,0,0,2,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 1
@@ -248,7 +248,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,2,4,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,0,0,0,1,0,0,2,0,0],[0,0,0,0,-2,0,0,2,0,0],[0,0,0,0,-3,0,0,1,0,0])
+            $ rv_response = rival.findBestFit([[0,0,0,0,1,0,0,2,0,0],[0,0,0,0,-2,0,0,2,0,0],[0,0,0,0,-3,0,0,1,0,0]])
             if(rv_response == 1):
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 1
@@ -274,7 +274,7 @@ label scene1:
 
         "...":
 
-            $ rv_response = rival.findBestFit([0,3,3,0,0,0,0,3,0,0],[0,2,2,0,0,0,0,4,0,0],[-2,0,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,3,3,0,0,0,0,3,0,0],[0,2,2,0,0,0,0,4,0,0],[-2,0,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[7] += 3
                 $ rv_state[1] += 3
@@ -315,7 +315,7 @@ label scene1:
 
             $ pg_state[1] = pg_state[1] + 1
 
-            $ rv_response = rival.findBestFit([0,3,3,0,0,0,0,3,0,0],[0,2,2,0,0,0,0,4,0,0],[-2,0,0,0,0,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,3,3,0,0,0,0,3,0,0],[0,2,2,0,0,0,0,4,0,0],[-2,0,0,0,0,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[7] += 3
                 $ rv_state[1] += 3
@@ -363,7 +363,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,2,3,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,0,1,0,2,0,0,0,0,0],[0,0,0,0,-1,0,0,-2,0,0],[0,0,0,0,0,0,0,3,0,0])
+            $ rv_response = rival.findBestFit([[0,0,1,0,2,0,0,0,0,0],[0,0,0,0,-1,0,0,-2,0,0],[0,0,0,0,0,0,0,3,0,0]])
             if(rv_response == 1):
                 $ rv_state[2] += 1
                 $ rv_state[4] += 2
@@ -385,7 +385,7 @@ label scene1:
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,-2,0,0,0,0,0]))
             "{i}[response]{/i}"
 
-            $ rv_response = rival.findBestFit([0,-2,0,0,0,0,0,-2,0,0],[0,1,2,0,0,0,0,0,0,0],[0,0,2,0,-2,0,0,0,0,0])
+            $ rv_response = rival.findBestFit([[0,-2,0,0,0,0,0,-2,0,0],[0,1,2,0,0,0,0,0,0,0],[0,0,2,0,-2,0,0,0,0,0]])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[7] -= 2

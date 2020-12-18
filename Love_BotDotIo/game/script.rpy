@@ -268,7 +268,7 @@ init python:
                 currentResult = 0
                 dialogue = dialogueOptions[optionsCount]
                 while count < 10:
-                    currentResult = currentResult + (self.li.interests[count] * dialogue[count])
+                    currentResult = currentResult + (self.li_interests[count] * dialogue[count])
                     count += 1
                 if(currentResult >= bestResult):
                     bestResult = currentResult
