@@ -275,7 +275,7 @@ init python:
                     bestResultIndex = optionsCount
                 optionsCount += 1
 
-            appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
+            self.appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
 
             return (bestResultIndex + 1)
 

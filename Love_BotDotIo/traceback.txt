@@ -2,29 +2,29 @@
 
 While running game code:
   File "game/scene1.rpy", line 45, in script
-    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+    $ rv_response = rival.findBestFit([[0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0]])
   File "game/scene1.rpy", line 45, in <module>
-    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
-  File "game/script.rpy", line 271, in findBestFit
-    currentResult = currentResult + (self.li.interests[count] * dialogue[count])
-AttributeError: 'Rivals' object has no attribute 'li'
+    $ rv_response = rival.findBestFit([[0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0]])
+  File "game/script.rpy", line 278, in findBestFit
+    appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
+NameError: global name 'appendSceneResult' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scene1.rpy", line 45, in script
-    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+    $ rv_response = rival.findBestFit([[0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0]])
   File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
   File "game/scene1.rpy", line 45, in <module>
-    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
-  File "game/script.rpy", line 271, in findBestFit
-    currentResult = currentResult + (self.li.interests[count] * dialogue[count])
-AttributeError: 'Rivals' object has no attribute 'li'
+    $ rv_response = rival.findBestFit([[0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0]])
+  File "game/script.rpy", line 278, in findBestFit
+    appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
+NameError: global name 'appendSceneResult' is not defined
 
 Windows-7-6.1.7601-SP1
 Ren'Py 7.3.5.606
 Love_BotDotIo 1.0
-Fri Dec 18 00:51:51 2020
+Fri Dec 18 00:53:45 2020
