@@ -13,9 +13,9 @@ label scene6:
     # Define boardwalk image
     scene sc_boardwalk
 
-    show cf at right
-    show li_joy
-    show rv at left
+    show cfimg cf at right
+    show luvint li_joy
+    show rivchar rv at left
 
     # Check rival meter against player's
     if LoveInterest.getResponse(rv_state) > LoveInterest.getResponse(pg_state):
@@ -34,9 +34,9 @@ label scene6:
         # Background change to inside gondola
         scene inside_gondola
 
-        hide rv
-        hide li_joy
-        show cf at center
+        hide rivchar rv
+        hide luvint li_joy
+        show cfimg at center
 
         "[rv] and [li] get on the gondola. You and [cf] get on the next one."
 
@@ -72,7 +72,7 @@ label scene6:
 
                 $ pg_state[3] = pg_state[3] + 2
 
-        show cf_serious
+        show cfimg cf_serious
         cf "Hmm, well, I'd try to be as forward -- no, try to be {i}more{/i} forward than [rv]. Play his game, but do it better."
 
         menu:
@@ -81,7 +81,7 @@ label scene6:
                     $ pg_state[3] += 2
                     cf "Take charge, think of what [li] would like to hear. Don’t let him take up all of [li]’s time! You have to get her to see you in a good way, too. Then I think you have more of a chance."
                     pg "Since when did you get so good at giving advice?"
-                    show cf_happy
+                    show cfimg cf_happy
                     cf "Haha... I'm not too sure."
 
             "Sounds like a good idea":
@@ -91,7 +91,7 @@ label scene6:
                         jump cf_advice
                     "Yeah, I'm sure."
 
-        show cf
+        show cfimg cf
         cf "I'm here for moral support, buddy. Look, we're already at the other side of the boardwalk -- why don't you try and put that advice to use?"
         jump funnel_cake_scene
 
@@ -103,7 +103,7 @@ label scene6:
 
         menu:
             "You could go with me.":
-                show li_happy2
+                show luvint li_happy2
                 li "Oh... that sounds good!"
                 $ pg_state[7] += 2
                 $ pg_state[3] += 2
@@ -121,7 +121,7 @@ label scene6:
         label pg_indifferent:
             li "How about...me and [pg] go together, and [rv] could go with [cf]?"
             cf "That's alright with me."
-            show rv_sad at right
+            show rivchar rv_sad at right
             rv "...Yeah, I guess."
 
         label li_pg_gondola:
@@ -132,8 +132,8 @@ label scene6:
             with fade
 
             # Change characters on scene to rival and cf, rival is looking daggers at pg
-            show rv_angry at left
-            show cf at right
+            show rivchar rv_angry at left
+            show cfimg cf at right
 
 
             "{i}Well that makes sense. Can’t waste this opportunity, though!{/i}"
@@ -141,9 +141,9 @@ label scene6:
             # Change background to inside of gondola
             scene inside_gondola
 
-            show li_joy
-            hide rv_angry
-            hide cf
+            show luvint li_joy
+            hide rivchar rv_angry
+            hide cfimg cf
 
             li "I used to be scared of this as a kid because of how high up we are, but it’s not so bad now."
 
@@ -153,10 +153,10 @@ label scene6:
                     $ pg_state[7] += 1
                     $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,5,0,0,0,1,0,0]))
                     "{i}[response]{/i}"
-                    show li_happyblush
+                    show luvint li_happyblush
                     li "Um, maybe? Hahaha..."
                     li "It does help that I’m with someone I trust."
-                    show li_joy
+                    show luvint li_joy
                     jump smalltalk
 
 
@@ -183,9 +183,9 @@ label scene6:
                         "Just a part of helping out.":
                             $ pg_state[2] = pg_state[2]
 
-                    show li_happy2
+                    show luvint li_happy2
                     li "I really appreciate it. I haven’t figured it out yet, but when it’s over, I’ll make sure to make you guys some sort of meal. It’s the least I can do!"
-                    show li_joy
+                    show luvint li_joy
 
                 "You said you baked something the other day?":
                     li "I did! I made an apple pie. The apartment smelled so good while it was baking..."
@@ -209,9 +209,9 @@ label scene6:
                             pg "Fair enough."
 
                         "I can’t wait to try it.":
-                            show li_happy
+                            show luvint li_happy
                             li "Yeah, I’m confident you’ll like it!"
-                            show li_joy
+                            show luvint li_joy
 
                 "What're you thinking about?":
                     li "I’m thinking about how nice the weather is. Kind of cliche, isn’t it? But it’s not too hot, not too cold. The sky is blue. What’s not to appreciate?"
@@ -219,7 +219,7 @@ label scene6:
                     menu:
                         "I’m thinking about...you?":
                             $ pg_state[3] += 2
-                            show li_happyblush
+                            show luvint li_happyblush
                             li "Me? Hahaha...what about me?"
                             menu:
                                 "Just about how lucky I was to ride this with you.":
@@ -240,7 +240,7 @@ label scene6:
                             "{i}[response]{/i}"
                             li "Fair enough. The weather affects all of us."
 
-            show li_joy
+            show luvint li_joy
             li "Looks like we’re getting off soon."
 
     label funnel_cake_scene:
@@ -248,9 +248,9 @@ label scene6:
         # Switch background to main scene
         scene sc_boardwalk
 
-        show cf at right
-        show li_joy
-        show rv at left
+        show cfimg cf at right
+        show luvint li_joy
+        show rivchar rv at left
 
         rv "I’m hungry. Should we eat something?"
 
@@ -282,9 +282,9 @@ label scene6:
         # Switch background to funnel cake shop
         scene funnel_cake_shop
 
-        show cf at right
-        show li_joy
-        show rv at left
+        show cfimg cf at right
+        show luvint li_joy
+        show rivchar rv at left
 
         menu:
 
@@ -331,11 +331,11 @@ label scene6:
                 $ rv_state[0] += 2
                 $ rv_state[7] += 3
                 rv "I can pay for you, [li]."
-                show li_happy2
+                show luvint li_happy2
                 li "Woah, really? ...Thanks!"
                 "{i}...Missed opportunity there.{/i}"
 
-        show li_joy
+        show luvint li_joy
         li "Ah, we’re next. I’m still deciding…"
         rv "Me too."
         cf "Same here…[pg], you order first. Don’t you have a regular?"

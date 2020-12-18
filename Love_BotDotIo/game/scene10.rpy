@@ -7,9 +7,9 @@ label scene10:
 
     scene quarry_amphitheatre
 
-    show cf_happy at right
-    show li_joy at left
-    show rv
+    show cfimg cf_happy at right
+    show luvint li_joy at left
+    show rivchar rv
 
     cf "We did it, [pg] -- we’ve finally graduated!"
 
@@ -17,7 +17,7 @@ label scene10:
 
     rv "Yeah, about that -- why are you guys last to graduate? Making us wait like this..."
 
-    show cf at right
+    show cfimg cf at right
 
     menu:
         "We can’t really pick when we graduate...":
@@ -35,10 +35,10 @@ label scene10:
 
     cf "Don’t get so sappy, [li]."
 
-    show li_happyblush at left
+    show luvint li_happyblush at left
     li "I can’t help it, though -- doesn’t everyone get sappy with this sort of thing?"
 
-    show rv_smiling
+    show rivchar rv_smiling
 
     menu:
 
@@ -53,17 +53,17 @@ label scene10:
 
     cf "...Alright. Though we’ll still be neighbors for quite a bit, [li]. Our time at the apartment doesn’t end until August."
 
-    show li_joy at left
+    show luvint li_joy at left
     li "Haha, I know!"
 
     rv "Right, mine is around that time, too. We’ll still be seeing each other quite a bit, huh?"
 
     li "Hmm, should I save the sappiness for when we all move out, then?"
 
-    show cf_happy at right
+    show cfimg cf_happy at right
     cf "Maybe. If it makes you feel better, you can be extra sappy then. I’ll allow it."
 
-    show rv
+    show rivchar rv
     rv "...So what now?"
 
     cf "Hm. I know my family’s probably looking for me, so I should probably go to them."
@@ -72,7 +72,7 @@ label scene10:
 
     cf "Yep. See you guys in a bit."
 
-    hide cf_happy at right with easeoutright
+    hide cfimg cf_happy at right with easeoutright
 
     if False == True:
 
@@ -80,13 +80,13 @@ label scene10:
 
         rv "Sounds good."
 
-        hide li_joy at left with easeoutleft
+        hide luvint li_joy at left with easeoutleft
 
         rv "Then it’s just you and me, [pg]."
 
         rv "..."
 
-        show rv_embarassed
+        show rivchar rv_embarassed
         rv "I don’t know how else to say this. I need to talk to you -- in private."
 
         "...Huh?"
@@ -100,9 +100,9 @@ label scene10:
 
         li "Not at all!"
 
-        hide rv with easeoutright
-        hide li_joy at left
-        show li_joy
+        hide rivchar rv with easeoutright
+        hide luvint li_joy at left
+        show luvint li_joy
 
         li "Just you and me, [pg]. Actually, that was perfect timing...if you have time, can I talk to you for bit? In private?"
 
@@ -168,10 +168,10 @@ label rv_pg_route:
 
     rv "But I want to know eventually."
 
-    show rv_smiling
+    show rivchar rv_smiling
     rv "They’re coming back. Let’s meet up later, yeah?"
 
-    show rv_smirking
+    show rivchar rv_smirking
     rv "Don’t think I’m letting you go easily."
 
     jump after10
@@ -179,7 +179,7 @@ label rv_pg_route:
 # branch if player won
 label li_pg_route:
 
-    show li_blush
+    show luvint li_blush
     li "Umm...how should I start?"
 
     li "I’m a little nervous, haha..."
@@ -188,33 +188,33 @@ label li_pg_route:
 
     li "Should I just say it straight up? Maybe it’ll be easier than trying to figure out what I had planned before."
 
-    show li_happy2
+    show luvint li_happy2
     li "[pg], I think you’re a really cool person. You’re great! I don’t think I’ve ever seen you in any sort of bad light...especially during this last leg of our school year. You were such a great help during the show! And just a great shoulder to lean on. Really, there’s a lot of good things about you..."
 
     li "It led to a lot of things, and basically...what I’m trying to say is that after all that time..."
 
-    show li_happyblush
+    show luvint li_happyblush
     li "I’m in love with you, [pg]."
 
     li "I think of you in that way."
 
-    show li_tsundere
+    show luvint li_tsundere
     li "...Yeah. Yeah, that’s it. I like you, [pg]."
 
     menu:
 
         "I like you, too.":
-            show li_blush
+            show luvint li_blush
             li "Woah, woah, woah -- am I hearing that right? You’re not playing with me?!"
 
         "I’ve had a crush on you since forever.":
-            show li_blush
+            show luvint li_blush
             li "Woah, woah, woah -- am I hearing that right? You’re not playing with me?!"
 
     menu:
 
         "Nope.":
-            show li_happy2
+            show luvint li_happy2
             li "That’s...wow, this ended up going really well! I didn’t expect this at all!"
 
     li "...Didn’t expect this at all..."
@@ -224,24 +224,24 @@ label li_pg_route:
     menu:
 
         "Dating?":
-            show li_happyblush
+            show luvint li_happyblush
             li "...Seriously?!"
 
         "Together?":
-            show li_happyblush
+            show luvint li_happyblush
             li "...Seriously?!"
 
-    show li_joy
+    show luvint li_joy
     li "Wow, then I’m glad we have all summer to still be around. It’ll be kinda fun? Hahaha."
 
     li "We could go on dates, do couple stuff together, all that jazz! I mean, if that’s okay with you -- I’m just excited about the thought of it, that’s all."
 
     li "We could get a little closer..."
 
-    show li_happyblush
+    show luvint li_happyblush
     li "Is that weird? Haha."
 
-    show li_happy2
+    show luvint li_happy2
     li "This is the best thing that’s ever happened to me! [pg]...I’m seriously so happy right now. You’ve made me really happy."
 
     li "Ah, they’re coming back right now -- let’s tell them the good news!"
@@ -251,7 +251,7 @@ label li_pg_route:
 # branch if rival won
 label li_rv_route:
 
-    show li_blush
+    show luvint li_blush
     li "Umm...how should I start?"
 
     li "I’m a little nervous, haha..."
@@ -260,7 +260,7 @@ label li_rv_route:
 
     li "Should I just say it straight up? Maybe it’ll be easier than trying to figure out what I had planned before."
 
-    show li_happy2
+    show luvint li_happy2
     li "I wanted to tell you that...later on, I’m going to tell [rv] that I like him."
 
     menu:
@@ -271,7 +271,7 @@ label li_rv_route:
         "Seriously?":
             li "Seriously! I didn’t think he’d be my type, but...it just...kinda happened, haha."
 
-    show li_happyblush
+    show luvint li_happyblush
     li "He’s just...he’s something else. I can’t tell what it is, but...I like it. I like being around him. I just can’t help it."
 
     li "I know it might be weird telling you this first, but...it’s because I have a question to ask, too. I hope you don’t mind."
@@ -283,11 +283,11 @@ label li_rv_route:
     menu:
 
         "I think he will.":
-            show li_joy
+            show luvint li_joy
             li "Ah, that’s a relief..."
 
         "I don’t see why not.":
-            show li_joy
+            show luvint li_joy
             li "Ah, that’s a relief..."
 
     li "Wish me luck later, okay?"
@@ -295,7 +295,7 @@ label li_rv_route:
     menu:
 
         "For sure.":
-            show li_happy2
+            show luvint li_happy2
             li "Thank you, [pg]. You’re a really good friend."
 
     li "Ah, they’re coming back now. I can’t wait for later!"
