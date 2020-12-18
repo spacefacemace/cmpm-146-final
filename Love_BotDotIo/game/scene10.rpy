@@ -17,8 +17,9 @@ label scene10:
 
     rv "Yeah, about that -- why are you guys last to graduate? Making us wait like this..."
 
+    show cf at right
+
     menu:
-        show cf at right
         "We can’t really pick when we graduate...":
             cf "That’s true. Well, after all that time, we finally finished a big chapter of our lives. Thanks for coming, you guys. I appreciate it, and I’m sure [pg] does, too."
 
