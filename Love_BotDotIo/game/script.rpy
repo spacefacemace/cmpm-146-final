@@ -14,8 +14,8 @@ define sesh = Character(_('Prof._Sesh'))
 
 init python:
     import random
-    import numpy as np
-    from sklearn.linear_model import LinearRegression
+    #import numpy as np
+    #from sklearn.linear_model import LinearRegression
     scenes = []
 
     class Scene(object):
@@ -63,7 +63,7 @@ init python:
 
     interest = [random.randrange(-3, 5, 1), #Confidence
                 random.randrange(0, 5, 1), #Empathy
-                random.randrange(-2.5, 5, 1), #Responsibility
+                random.randrange(-3, 5, 1), #Responsibility
                 random.randrange(-4, 5, 1), #Romantic
                 random.randrange(-3, 4, 1), #Caring
                 random.randrange(-5, 5, 1), #Humor
@@ -74,15 +74,16 @@ init python:
 
     LoveInterest = LoveInterest(interest)
 
+    '''
     class Rival:
         def __init__(self):
             self.sceneResults = list()
             self.iteration = 1 # For special case perfect squares
 
-            '''
-            Rival needs to start _somewhere_. So let's set it up like
-            the love interest and pair it up with a random responseValue
-            '''
+
+            #Rival needs to start _somewhere_. So let's set it up like
+            #the love interest and pair it up with a random responseValue
+
             initChoice =   [random.randrange(-5, 5, 1), #Confidence
                             random.randrange(-5, 5, 1), #Empathy
                             random.randrange(-5, 5, 1), #Responsibility
@@ -103,10 +104,10 @@ init python:
             if not isinstance(sceneResult, tuple):
                 raise ValueError("Scene Result must be a tuple (prediction, chosen dialogue)")
 
-            '''
-            Extrapolate variables "x_i" of the (responseValue = a_1*x_1 + ... a_r*x_r)
-            linear combination given the constraints that bound the interest values: -5 <= i <= 5.
-            '''
+
+            #Extrapolate variables "x_i" of the (responseValue = a_1*x_1 + ... a_r*x_r)
+            #linear combination given the constraints that bound the interest values: -5 <= i <= 5.
+
             coefficients = np.array([sceneResult[0]])
             responseValue = np.array([sceneResult[1]])
 
@@ -129,10 +130,10 @@ init python:
             return True
 
         def getPerfectSquare(self, val):
-            '''
-            Returns the closest perfect square and the steps it took to
-            get there.
-            '''
+
+            #Returns the closest perfect square and the steps it took to
+            #get there.
+
             if Rival.isPerfect(val):
                 return val, 0
 
@@ -145,20 +146,20 @@ init python:
                     n1 += 1
 
         def findBestFit(self, dialogueOptions):
-            '''
-            Will attempt to find the best response using the most recent responseValues
-            of the Love Interest, and previous sceneResults data.
 
-            dialogueOptions - List of the values associated with available dialogue options
-            '''
+            #Will attempt to find the best response using the most recent responseValues
+            #of the Love Interest, and previous sceneResults data.
 
-            '''
-            Multivariate linear regression.
+            #dialogueOptions - List of the values associated with available dialogue options
 
-            This reconstructs the best fit each call to findBestFit().
 
-            Data organization: [([dialogueVal, ...], responseVal), ...]
-            '''
+
+            #Multivariate linear regression.
+
+            #This reconstructs the best fit each call to findBestFit().
+
+            #Data organization: [([dialogueVal, ...], responseVal), ...]
+
             dialogueValues = [i[0] for i in self.sceneResults]
             responseValues  = [j[1] for j in self.sceneResults]
             if len(dialogueValues) != len(responseValues):
@@ -166,10 +167,10 @@ init python:
 
             npDiagVals, npRespVals = np.array(dialogueValues, dtype=object), np.array(responseValues, dtype=object)
 
-            '''
-            This is silly, but either the shape of the data is a perfect square or we need
-            to add enough zero columns such that it can be a perfect square.
-            '''
+
+            #This is silly, but either the shape of the data is a perfect square or we need
+            #to add enough zero columns such that it can be a perfect square.
+
             diagSize = npDiagVals.shape[0] * npDiagVals.shape[1] * npDiagVals.shape[2]
             requiredSize, numDims = self.getPerfectSquare(diagSize)
 
@@ -200,19 +201,19 @@ init python:
             x = np.squeeze(npDiagVals.reshape(1, diagShape, diagShape), axis=0)
             y = np.squeeze(npRespVals.reshape(1, respShape), axis=0)
 
-            '''
-            Rival AI learns from the previous choices and makes a prediction.
-            '''
+
+            #Rival AI learns from the previous choices and makes a prediction.
+
 
             model = LinearRegression().fit(x, y)
 
             prediction = model.predict(x)
 
-            '''
-            Choose the option that is closest in pairwise value to the Rival's predictions.
 
-            Note that order matters here, so the list comprehension accounts for that.
-            '''
+            #Choose the option that is closest in pairwise value to the Rival's predictions.
+
+            #Note that order matters here, so the list comprehension accounts for that.
+
             bestOption = []
             prevDiffs = []
             for option in dialogueOptions:
@@ -221,12 +222,12 @@ init python:
                     bestOption = [i for i in option]
                     prevDiffs = [j for j in diffs]
                 else:
-                    '''
-                    Change bestOption if current diffs are greater pairwise than prevDiffs.
 
-                    If there are a majority of greater values in `prevDiffs`, keep current
-                    bestOption as it is "greater", and hence closer to the best option.
-                    '''
+                    #Change bestOption if current diffs are greater pairwise than prevDiffs.
+
+                    #If there are a majority of greater values in `prevDiffs`, keep current
+                    #bestOption as it is "greater", and hence closer to the best option.
+
                     comparison = zip(diffs, prevDiffs)
                     total, other = 0, 0
                     for a, b in comparison:
@@ -243,8 +244,44 @@ init python:
             # Return the best choice corresponding to an available dialogue option for Rival
             self.appendSceneResult((prediction[:10], LoveInterest.getResponse(bestOption)))
             return bestOption
+    '''
 
-    rival = Rival()
+    class Rivals(object):
+        def __init__(self, interests):
+            self.li_interests = interests
+
+        def appendSceneResult(self, choice, response):
+            count = 0
+            while count < 10:
+                self.li_interests[count] = self.li_interests[count] + (choice[count] * response)
+                count += 1
+
+
+        def findBestFit(self, dialogueOptions):
+            optionsCount = 0
+            count = 0
+            bestResult = -100000
+            bestResultIndex = -10
+            currentResult = -1
+
+            while optionsCount < len(dialogueOptions):
+                currentResult = 0
+                dialogue = dialogueOptions[optionsCount]
+                while count < 10:
+                    currentResult = currentResult + (self.li.interests[count] * dialogue[count])
+                    count += 1
+                if(currentResult >= bestResult):
+                    bestResult = currentResult
+                    bestResultIndex = optionsCount
+                optionsCount += 1
+
+            appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
+
+            return (bestResultIndex + 1)
+
+
+
+    rival = Rivals([0,0,0,0,0,0,0,0,0,0])
 
 # The game starts here.
 

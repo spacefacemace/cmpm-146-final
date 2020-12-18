@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    init python:
-  File "game/script.rpy", line 18, in <module>
-    import numpy as np
-SyntaxError: invalid syntax (python-packages/numpy/__init__.py, line 302)
+  File "game/scene1.rpy", line 45, in script
+    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+  File "game/scene1.rpy", line 45, in <module>
+    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+TypeError: findBestFit() takes exactly 2 arguments (4 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    init python:
+  File "game/scene1.rpy", line 45, in script
+    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
   File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 18, in <module>
-    import numpy as np
-  File "C:\Users\JoshPC\Desktop\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
-    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
-SyntaxError: invalid syntax (python-packages/numpy/__init__.py, line 302)
+  File "game/scene1.rpy", line 45, in <module>
+    $ rv_response = rival.findBestFit([0,2,1,0,0,0,0,0,0,0],[0,-2,-1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0])
+TypeError: findBestFit() takes exactly 2 arguments (4 given)
 
 Windows-7-6.1.7601-SP1
 Ren'Py 7.3.5.606
 Love_BotDotIo 1.0
-Wed Dec 16 21:16:05 2020
+Fri Dec 18 00:32:42 2020

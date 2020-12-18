@@ -2,10 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 74: invalid syntax
-    LoveInterest = new LoveInterest(interest)
-                                   ^
+File "game/script.rpy", line 156: unexpected indent
+(Perhaps you left out a ' at the end of the first line.)
+        '''
+        ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 12 21:49:57 2020
+Fri Dec 18 00:30:51 2020

@@ -3,14 +3,47 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-init python:
-
-    pip2 install --target game/python-packages numpy
-
-
 
 
 define e = Character("Eileen")
+
+init python:
+
+    class Rival(object):
+        def __init__(self, interests):
+            self.li_interests = interests
+
+        def appendSceneResult(self, choice, response):
+            count = 0
+            while count < 10:
+                self.li_interests[count] = self.li_interests[count] + (choice[count] * response)
+                count += 1
+
+
+        def findBestFit(self, dialogueOptions):
+            optionsCount = 0
+            count = 0
+            bestResult = -100000
+            bestResultIndex = -10
+            currentResult = -1
+
+            while optionsCount < len(dialogueOptions):
+                currentResult = 0
+                dialogue = dialogueOptions[optionsCount]
+                while count < 10:
+                    currentResult = currentResult + (self.li.interests[count] * dialogue[count])
+                    count += 1
+                if(currentResult >= bestResult):
+                    bestResult = currentResult
+                    bestResultIndex = optionsCount
+                optionsCount += 1
+
+            appendSceneResult(dialogueOptions[bestResultIndex], LoveInterest.getResponse(dialogueOptions[bestResultIndex]))
+
+            return (bestResultIndex + 1)
+
+
+
 
 
 # The game starts here.
