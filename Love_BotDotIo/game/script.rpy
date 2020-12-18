@@ -367,7 +367,9 @@ label after8:
 label after9:
     jump scene10
 label after10:
-    "state is [pg_state]"
+    "li interest is [interests]"
+    "pg_state is [pg_state]"
+    "rv_state is [rv_state]"
 
 
 
