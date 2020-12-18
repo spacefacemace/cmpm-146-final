@@ -349,7 +349,7 @@ label start:
     define pg = Character(_("[player_character]"))
 
     jump scene1
-label after1:
+label after1: #show this scene in demo
     jump scene2
 label after2:
     jump scene3
@@ -367,7 +367,7 @@ label after8:
     jump scene9
 label after9:
     jump scene10
-label after10:
+label after10: #show this scene in demo
     "li interest is [interest]"
     "pg_state is [pg_state]"
     "rv_state is [rv_state]"
