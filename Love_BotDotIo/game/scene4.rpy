@@ -20,7 +20,7 @@ label scene4:
     scene pg_cf_rm_apartment
 
     show cf at right
-    show li at left
+    show li_joy at left
     show rv
 
     cf "Don’t mind all the mess."
@@ -36,6 +36,7 @@ label scene4:
             $ rv_response = rival.findBestFit([0,-2,0,0,0,0,0,0,0,0],[0,2,-2,0,0,0,0,0,0,0],[0,-2,2,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,3,0,0])
             if(rv_response == 1):
                 $ rv_state[1] -= 2
+                show rv_sad
                 rv "...I sure hope so."
 
             elif(rv_response == 2):
@@ -46,11 +47,13 @@ label scene4:
             elif(rv_response == 3):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
+                show rv_angry
                 rv "I'd never let my place get to this point."
 
             elif(rv_response == 4):
                 $ rv_state[7] += 3
                 rv "Maybe I could come over and help. We are sorta neighbors, after all."
+                show rv_happy
                 rv "Just not in the morning. I'm at the gym during that time."
 
         "Watch out for that pizza box.":
@@ -64,6 +67,7 @@ label scene4:
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
+                show rv_angry
                 rv "Don’t you think you should clean your place up a little?"
 
             elif(rv_response == 2):
@@ -101,6 +105,7 @@ label scene4:
             if(rv_response == 1):
                 $ rv_state[1] -= 2
                 $ rv_state[2] += 2
+                show rv_angry
                 rv "Don’t you think you should clean your place up a little?"
 
             elif(rv_response == 2):
@@ -130,6 +135,7 @@ label scene4:
                         "{i}[response]{/i}"
                         cf "We have free time tomorrow, right, [pg]? We’ll get this sorted out."
 
+    show rv
     cf "While we’re at it, let’s get [rm] in it, too."
 
     li "Yeah, where is he?"
@@ -211,7 +217,7 @@ label scene4:
             $ pg_state[2] += 3
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,3,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
-            "Should I clear the table?"
+            pg "Should I clear the table?"
             li "That'd be great!"
 
 
@@ -220,13 +226,14 @@ label scene4:
             $ pg_state[2] += 1
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,1,0,0,0,0,0,0,0]))
             "{i}[response]{/i}"
-            "Should I set up the food?"
+            pg "Should I set up the food?"
             # 1-2 points for li->rv
             
 
             $ rv_response = rival.findBestFit([0,0,3,0,0,0,0,0,0,0],[0,0,2,0,0,0,0,1,0,0],[0,0,2,0,0,5,0,0,0,0])
             if(rv_response == 1):
                 $ rv_state[2] += 3
+                show rv_angry
                 rv "Shouldn't we clear the table first?"
 
             elif(rv_response == 2):
@@ -258,12 +265,13 @@ label scene4:
                 $ rv_state[7] += 1
                 rv "We should probably clear the table first."
 
+    show rv
     li "All set. Alright, let’s dig in!"
 
     # fade here?
 
     hide rv
-    show cf
+    show cf_happy
 
     cf "Wow, that was exceptionally good."
 
@@ -277,12 +285,15 @@ label scene4:
 
     pg "[cf] usually doesn’t eat sushi, but I guess he couldn’t taste it considering he finished one and a half bottles of the cherry-flavored one?"
 
+    show cf_disappointed
     cf "You know me too well, [pg]."
 
+    show cf
     cf "What was that?"
 
     rm "Oh, it’s my chess set. I was wondering where that went."
 
+    show cf_shocked
     cf "We had a chess set?"
 
     menu:
@@ -382,10 +393,12 @@ label scene4:
                 $ rv_state[4] -= 2
                 $ rv_state[6] += 2
                 rv "Woah."
+                show rv_happy
                 rv "You're right though..."
                 rv "I know how to play. I had to get good if I wanted to beat my dad, and he had a really high score."
 
 
+    show rv
     li "Do you know how to play, [pg]?"
 
     "{i}Do I...?{/i}"
@@ -542,6 +555,7 @@ label scene4:
     if chess_win:
 
         rv "Bad move, [pg]. I win."
+        show rv_smirking
 
         #li->rv big points, some points for rv->pg
         $ pg_state[0] = pg_state[0] - 2
@@ -549,6 +563,7 @@ label scene4:
         $ response = LoveInterest.textResponse(LoveInterest.getResponse([-2,0,0,0,0,0,0,-5,0,0]))
         "{i}[response]{/i}"
 
+        show rv_happy
         rv "Good game, though. You caught me off guard a couple of times."
 
 
@@ -563,11 +578,12 @@ label scene4:
 
         # rv->pg some points, li->pg big points
 
-
+    show rv
     rm "That was...thrilling, yet not-so-thrilling at the same time."
 
     cf "Should have drank a bit more."
 
+    show li_happy at left
     li "It was! Even if I wasn’t sure what was going on...[rv], [pg], you were both pretty cool!"
 
     li "If I learned how to play, maybe I could play next time..."
@@ -580,6 +596,7 @@ label scene4:
             $ pg_state[7] += 2
             $ response = LoveInterest.textResponse(LoveInterest.getResponse([0,0,0,0,3,0,0,2,0,0]))
             "{i}[response]{/i}"
+            show li_happy2 at left
             li "Awesome! You might have to go easy on me at first, haha."
 
         # maybe like 1-2 points for li->pg
@@ -591,6 +608,7 @@ label scene4:
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "I could teach you how to play."
+                show li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -599,6 +617,7 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
+                show li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -615,6 +634,7 @@ label scene4:
                 $ rv_state[4] += 2
                 $ rv_state[7] += 2
                 rv "I could teach you how to play."
+                show li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 
@@ -623,6 +643,7 @@ label scene4:
                 $ rv_state[7] += 3
                 rv "Woah."
                 rv "Yeah, it'll be fun once you know how to play. I could teach you."
+                show li_happy2 at left
                 li "You will? Thanks!"
                 "{i}Damn, I could have done that.{/i}"
 

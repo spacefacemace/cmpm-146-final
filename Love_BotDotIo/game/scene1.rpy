@@ -200,6 +200,7 @@ label scene1:
 
     cf "Well, no matter what, [li], you’ve got to think somewhat ahead. How’s the planning for the last show?"
 
+    show li_tired at left
     li "Don’t even get me started!"
 
     "{i}[cf] and [li] are in one of the dance groups on campus. It’s how they met. [li] was actually the one to recommend [cf] our current living situation.{/i}"
@@ -351,6 +352,7 @@ label scene1:
 
 
     show rv
+    show li_blush at left
     li "Are you sure about this?"
 
     menu:
@@ -408,6 +410,7 @@ label scene1:
 
 
     show rv
+    show li_happy2 at left
     li "Thanks, guys! I really appreciate it. Wow, I’m glad we’re doing something together before moving on. It’ll be fun!"
 
     jump after1
