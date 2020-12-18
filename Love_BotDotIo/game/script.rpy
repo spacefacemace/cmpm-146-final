@@ -41,6 +41,13 @@ image rivchar rv_sad = "rv_sad.png"
 image rivchar rv_smiling = "rv_smiling.png"
 image rivchar rv_smirking = "rv_smirking.png"
 
+image cfimg cf = "cf.png"
+image cfimg cf_disappointed = "cf_disappointed.png"
+image cfimg cf_happy = "cf_happy.png"
+image cfimg cf_sad = "cf_sad.png"
+image cfimg cf_serious = "cf_serious.png"
+image cfimg cf_shocked = "cf_shocked.png"
+
 init python:
     import random
     #import numpy as np
