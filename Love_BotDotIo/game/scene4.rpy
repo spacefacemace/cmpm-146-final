@@ -20,7 +20,7 @@ label scene4:
     scene pg_cf_rm_apartment
 
     show cfimg cf at right
-    show luvchar li_joy at left
+    show luvint li_joy at left
     show rivchar rv
 
     cf "Don’t mind all the mess."

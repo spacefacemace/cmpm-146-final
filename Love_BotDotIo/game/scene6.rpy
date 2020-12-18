@@ -36,7 +36,7 @@ label scene6:
 
         hide rivchar rv
         hide luvint li_joy
-        show cfimg at center
+        show cfimg cf at center
 
         "[rv] and [li] get on the gondola. You and [cf] get on the next one."
 

@@ -16,20 +16,20 @@ label scene9:
     scene bens_house
 
     show cfimg cf at right
-    show rivchar rm at left
+    show roommate rm at left
 
     rm "This is...an odd venue, but I’ll take it. His vinyl collection is insane."
 
     cf "...Did you go through it?"
 
-    show rivchar rm_suspicious at left
+    show roommate rm_suspicious at left
     rm "What? Of course not. I have manners."
 
     cf "Why are you here again?"
 
     rm "Because [li] invited me?"
 
-    hide rivchar rm_suspicious
+    hide roommate rm_suspicious
     hide cfimg cf
     show luvint li_tired
     show rivchar rv at right

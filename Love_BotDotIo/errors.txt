@@ -2,11 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 156: unexpected indent
-(Perhaps you left out a ' at the end of the first line.)
-        '''
-        ^
-    
+File "game/script.rpy", line 344: expected statement.
+    player_character = player_character.strip()
+                     ^
+
+File "game/script.rpy", line 347: expected statement.
+    player_character = "Bobby Joe"
+                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 18 00:30:51 2020
+Fri Dec 18 02:12:15 2020
