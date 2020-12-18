@@ -125,7 +125,7 @@ label scene6:
             rv "...Yeah, I guess."
 
         label li_pg_gondola:
-            pg "{i}Is it just me or is someone glaring at me? Someone behind me?{/i}"
+            "{i}Is it just me or is someone glaring at me? Someone behind me?{/i}"
 
             # dissolve in
             show sc_boardwalk
@@ -136,7 +136,7 @@ label scene6:
             show cf at right
 
 
-            pg "{i}Well that makes sense. Can’t waste this opportunity, though!{/i}"
+            "{i}Well that makes sense. Can’t waste this opportunity, though!{/i}"
 
             # Change background to inside of gondola
             scene inside_gondola
@@ -255,7 +255,7 @@ label scene6:
         rv "I’m hungry. Should we eat something?"
 
         if not interact_with_li:
-            pg "{i}Be more forward. Alright, let’s do this.{/i}"
+            "{i}Be more forward. Alright, let’s do this.{/i}"
 
         menu:
 
@@ -333,20 +333,20 @@ label scene6:
                 rv "I can pay for you, [li]."
                 show li_happy2
                 li "Woah, really? ...Thanks!"
-                pg "{i}...Missed opportunity there.{/i}"
+                "{i}...Missed opportunity there.{/i}"
 
         show li_joy
         li "Ah, we’re next. I’m still deciding…"
         rv "Me too."
         cf "Same here…[pg], you order first. Don’t you have a regular?"
-        pg "{i}I do. I guess that’s convenient.{/i}"
-        pg "{i}Well, this trip to the Boardwalk wasn’t all too bad.{/i}"
+        "{i}I do. I guess that’s convenient.{/i}"
+        "{i}Well, this trip to the Boardwalk wasn’t all too bad.{/i}"
 
         if interact_with_li:
-            pg "{i}[cf] gave me some good advice.{/i}"
+            "{i}[cf] gave me some good advice.{/i}"
         else:
-            pg "{i}I got to spend some time with just [li]{/i}"
+            "{i}I got to spend some time with just [li]{/i}"
 
-        pg "{i}And after all of that...this could be some sort of reward.{/i}"
-        pg "{i}Alright, can I get...{/i}"
+        "{i}And after all of that...this could be some sort of reward.{/i}"
+        "{i}Alright, can I get...{/i}"
         jump after6

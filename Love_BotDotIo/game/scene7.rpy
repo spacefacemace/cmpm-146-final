@@ -65,12 +65,14 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
+                show rv_crying
                 rv "Ugh, you're right."
 
             elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[3] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
+                show rv_crying
                 rv "Ugh, you're right."
 
         # 2-3 points for rv->pg, some points for li->pg
@@ -82,12 +84,14 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
+                show rv_crying
                 rv "Ugh, you're right."
 
             elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[2] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
+                show rv_crying
                 rv "Ugh, you're right."
 
         # best option, points for li->pg
@@ -99,12 +103,14 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
+                show rv_crying
                 rv "Ugh, you're right."
 
             elif(rv_response == 2):
                 $ rv_state[7] -= 2
                 $ rv_state[2] += 2
                 rv "Even if this is a rehearsal, I want this to go well, but..."
+                show rv_crying
                 rv "Ugh, you're right."
 
     rv "Or do you just not want me to leave?"
@@ -112,14 +118,17 @@ label scene7:
     menu:
 
         "That’s kind of...":
+            show rv
             rv "I'm kidding."
 
 
         "I don’t know...":
+            show rv
             rv "I'm kidding."
 
         # some points for rv->pg
         "What makes you say that...":
+            show rv
             rv "I'm kidding."
 
     rv "Oh, here they come."
@@ -128,6 +137,7 @@ label scene7:
 
     rv "You were supposed to be here...three minutes ago."
 
+    show rv_angry
     rv "If this was the real thing, there could be some serious delay."
 
     menu:
@@ -138,11 +148,13 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
+                show rv_sad
                 rv "i guess I was a little harsh. Sorry about that."
 
             elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[2] -= 2
+                show rv_sad
                 rv "...Right, right."
                 rv "I guess I was a little harsh. Sorry about that."
 
@@ -155,11 +167,13 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[7] -= 2
                 $ rv_state[4] += 2
+                show rv_sad
                 rv "i guess I was a little harsh. Sorry about that."
 
             elif(rv_response == 2):
                 $ rv_state[4] += 2
                 $ rv_state[2] -= 2
+                show rv_sad
                 rv "...Right, right."
                 rv "I guess I was a little harsh. Sorry about that."
 
@@ -172,6 +186,7 @@ label scene7:
             if(rv_response == 1):
                 $ rv_state[4] -= 2
                 $ rv_state[2] += 2
+                show rv_sad
                 rv "...Right, right."
                 rv "I guess I was a little harsh. Sorry about that."
 
@@ -179,11 +194,12 @@ label scene7:
                 $ rv_state[4] -= 3
                 $ rv_state[7] += 2
                 rv "I’m not trying to be?"
+                show rv_sad
                 rv "...Does it seem that way?"
                 rv "If it does, sorry."
 
 
-
+    show rv
     pg "You guys are good to go in...3, 2, 1."
 
     rv "...And that’s the end of our jobs. At least for this rehearsal."
@@ -208,8 +224,10 @@ label scene7:
             elif(rv_response == 2):
                 $ rv_state[2] += 1
                 $ rv_state[4] += 2
+                show rv_angry
                 rv "Come on, at least pay a little attention."
                 rv "[li] said something about it a few days ago."
+                show rv
 
         # 2-3 points for li->rv
         "Did I miss something?":
@@ -224,8 +242,10 @@ label scene7:
             elif(rv_response == 2):
                 $ rv_state[2] += 1
                 $ rv_state[4] += 2
+                show rv_angry
                 rv "Come on, at least pay a little attention."
                 rv "[li] said something about it a few days ago."
+                show rv
 
     rv "It’s going to be at...Ben Carson’s house?"
 
@@ -246,7 +266,7 @@ label scene7:
             rv "Anyway, he offered his house for...you know, the after-party."
 
     hide rv
-    show li at right
+    show li_joy at right
 
     li "Good job everyone! You all did amazing!"
 
@@ -258,7 +278,9 @@ label scene7:
 
     li "You guys have definitely got this down! You might be better than me when I had to do this, hahaha..."
 
+    show li_happy2 at right
     li "Doing what you did just now, we’ll definitely have a successful show tomorrow!"
+    show li_joy at right
 
     menu:
 
@@ -276,12 +298,14 @@ label scene7:
                 $ rv_state[7] += 2
                 $ rv_state[0] += 2
                 rv "Exactly. Though it wouldn’t hurt if we did better tomorrow."
+                show rv_happy
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
             elif(rv_response == 2):
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+                show rv_happy
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
         "Hopefully that’s the case.":
@@ -296,11 +320,13 @@ label scene7:
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+                show rv_happy
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
             elif(rv_response == 2):
                 $ rv_state[6] += 2
                 $ rv_state[0] += 1
+                show rv_happy
                 rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
 
         # 1-2 points for rv->pg
@@ -314,12 +340,16 @@ label scene7:
                 $ rv_state[7] += 1
                 $ rv_state[0] += 3
                 rv "Oh, we’ll make sure it’ll be the best show it could possibly be. Though it wouldn’t hurt if we did better tomorrow."
+                show rv_happy
                 rv "Shoot for the moon, and if you fail, at least you’ll land among the stars -- that sort of thing."
 
             elif(rv_response == 2):
                 $ rv_state[6] += 2
                 $ rv_state[0] += 1
+                show rv_happy
                 rv "Well, let's shoot for the moon, and if we fail, at least we’ll land among the stars."
+
+    show li_happy2 at right
 
     li "Right!"
 
